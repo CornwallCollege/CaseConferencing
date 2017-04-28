@@ -1,0 +1,190 @@
+﻿/*
+    The CSS of the client side tabs.
+*/
+.WizardStep {    
+      position: relative;
+    display: table-cell;
+    cursor: pointer;
+    padding: 5px 0px;
+    text-align: center;
+    vertical-align: middle;
+    background: #e4e4e4;
+    border: solid 1px #ccc;   
+    border-left-width: 0;
+    height: 30px;
+
+}
+
+.WizardStep.Active {
+    background: #366CAB;
+    color:#FFFFFF;
+    
+}
+
+.WizardStep.Past {
+
+      background: #0B2F4D;
+  color: #FFFFFF;
+}
+
+.WizardStep a,
+.WizardStep a:link  {
+    display: block;
+    padding: 10px 20px;
+}
+
+.WizardStep a,
+.WizardStep a:link,
+.WizardStep a[disabled='disabled'], 
+.WizardStep a[disabled='disabled']:hover {
+    color: white;   
+}
+
+
+/* after: right arrow on wizard step */
+.WizardStep:after {
+    content: "";
+    width: 0px;
+    height: 0px;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 20px solid #e4e4e4;
+    right: -20px;
+    top: 0px;
+    position: absolute;
+}
+
+.WizardStep:last-of-type:after {
+    border: none;
+}
+
+
+/* before: left "inverted" arrow on wizard step */
+.WizardStep:before {
+    left: -20px;
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-top: 20px solid #e4e4e4;
+    border-bottom: 20px solid #e4e4e4;
+    content: "";
+    top: 0px;
+    position: absolute;
+}
+
+.WizardStep:first-of-type:before {
+    border: none;
+}
+
+.WizardStep.Past:after {
+    border-left-color: #0B2F4D;
+}
+
+.WizardStep.Past:before {
+    border-top-color: #0B2F4D;
+    border-bottom-color: #0B2F4D;
+}
+
+.WizardStep.Active:after {
+    border-left-color: #366CAB;
+}
+
+.WizardStep.Active:before {
+    border-top-color: #366CAB;
+    border-bottom-color: #366CAB;
+}
+
+@media screen and (max-width: 764px) {
+    .WizardStep:before {
+        border: none;
+    } 
+    .WizardStep:after {
+        border: none;
+    } 
+    
+    .WizardStep {
+        border-bottom: 1px solid white; 
+    }
+    
+    .WizardStep:last-of-type {
+        border-bottom: none;   
+    }
+    
+    .Responsive .WizardStep:first-of-type.ThemeGrid_MarginGutter[class*="ThemeGrid_Width"], 
+    .Responsive .WizardStep:first-of-type[class*="ThemeGrid_Margin"] {
+        margin-top: 0px;
+    }
+    
+    .Responsive .WizardStep.ThemeGrid_MarginGutter[class*="ThemeGrid_Width"], 
+    .Responsive .WizardStep[class*="ThemeGrid_Margin"] {
+        margin-top: 0px;
+    }
+}
+.Tabs {
+    margin-top: 0px;
+    min-height: 80px;
+}
+.Tabs_header {
+    display: table;
+    width: 100%;
+}
+
+.Tabs__tab {
+    display: table-cell;
+    cursor: pointer;
+    padding: 5px 0px;
+    text-align: center;
+    vertical-align: middle;
+  
+    background: #e4e4e4;
+    border: solid 1px #ccc;   
+    border-left-width: 0;
+}
+
+
+.Tabs__tab:first-child {
+    border-left-width: 1px;
+}
+
+.Tabs__tab:hover {
+    background: #FFFFFF;
+}
+
+.Tabs__tab.active {
+    background: #FFF;
+    cursor: default;
+    border-bottom-color: #FFF;
+}
+
+.Tabs_body {
+    border: solid 1px #ccc;
+    border-top: 0px;
+    padding: 10px;
+    
+    z-index: 0;
+    position: relative;
+    margin-top: 0px;
+}
+
+.Tabs__content {
+    display: block;
+    opacity: 0; 
+
+    height: 0;
+
+
+    overflow: hidden;
+
+
+    margin-top: 0px;
+
+}
+
+.Tabs__content.active {
+    opacity: 1;
+    height: auto;
+}
+
+.Tabs__Loading{
+    padding: 25px 40px;
+}

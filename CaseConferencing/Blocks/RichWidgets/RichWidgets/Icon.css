@@ -1,0 +1,6 @@
+﻿@import url(/RichWidgets/Theme.FontAwesome.css?181);
+
+/* fallback for offline web editor, the icons are not available */
+.fa:after {
+    content: "N/A";       
+}

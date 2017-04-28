@@ -1,0 +1,5 @@
+﻿<%@ Control Language="c#" AutoEventWireup="false" Codebehind="Blocks\CaseConferencing\StaffView\StudentAttendanceIndicator.ascx.cs" Inherits="ssCaseConferencing.Flows.FlowStaffView.WBlkStudentAttendanceIndicator,CaseConferencing" TargetSchema="http://schemas.microsoft.com/intellisense/ie5"%>
+<%@ Register TagPrefix="osweb" Namespace="OutSystems.HubEdition.WebWidgets" Assembly="OutSystems.HubEdition.WebWidgets" %>
+<%@ Assembly Name="OutSystems.WidgetsRuntimeAPI" %>
+<%@ Import namespace="ssCaseConferencing" %>
+<%# PageStartHook() %><osweb:Container runat="server" id="wt_Container1" anonymous="true" onDataBinding="cnt_Container1_onDataBinding" cssClass="IndicatorRed" align="center"><osweb:Span runat="server" id="wt_InlineExpression2" anonymous="true" onDataBinding="expression_InlineExpression2_onDataBinding"><%# OutSystems.HubEdition.RuntimePlatform.RuntimePlatformUtils.ExtendedHtmlEncode(expression_InlineExpression2()) %></osweb:Span></osweb:Container><%# PageEndHook() %>

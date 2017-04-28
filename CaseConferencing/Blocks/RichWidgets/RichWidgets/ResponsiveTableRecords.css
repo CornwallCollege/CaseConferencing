@@ -1,0 +1,110 @@
+﻿div.TableRecords_Label {
+    display: none;   
+}
+
+
+@media screen and (max-width: 764px) {
+    .Responsive .TableRecords_Label {
+        display: block;
+        color: #999; 
+    }
+    
+    .Responsive .TableRecords td:first-child .TableRecords_Label {
+        display:inline-block; /* for master details with checkboxes*/
+    }
+
+    .Responsive .TableRecords td:first-child .TableRecords_Label:first-child {
+        display:none;
+    }
+    
+    .Responsive .TableRecords {
+        padding: 0px;
+    }
+    
+    .Responsive .TableRecords td.TableRecords_OddLine, 
+    .Responsive .TableRecords td.TableRecords_EvenLine {
+        width: 100%;
+        float: left;
+        display: block;
+        padding: 5px;
+        box-sizing: border-box;
+        border-bottom: none;
+        display:none;
+
+    }
+    
+    .Responsive .TableRecords td.TableRecords_OddLine:first-child, 
+    .Responsive .TableRecords td.TableRecords_EvenLine:first-child {
+        border-top: 1px dotted #CCC;
+        display:block;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        cursor:pointer;
+
+    }
+    
+    .Responsive .TableRecords tr:first-child td.TableRecords_OddLine:first-child, 
+    .Responsive .TableRecords tr:first-child td.TableRecords_EvenLine:first-child {
+        border:  none;
+    }
+    
+    .Responsive .TableRecords thead {
+        display: none;
+
+    }
+    
+    .Responsive .TableRecords td * {
+        text-align: left;
+    }
+
+    .Responsive .TableRecords tr.TableRecords_ExpandedRow td.TableRecords_OddLine,
+    .Responsive .TableRecords tr.TableRecords_ExpandedRow td.TableRecords_EvenLine {
+        display: block;
+
+    }
+
+    .Responsive .TableRecords tr.TableRecords_ExpandedRow td.TableRecords_OddLine.HiddenInSmartphone,
+    .Responsive .TableRecords tr.TableRecords_ExpandedRow td.TableRecords_EvenLine.HiddenInSmartphone {
+        display: none;
+    }
+
+    .Responsive .TableRecords td:first-child:before {
+        content: "\f0dd";
+        float: right;
+        font-family: FontAwesome;
+        color: #AAA;
+        margin-right:5px;
+    }
+    
+    .Responsive .TableRecords td:last-child:before {
+        content: ""; /* hide the icon there is only one column (first and last child are the same) */
+    }
+
+    .Responsive .TableRecords td[colspan]:first-child:before {
+        content: "";
+    }
+
+    .Responsive .TableRecords tr.TableRecords_ExpandedRow td:first-child:before {
+        content: "\f0de";
+    }
+    
+    .Responsive .TableRecords tr.TableRecords_ExpandedRow td:last-child:before {
+        content: ""; /* hide the icon there is only one column (first and last child are the same) */
+    }
+    
+    .Responsive .TableRecords.Expanded td.TableRecords_OddLine, 
+    .Responsive .TableRecords.Expanded td.TableRecords_EvenLine {
+        display:table-cell;
+
+     }
+    
+    .Responsive .TableRecords.Expanded td:first-child:before {
+        display:none;
+
+    }
+    .Responsive .TableRecords.Expanded td:first-child .TableRecords_Label:first-child {
+        display:table-cell;
+    }
+}    
+
+/* ExcludeAllFromPickersOutsideBlock */

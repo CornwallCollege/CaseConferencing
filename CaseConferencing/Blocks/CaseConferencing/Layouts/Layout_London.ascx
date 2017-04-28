@@ -1,0 +1,3 @@
+﻿<%@ Control Language="c#" AutoEventWireup="false" Inherits="proxy_CaseConferencing_RichWidgets.Flows.FlowLayouts.WBlkLayout_London,CaseConferencingReferencesProxy" TargetSchema="http://schemas.microsoft.com/intellisense/ie5"%>
+<%@ Register TagPrefix="client" TagName="node" Src="..\..\RichWidgets\Layouts\Layout_London.ascx" %>
+<client:node id="block" runat="server" OnBindDelegates="BindProxyDelegates" />

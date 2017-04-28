@@ -1,0 +1,5 @@
+﻿<%@ Control Language="c#" AutoEventWireup="false" Codebehind="Blocks\Charts\Utils\JavaScript_Content.ascx.cs" Inherits="ssCharts.Flows.FlowUtils.WBlkJavaScript_Content,Charts" TargetSchema="http://schemas.microsoft.com/intellisense/ie5"%>
+<%@ Register TagPrefix="osweb" Namespace="OutSystems.HubEdition.WebWidgets" Assembly="OutSystems.HubEdition.WebWidgets" %>
+<%@ Assembly Name="OutSystems.WidgetsRuntimeAPI" %>
+<%@ Import namespace="ssCharts" %>
+<%# PageStartHook() %><osweb:IfPlaceHolder runat="server"><osweb:If runat="server" visible="<%# if_wt1() %>"><osweb:Container runat="server" id="wt4" anonymous="true" onDataBinding="cnt4_onDataBinding" cssClass="Utils_TagWrapper Utils_JavaScript"><osweb:PlaceHolder runat="server"><%# "JavaScript Content" %></osweb:PlaceHolder></osweb:Container></osweb:If><osweb:If runat="server" visible="<%# !if_wt1() %>"><osweb:PlaceHolder runat="server"><%# expression2() %></osweb:PlaceHolder></osweb:If></osweb:IfPlaceHolder><%# PageEndHook() %>

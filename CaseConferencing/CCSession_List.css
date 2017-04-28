@@ -1,0 +1,32 @@
+﻿.TableRecords_OddLine
+{
+    background-color:#F8F8F8;
+}
+.TableRecords_EvenLine {
+    border-top: 1px solid #dadada;
+    padding: 7px 0 7px 10px;
+}
+
+.ListHeader
+{
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    height: 30px;
+    vertical-align: top;
+    border-top: 1px solid #1F3D60;
+    border-left: 1px solid #1F3D60;
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;    
+    background-color: #00326C;
+    background: -webkit-linear-gradient(180deg, #002959, #00326C); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(180deg, #002959, #00326C); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(180deg, #002959, #00326C); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(180deg, #002959, #00326C); /* Standard syntax (must be last) */
+}
+
+.ListHeaderTitle
+{
+    border-right: 1px solid #DADADA;
+}

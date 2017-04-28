@@ -1,0 +1,63 @@
+﻿.ProgressReportAreaContent {
+    float: right;
+    width: 75%;
+    padding: 20px;
+    background-color: #f8f8f8; 
+    border: solid 1px #DADADA;
+    min-height: 510px;
+}
+
+.ProgressReportMenu {
+    float: left;
+    width: 20%;
+    margin-right: 10px;
+}
+
+.ProgressReportMenuItem
+{
+    font-size: 14px;
+    cursor: pointer;
+    background-color: white;
+    box-shadow: 0px 1px 2px #b1b1b1;
+    border: solid 1px #DADADA;
+    margin-right: 10px;
+    padding: 10px;
+    border-radius: 3px; 
+}
+
+.ProgressReportMenuItemSelectedCard
+{
+     font-size: 14px;
+    cursor: pointer;
+    background-color: white;
+    box-shadow: 0px 1px 2px #b1b1b1;
+    border: solid 1px #DADADA;
+    margin-right: 10px;
+    padding: 10px;
+    border-radius: 3px; 
+    -moz-box-shadow: 0px -2px 17px #000000;
+    -webkit-box-shadow: 0px -2px 17px #000000;
+    box-shadow: 0px -2px 17px #000000;
+}
+
+
+.TitleTargetHeader
+{
+    padding: 15px; 
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 18px;
+    text-shadow: 0px 1px 2px #dadada;
+    box-shadow: 0px 0px 12px #b1b1b1;
+}
+
+.StudentTableTarget:nth-child(even){
+  background-color:#F8F8F8;
+}
+
+.divstyle:nth-child(even){
+  background-color:#F8F8F8;
+}
+
+
+

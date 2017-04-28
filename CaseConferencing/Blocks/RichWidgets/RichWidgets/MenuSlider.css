@@ -1,0 +1,186 @@
+﻿.MenuSlider_Toggler {
+    display: none;
+
+    color: black;
+    font-size: 25px;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+}    
+
+ .MobileApp .Application_Menu {
+
+ }
+ 
+/* reset any inherit styles (e.g.: ChicagoMobile -> Chicago) */
+div.Menu_DropDownPanel a, 
+div.Menu_DropDownPanel a:link, 
+div.Menu_DropDownPanel a:visited {
+    height: auto;
+}
+
+div.Application_Menu div.Menu_DropDownPanel a,
+div.Application_Menu div.Menu_DropDownPanel a:link,
+div.Application_Menu div.Menu_DropDownPanel a:visited {
+    display: block;
+}
+
+/* Tablet Portrait and Mobile */
+@media screen and (max-width: 1023px) {  
+    .MenuSlider_Toggler {
+        display: inline-block;
+    }
+    
+    .Menu_Container {
+        margin-bottom: 44px; /* iphone bottom toolbar */
+        width: 100%;
+    }
+    
+    .Application_Menu {
+        display: block;        
+        position: fixed;
+
+        right: -270px;
+        top: 50px;
+
+        width: 260px;
+        height: 100%;
+        overflow: auto;
+        box-shadow: 0px 3px 5px #888;
+        
+        /* Animate the menu when opening and closing */
+        -webkit-transition: all .3s ease-out;
+        -moz-transition: all .3s ease-out;
+        -ms-transition: all .3s ease-out;
+        -o-transition: all .3s ease-out;
+        transition: all .3s ease-out;            
+        
+        /* Enable hardware acceleration */
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+       
+       /* Reduce animation flickering */
+       -webkit-backface-visibility: hidden;
+       -moz-backface-visibility: hidden;
+       -ms-backface-visibility: hidden;
+       backface-visibility: hidden;
+       
+       -webkit-perspective: 1000;
+       -moz-perspective: 1000;
+       -ms-perspective: 1000;
+       perspective: 1000;
+    }
+   
+    .Header .Application_Menu {
+
+    }    
+
+    .LeftMenu .Application_Menu {
+        left: -270px;
+    }
+    
+    .MenuSlider_IsOpen .Application_Menu {
+        -webkit-transform: translate3d(-270px,0,0);
+        -moz-transform: translate3d(-270px,0,0);
+        -ms-transform: translate3d(-270px,0,0);
+        -o-transform: translate3d(-270px,0,0);
+        transform: translate3d(-270px,0,0);
+        
+        /* IE9 */
+        right: 0px\0;
+        -webkit-transform: none\0;
+        -moz-transform: none\0;
+        -ms-transform: none\0;
+        -o-transform: none\0;
+        transform: none\0;
+    }
+    
+     .MenuSlider_IsOpen .LeftMenu .Application_Menu {
+        -webkit-transform: translate3d(270px,0,0);
+        -moz-transform: translate3d(270px,0,0);
+        -ms-transform: translate3d(270px,0,0);
+        -o-transform: translate3d(270px,0,0);
+        transform: translate3d(270px,0,0);
+        
+        /* IE9 */
+        left: 0px\0;
+        -webkit-transform: none\0;
+        -moz-transform: none\0;
+        -ms-transform: none\0;
+        -o-transform: none\0;
+        transform: none\0;
+     }
+    
+    /* fix for older versions of android */
+    .MenuSlider_IsOpen select { 
+        z-index: 0;
+    }
+    
+    .Application_Menu .Menu_TopMenu {
+        width: 100%;
+        border: 0px;
+        margin: 0px;
+        padding: 0px;
+    }
+
+     /* the "body >" rule applies only when in design mode, directy on the web block menu */
+     body > div.Application_Menu .Menu_DropDownButton,
+    .Application_Menu .Menu_DropDownButton {        
+        display: block;
+        position: relative;
+    }
+    
+    .Application_Menu a,
+    .Application_Menu a:link,
+    .Application_Menu a:visited {
+        display: inline-block;
+        width: 100%;
+        border: 0px;
+        border-bottom: 1px solid #747474;
+        box-sizing: border-box;
+    }
+    
+    .Application_Menu .Menu_DropDownPanel {
+        position: static; 
+        border: 0px;
+        margin: 0px;
+        padding: 0px;
+        background-color: #999;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+    }
+    
+    .Application_Menu .Menu_DropDownArrow {
+        position: absolute;
+        right: 14px;
+        top: 21px;
+    }
+
+    /* create an overlay so that you can close the menu on click (body) */
+    .MenuSlider_Toggler_Overlay {
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        position: fixed;
+        display: none;
+        -webkit-tap-highlight-color: rgba(255, 255, 255, 0); 
+     }
+
+    .MenuSlider_IsOpen .MenuSlider_Toggler_Overlay {
+        display: block;
+    }
+}
+
+/* The following classes are applied on design time, when editing the menu WB */
+ body > div.Application_Menu {            
+
+}
+
+/* ExcludeAllFromPickersOutsideBlock */

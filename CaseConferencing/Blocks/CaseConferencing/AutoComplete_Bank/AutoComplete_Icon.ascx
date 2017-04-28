@@ -1,0 +1,5 @@
+﻿<%@ Control Language="c#" AutoEventWireup="false" Codebehind="Blocks\CaseConferencing\AutoComplete_Bank\AutoComplete_Icon.ascx.cs" Inherits="ssCaseConferencing.Flows.FlowAutoComplete_Bank.WBlkAutoComplete_Icon,CaseConferencing" TargetSchema="http://schemas.microsoft.com/intellisense/ie5"%>
+<%@ Register TagPrefix="osweb" Namespace="OutSystems.HubEdition.WebWidgets" Assembly="OutSystems.HubEdition.WebWidgets" %>
+<%@ Assembly Name="OutSystems.WidgetsRuntimeAPI" %>
+<%@ Import namespace="ssCaseConferencing" %>
+<%@ Register TagPrefix="RichWidgets_widgets" TagName="KmbfKJ2gWQUq1Gwk_0SjV4w" Src="..\..\CaseConferencing\RichWidgets\Icon.ascx" %><%# PageStartHook() %><osweb:Container runat="server" id="wt_Container1" anonymous="true" onDataBinding="cnt_Container1_onDataBinding" cssClass="HeaderButton" GridCssClasses="OSInline" align="right"><RichWidgets_widgets:KmbfKJ2gWQUq1Gwk_0SjV4w runat="server" id="RichWidgets_wt_WebBlockInstance2" OnEvaluateParameters="RichWidgets_webBlck_WebBlockInstance2_onDataBinding" InstanceID="_WebBlockInstance2"></RichWidgets_widgets:KmbfKJ2gWQUq1Gwk_0SjV4w></osweb:Container><%# PageEndHook() %>

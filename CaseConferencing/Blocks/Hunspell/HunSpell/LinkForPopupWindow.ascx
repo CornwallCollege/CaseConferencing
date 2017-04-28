@@ -1,0 +1,5 @@
+﻿<%@ Control Language="c#" AutoEventWireup="false" Codebehind="Blocks\Hunspell\HunSpell\LinkForPopupWindow.ascx.cs" Inherits="ssHunspell.Flows.FlowHunSpell.WBlkLinkForPopupWindow,Hunspell" TargetSchema="http://schemas.microsoft.com/intellisense/ie5"%>
+<%@ Register TagPrefix="osweb" Namespace="OutSystems.HubEdition.WebWidgets" Assembly="OutSystems.HubEdition.WebWidgets" %>
+<%@ Assembly Name="OutSystems.WidgetsRuntimeAPI" %>
+<%@ Import namespace="ssHunspell" %>
+<%# PageStartHook() %><osweb:DynamicImage runat="server" id="wt1" anonymous="true" onDataBinding="img1_onDataBinding" StaticSource="<%# Images.spellcheck_Source() %>" ImageType="Static" StaticPath="<%# AppUtils.Instance.getImagePath() %>" Height="<%# System.Web.UI.WebControls.Unit.Parse(img1_actualHeight(), System.Globalization.CultureInfo.InvariantCulture) %>" Width="<%# System.Web.UI.WebControls.Unit.Parse(img1_actualWidth(), System.Globalization.CultureInfo.InvariantCulture) %>" alt=""/><%# PageEndHook() %>

@@ -1,0 +1,5 @@
+﻿<%@ Control Language="c#" AutoEventWireup="false" Codebehind="Blocks\RichWidgets\RichWidgets\List_BulkSelect.ascx.cs" Inherits="ssRichWidgets.Flows.FlowRichWidgets.WBlkList_BulkSelect,RichWidgets" TargetSchema="http://schemas.microsoft.com/intellisense/ie5"%>
+<%@ Register TagPrefix="osweb" Namespace="OutSystems.HubEdition.WebWidgets" Assembly="OutSystems.HubEdition.WebWidgets" %>
+<%@ Assembly Name="OutSystems.WidgetsRuntimeAPI" %>
+<%@ Import namespace="ssRichWidgets" %>
+<%# PageStartHook() %><osweb:CheckBox runat="server" id="wtchkSelectAll" onDataBinding="chkchkSelectAll_onDataBinding" Visible="<%# chkchkSelectAll_isVisible() %>" Enabled="<%# chkchkSelectAll_isEnabled() %>" Checked="<%# chkchkSelectAll_checked_value() %>" onCheckedChanged="chkchkSelectAll_checkbox_onCheckedChanged"/><osweb:IfPlaceHolder runat="server"><osweb:If runat="server" visible="<%# if_wt4() %>"></osweb:If><osweb:If runat="server" visible="<%# !if_wt4() %>"><osweb:PlaceHolder runat="server"><%# expression1() %></osweb:PlaceHolder></osweb:If></osweb:IfPlaceHolder><%# PageEndHook() %>

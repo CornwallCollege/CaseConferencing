@@ -1,0 +1,5 @@
+﻿<%@ Control Language="c#" AutoEventWireup="false" Codebehind="Blocks\CaseConferencing\Common\ButtonGroup_SILK.ascx.cs" Inherits="ssCaseConferencing.Flows.FlowCommon.WBlkButtonGroup_SILK,CaseConferencing" TargetSchema="http://schemas.microsoft.com/intellisense/ie5"%>
+<%@ Register TagPrefix="osweb" Namespace="OutSystems.HubEdition.WebWidgets" Assembly="OutSystems.HubEdition.WebWidgets" %>
+<%@ Assembly Name="OutSystems.WidgetsRuntimeAPI" %>
+<%@ Import namespace="ssCaseConferencing" %>
+<%@ Register TagPrefix="SilkUIFramework_widgets" TagName="Kyod0jz_JYE_ei6nHo2Eoiw" Src="..\..\CaseConferencing\Development\JS.ascx" %><%# PageStartHook() %><SilkUIFramework_widgets:Kyod0jz_JYE_ei6nHo2Eoiw runat="server" id="SilkUIFramework_wt_WebBlockInstance3" OnEvaluateParameters="SilkUIFramework_webBlck_WebBlockInstance3_onDataBinding" InstanceID="_WebBlockInstance3"><phDescription><osweb:PlaceHolder runat="server"><%# "Button Group script" %></osweb:PlaceHolder></phDescription></SilkUIFramework_widgets:Kyod0jz_JYE_ei6nHo2Eoiw><%# PageEndHook() %>

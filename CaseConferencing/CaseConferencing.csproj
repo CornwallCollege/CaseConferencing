@@ -1,0 +1,3432 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CD3096B6-9D30-4623-AA05-E93CB56CEF09}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>ssCaseConferencing</RootNamespace>
+    <AssemblyName>CaseConferencing</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+    <WarningLevel>1</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <WarningLevel>1</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Web">
+      <Name>System.Web</Name>
+    </Reference>
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services">
+      <Name>System.Web.Services</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <Reference Include="OutSystems.HubEdition.SQLServerDatabaseProvider">
+      <HintPath>..\SQLServerDatabaseProvider\OutSystems.HubEdition.SQLServerDatabaseProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="OutSystems.HubEdition.OracleDatabaseProvider">
+      <HintPath>..\OracleDatabaseProvider\OutSystems.HubEdition.OracleDatabaseProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="OutSystems.HubEdition.MySQLDatabaseProvider">
+      <HintPath>..\MySQLDatabaseProvider\OutSystems.HubEdition.MySQLDatabaseProvider.dll</HintPath>
+    </Reference>
+    <ProjectReference Include="..\OutSystems.RuntimeCommon\OutSystems.RuntimeCommon.csproj">
+      <Project>{A99F44D3-9D76-4AA1-A833-BA2D283AD22E}</Project>
+      <Name>OutSystems.RuntimeCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RuntimePlatform\RuntimePlatform.csproj">
+      <Project>{EFB0D1E3-076D-4F16-A595-B33BFC5B3F18}</Project>
+      <Name>RuntimePlatform</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SMSInterface\SMSInterface.csproj">
+      <Project>{66D6B91F-CCF4-495D-89FD-0290CBC9D06E}</Project>
+      <Name>SMSInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebWidgets\WebWidgets.csproj">
+      <Project>{0F14B756-1F80-421A-9837-79B64857331C}</Project>
+      <Name>WebWidgets</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WidgetsRuntimeAPI\WidgetsRuntimeAPI.csproj">
+      <Project>{F686984C-5ABE-4529-9AE1-4BBF1EA7F93E}</Project>
+      <Name>WidgetsRuntimeAPI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PluginWidgets\OutSystems.Plugin.Widgets.Runtime.csproj">
+      <Project>{E1542247-C244-4EC3-99F1-F39717106886}</Project>
+      <Name>OutSystems.Plugin.Widgets.Runtime</Name>
+    </ProjectReference>
+    <Reference Include="GemBox.Spreadsheet.dll">
+      <Name>GemBox.Spreadsheet.dll</Name>
+      <HintPath>..\GemboxSpreadSheet\Bin\NET35\GemBox.Spreadsheet.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <ProjectReference Include="..\DatabaseAbstractionLayer\DatabaseAbstractionLayer.csproj">
+      <Project>{E451FEC9-2B6B-45A2-8AB9-57196F4557E8}</Project>
+      <Name>DatabaseAbstractionLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="referencesProxy\CaseConferencingReferencesProxy.csproj">
+      <Name>CaseConferencingReferencesProxy</Name>
+      <Project>{F3BEB653-9E30-4E65-A8BB-3192461CBF8D}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ReferenceTheme.ThemeProvider.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="ReferenceTheme.ThemeProvider.extra.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="ReferenceTheme.ThemeProviderWithoutLondon.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="ReferenceTheme.ThemeProviderWithoutLondon.extra.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="ReferenceTheme.LondonFixed.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="ReferenceTheme.LondonFixed.extra.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="ReferenceTheme.London.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="ReferenceTheme.London.extra.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="_WebErrorPage.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="SmsErrorPage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AppUtils.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Content Include="iSmsHandler.asmx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="iSmsHandler.asmx.cs">
+      <SubType>Component</SubType>
+      <DependentUpon>iSmsHandler.asmx</DependentUpon>
+    </Compile>
+    <Compile Include="iSmsHandlerClient.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="iSmsNotificationHandlerClient.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SmsClasses.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Content Include="_download.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="_download.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>_download.aspx</DependentUpon>
+    </Compile>
+    <Content Include="_osjs.js">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Exceptions\NotSafeGuardingLead.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Exceptions\NotPLA.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Exceptions\NotCaseConferencingUser.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Exceptions\NotSuperUser.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Exceptions\NotLearningSupportLead.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Exceptions\NotCaseConferencingBackoffice.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Exceptions\NotSLA.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Exceptions\NotLearningSupportPractitioner.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionRAG_GetSafeguardingTitle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionResetRAGsForStartOfACYear.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionStudent_GetResponsible.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionGetScrollToJavascript.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionGetIALevel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionStudent_ChangeRAG.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionGetCurrentAcademicYear2.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionCheckUserCanViewDocument.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionGetMonthName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionCheckRoleCanViewDocument.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionAddMetaTags.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionGetAgeOnDate.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionLearnerList_GetActionsByRole.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionCourseList_GetActionsByRole.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionGetLastViewedDate.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionGetLearnerListString.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionCalculcateAttendanceFigures.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionGetSafeguardingStats_AgeBracket.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionGetSafeguardingStats_IssueType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionGetSafeguardingStats_Gender.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionGetRAGs_LastUpdatedBySite.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionGetRAGs_LastUpdatedByCluster.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionGetSafeguardingStats_ReferredTo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionCreateOVPopulatedRow.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionPopulateTDTags.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionCreateStudentAttendanceTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionGetLastWeekStartDate.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionCreateStudentAttendanceTableOverviewLayout.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionCreatePopulatedRow.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionRemoveTDTags.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionConvertStatusToMark.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionCreateEmptyRowObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionConvertTimeToNumber.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionGetStudentAttendanceColumnsAndRows.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionCreateHeaderRow.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionRefreshStudentAttendanceTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionCreateOVHeaderRow.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionGetFormatedName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionGetMyStaffListOrder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionSplitEnrolments.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionGetStudentEnrolmentStatus.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionGetDropDownValues.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionProgressReport_Create.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionProgressReportPersonalSectionCount.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionProgressReportSpecialistSectionCount.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionProgressReportUniversalSectionCount.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionConvertToHex.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionGetColour.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionGetStudentRAGStyle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionGetButtonAttendanceByValue.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionOnSessionStart.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionOnBeginWebRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionGetStudentAttendanceByCourseDetail.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionUserCheck.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionLDAPSearchforUsersandGroups.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionSplitDomainAndUser.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionHtmlToPdfConverter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionGetZipBinary.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionCreateZip.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionCommitChanges.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionAddFile.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionGetStudentCertificateURL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionStudent_GetAttendancesByStudentReference.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionStudent_FormatName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionStudentLog_GetCurrentValues.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionStudentLog_Create.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionDataPoint_Init.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionChartFormat_Init.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionDataPoint_GetClicked.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionAdvancedFormat_Init.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionUser_Login.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionDate_MonthName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionInput_FocusFirstInvalid.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionList_SortColumn_GetOrderBy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionDateTime_PrettyFormat.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionList_Navigation_GetStartIndex.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionPopup_Editor_Close.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionList_BulkSelectToggleEnabled.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionWidget_Click.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionFeedback_Message.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionList_Navigation_ResetStartIndex.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionDate_PrettyFormat.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionPopup_Editor_Notify.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionGeneratePDF.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionMakeAbsoluteURL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionAddHeader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionAddMetaHttpEquivTag.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionRunJavaScript.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionGetEntryURL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionMaintainScrollPositionOnPostback.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionStringBuilder_ToString.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionString_Split.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionStringBuilder_Create.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionFormat_DateTime.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionStringBuilder_Append.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionGetPrintCreditBalanceForUser.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionGetAcademicYearValues2.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionGetForSkillsInitialAssessmentForLearner.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionTwilioSMS.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\ActionGetMarkbookForLearnerQual.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\WsReports\ssGetRewards.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\WsReports\ssGetStudentNotes.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\WsReports\ssGetStudentRAG.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\WsReports\ssGetAllStudentRAGs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\WsReports\ssGetAllOverallStudentRAGs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actions\WsReports\ssGetCauseForConcern.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Roles\ssPLA.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Roles\ssSuperUser.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Roles\ssCaseConferencingUser.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Roles\ssSafeGuardingLead.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Roles\ssSLA.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Roles\ssLearningSupportLead.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Roles\ssCaseConferencingBackoffice.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Roles\ssLearningSupportPractitioner.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ExtendedActions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENLearnerDetailMenuEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENPDFReportTypeEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENConfirmationMessageButtonsEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENMenuSubItemEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENConfirmationMessageResponseEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENAttendanceViewTypeEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENDashboardLastViewedEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENColourBiasedEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENMenuItemEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENTeamEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENTargetTypeEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENTrackingEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENClusterEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENSupportTypeEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENSupportEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENStaffEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENSIASSupportTypeEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENGroupEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENCategoryEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENStudentAnnualValuesEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENStudent_GroupEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENTrackingTypeEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENTargetEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENExamEntryEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENIALevelsEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENGroupTypeEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENStudentEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENCurriculumLeadEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENStaff_GroupEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENTargetStatusEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENIALearningStylesEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENSafeguardingEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENExamConcessionsEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENQualsOnEntryEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENSafeguardingTypeEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENStudentAttendanceEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENSIASSupportEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENSIASSupportNeedsEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENSIASSupportNeedEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENSafeguardingStatusEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENSupportNeedsEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENSIASInitialAssessmentEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENPermissionTypeEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENRolePermissionsEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENApplicationPermissionEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENUser_RoleEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENGroup_RoleEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENUserEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENRoleEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENEspaceEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENXAxisValuesTypeEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENLegendPositionEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENStackingTypeEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENTabsEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENColorEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENTileSizeEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENMenuItem2EntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENIconNameEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENIconSizeEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENMessageTypeEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENAcademicYearType2EntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENAcademicYear2EntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENSizesEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENRewardEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENProgressReportSectionTypeEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENSIASSupportDocumentsEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENRAGStatusEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENCCSessionCourseEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENStudentLogEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENStudentPENPortraitEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENSafeguardingDocumentsBinaryEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENRiskAssessmentSourceOfEvidenceEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENSIASSupportNeedsDocumentsEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENUpdatesSeenByEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENStudentProcessNotesEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENNoteEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENTutorialEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENCommunicationDocumentsEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENStudentExtraCAEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENAcademicYearsEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENYesNoEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENDocumentsEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENSafeguardingIssueEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENStudentMLWProcessCompetenciesEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENSafeguardingDocumentsEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENNoteTypeEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENCommunicationTypeEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENShortTermRAGStatusEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENSafeguardingAgencyEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENRiskAssessmentWhoIsAtRiskEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENStudentRAGEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENStudentExemptionEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENStudentPastoralSupportEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENStudentLogTypeEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENDisciplinaryEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENMLWCompetenciesEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENRiskAssessmentManagementOfSupportEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENProgressReportEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENStaffCourseFavouriteEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENRiskAssessmentSSPReasonEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENSafeguardingIssueTypeEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENDisciplinaryDocumentsEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENSafeguardingPersonsInvolvedEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENCCSessionDocumentsEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENProgressReportSubSectionTypeEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENDestinationsEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENRiskAssessmentExternalContactsEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENSafeguardingReferralMadeToEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENStaffStudentFavouriteEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENAutoComplete_BankEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENLogoEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENCCSessionCurriculumLeadEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENSafeguardingOutcomeEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENInternalMessageTypeEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENStudentCareerAimEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENRiskAssessementRisksEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENStudentCategoryRAGEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENRewardReasonEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENStudentMLWProcessEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENCauseOfConcernReasonEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENCommunicationEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENCauseOfConcernLearnerNotesEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENMLWStagesEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENLearningSupportDocumentsEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENProgressReportSectionEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENLearningSupportEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENCCSessionTeamEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENRoleDocumentPermissionsEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENCCSessionEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENDocumentTypeEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENProgressReportSectionsEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENRiskAssessmentEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENLearningSupportTypesEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENUserDocumentPermissionsEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENRiskAssessmentKeepInformedEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENSafeguardingAgenciesInvolvedEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENProgressReportTypeEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENCauseOfConcernEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENAutoCompleteBankTypeEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENSafeguardingNatureOfConcernEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENUpdatesEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ENDisciplinaryTypeEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Structures\STOfferingListStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Structures\STSupportNeedsIdStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Structures\STEmailFromStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Structures\STApplicationPermissionsStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Structures\STDecimalStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Structures\STCourseLearnerProgressReportSummaryStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Structures\STBulkProgressReportDownloadStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Structures\STStringStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Structures\STSupportTextsStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Structures\STStaffView_SearchResultStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Structures\STStaffView_SearchStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Structures\STDocument_ListStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Structures\STTDTagStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Structures\STUpdateCountStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Structures\STDashboardFilterStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Structures\STAttendanceOVLayoutColumnsStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Structures\STReporting_RAGLastUpdatedGraphPointsStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Structures\STIntStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Structures\STRGBColorStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Structures\STReporting_SafeguardingIssuesGraphPointsStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Structures\STReporting_SafeguardingStatsFilterStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Structures\STEnrolmentStatusStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Structures\STStaffViewRecordStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Structures\STRAGsLastUpdatedStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Structures\STTimetabledClassesDropdownStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Structures\STStaffListStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Structures\STInitialAssessementStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Structures\STSelectActionStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Structures\STStudentGlobalRAGStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Structures\STStaffView_FilterStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Structures\STLearnerCategoryCoursesStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Structures\STStudentAttendanceTotalsStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Structures\STAttendanceCourseDropDownStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Structures\STLearnerCategoryMenuStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Structures\STActionItemStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Structures\STReporting_SafeguardingIssuesStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Structures\STCourseListFilterStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Structures\STLearnerDetail_ComponentStructStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Structures\STReporting_SafeguardingStatsStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Structures\STGraphPointsStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Structures\STAttendancePeriodDropDownStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Structures\STAllStudentsOverallRAGStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Structures\STCourseListProgressReportListStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Structures\STTableRowStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Structures\STCaseConferencingSession_FilterStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Structures\STAttendanceOVLayoutRowsStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Structures\STSIAS_SupportStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Structures\STListItemStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Structures\STAllStudentsAllRAGsStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Structures\STProgressReportSpecialistSectionTitlesStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Structures\STStudentAttendanceForCourseStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Structures\STStudentAttenndance_ListStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Structures\STAdvancedDataSeriesFormatStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Structures\STXAxisFormatStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Structures\STAdvancedDataPointFormatStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Structures\STAdvancedFormatStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Structures\STYAxisFormatStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Structures\STDataPointStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Structures\STChartFormatStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Structures\STBooleanStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Structures\STTextStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Structures\STForSkillsInitialAssessmentStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Structures\STForSkillsInitialAssessmentSummaryStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Structures\STMarkbookTasksStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Structures\STMarkbookUnitsStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Structures\STMarkbookForQualStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Structures\STMarkbookAssessmentsStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Records.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RecordLists.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Content Include="_SmsHandler.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="_SmsHandler.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>_SmsHandler.aspx</DependentUpon>
+    </Compile>
+    <Content Include="_delivery.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="_delivery.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>_delivery.aspx</DependentUpon>
+    </Compile>
+    <Content Include="Popup_Tutorial.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Popup_Tutorial.aspx.cs">
+      <DependentUpon>Popup_Tutorial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\Learner_ILP\MarkbookTrackingAssessments.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\Learner_ILP\MarkbookTrackingAssessments.ascx.cs">
+      <DependentUpon>MarkbookTrackingAssessments.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\Learner_ILP\jQuery_Easing.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\Learner_ILP\jQuery_Easing.js">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\Learner_ILP\jQuery_Easing.ascx.cs">
+      <DependentUpon>jQuery_Easing.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\Learner_ILP\Targets_List.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\Learner_ILP\Targets_List.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\Learner_ILP\Targets_List.ascx.cs">
+      <DependentUpon>Targets_List.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\Learner_ILP\ILP_Tab.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\Learner_ILP\ILP_Tab.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\Learner_ILP\ILP_Tab.ascx.cs">
+      <DependentUpon>ILP_Tab.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\Learner_ILP\MarkbookTrackingTasks.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\Learner_ILP\MarkbookTrackingTasks.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\Learner_ILP\MarkbookTrackingTasks.ascx.cs">
+      <DependentUpon>MarkbookTrackingTasks.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\Learner_ILP\TileIconText.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\Learner_ILP\TileIconText.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\Learner_ILP\TileIconText.ascx.cs">
+      <DependentUpon>TileIconText.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Learner_ILP.Popup_Target.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Learner_ILP.Popup_Target.aspx.cs">
+      <DependentUpon>Learner_ILP.Popup_Target.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\Learner_ILP\Tutorials.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\Learner_ILP\Tutorials.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\Learner_ILP\Tutorials.ascx.cs">
+      <DependentUpon>Tutorials.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\Learner_ILP\CareerAim_List.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\Learner_ILP\CareerAim_List.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\Learner_ILP\CareerAim_List.ascx.cs">
+      <DependentUpon>CareerAim_List.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\Learner_ILP\MarkbookTracking.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\Learner_ILP\MarkbookTracking.ascx.cs">
+      <DependentUpon>MarkbookTracking.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="ExamEntry_Popup.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="ExamEntry_Popup.aspx.cs">
+      <DependentUpon>ExamEntry_Popup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Popup_CareerAim.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Popup_CareerAim.aspx.cs">
+      <DependentUpon>Popup_CareerAim.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\Learner_ILP\MarkbookTrackingUnits.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\Learner_ILP\MarkbookTrackingUnits.js">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\Learner_ILP\MarkbookTrackingUnits.ascx.cs">
+      <DependentUpon>MarkbookTrackingUnits.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FlowLearner_ILP.ExceptionHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\CaseConference\ProgressBar.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\CaseConference\ProgressBar.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\CaseConference\ProgressBar.ascx.cs">
+      <DependentUpon>ProgressBar.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="CCSession_List.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="CCSession_List.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="CCSession_List.aspx.cs">
+      <DependentUpon>CCSession_List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\CaseConference\CCSessionActionsFloatingPanel.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\CaseConference\CCSessionActionsFloatingPanel.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\CaseConference\CCSessionActionsFloatingPanel.ascx.cs">
+      <DependentUpon>CCSessionActionsFloatingPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Session.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Session.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Session.aspx</DependentUpon>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\CaseConference\SessionBlock.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\CaseConference\SessionBlock.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\CaseConference\SessionBlock.ascx.cs">
+      <DependentUpon>SessionBlock.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="CCSession_Edit.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="CCSession_Edit.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="CCSession_Edit.aspx.cs">
+      <DependentUpon>CCSession_Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Popup_SelectCluster.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Popup_SelectCluster.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Popup_SelectCluster.aspx.cs">
+      <DependentUpon>Popup_SelectCluster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\CaseConference\Popup_Notes.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\CaseConference\Popup_Notes.ascx.cs">
+      <DependentUpon>Popup_Notes.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="CCSessionStep2_Edit.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="CCSessionStep2_Edit.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="CCSessionStep2_Edit.aspx.cs">
+      <DependentUpon>CCSessionStep2_Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\CaseConference\CCSessionAttachedDocuments.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\CaseConference\CCSessionAttachedDocuments.ascx.cs">
+      <DependentUpon>CCSessionAttachedDocuments.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FlowCaseConference.ExceptionHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Content Include="Reports_Main.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Reports_Main.aspx.cs">
+      <DependentUpon>Reports_Main.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Popup_UpdateRAG.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Popup_UpdateRAG.aspx.cs">
+      <DependentUpon>Popup_UpdateRAG.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\Reporting\SafeguardingIssues.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\Reporting\SafeguardingIssues.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\Reporting\SafeguardingIssues.ascx.cs">
+      <DependentUpon>SafeguardingIssues.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Reporting.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Reporting.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Reporting.aspx</DependentUpon>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\Reporting\RAGNotUpdatedIn30.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\Reporting\RAGNotUpdatedIn30.ascx.cs">
+      <DependentUpon>RAGNotUpdatedIn30.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FlowReporting.ExceptionHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Content Include="Progress_Report.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Progress_Report.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Progress_Report.aspx</DependentUpon>
+    </Compile>
+    <Content Include="PDF_Export.ProgressReport.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="ProgressReport.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="ProgressReport.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="PDF_Export.ProgressReport.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>PDF_Export.ProgressReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProgressReport.aspx.cs">
+      <DependentUpon>ProgressReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\PDF_Export\StudentInfo_Print.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\PDF_Export\StudentInfo_Print.ascx.cs">
+      <DependentUpon>StudentInfo_Print.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FlowPDF_Export.ExceptionHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\Common\Popup_Editor_Layout.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\Common\Popup_Editor_Layout.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\Common\Popup_Editor_Layout.ascx.cs">
+      <DependentUpon>Popup_Editor_Layout.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Properties\Common_WebExternalSite3.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Content Include="Login.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Login.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\Common\PopUp.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\Common\PopUp.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\Common\PopUp.ascx.cs">
+      <DependentUpon>PopUp.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Popup_AttachDocument.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Popup_AttachDocument.aspx.cs">
+      <DependentUpon>Popup_AttachDocument.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Popup_ConfirmationMessage.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Popup_ConfirmationMessage.aspx.cs">
+      <DependentUpon>Popup_ConfirmationMessage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\Common\PopUpArrow.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\Common\PopUpArrow.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\Common\PopUpArrow.ascx.cs">
+      <DependentUpon>PopUpArrow.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\Common\ButtonGroup_SILK.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\Common\ButtonGroup_SILK.js">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\Common\ButtonGroup_SILK.ascx.cs">
+      <DependentUpon>ButtonGroup_SILK.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="TwilioCallBack.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="TwilioCallBack.aspx.cs">
+      <DependentUpon>TwilioCallBack.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\Common\jQuerySelectric.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\Common\jQuerySelectric.js">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\Common\jQuerySelectric.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\Common\jQuerySelectric.ascx.cs">
+      <DependentUpon>jQuerySelectric.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\Common\ButtonGroup3_SILK.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\Common\ButtonGroup3_SILK.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\Common\ButtonGroup3_SILK.ascx.cs">
+      <DependentUpon>ButtonGroup3_SILK.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\Common\DateFormatted.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\Common\DateFormatted.ascx.cs">
+      <DependentUpon>DateFormatted.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\Common\PopUp_Tootip.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\Common\PopUp_Tootip.ascx.cs">
+      <DependentUpon>PopUp_Tootip.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\Common\InfiniteScroll.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\Common\InfiniteScroll.js">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\Common\InfiniteScroll.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\Common\InfiniteScroll.ascx.cs">
+      <DependentUpon>InfiniteScroll.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\Common\HelpUpdate.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\Common\HelpUpdate.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\Common\HelpUpdate.ascx.cs">
+      <DependentUpon>HelpUpdate.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FlowCommon.ExceptionHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\MainFlow2_WebExternalSite1.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Content Include="_Default.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="MakingLearningWork.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="MakingLearningWork.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>MakingLearningWork.aspx</DependentUpon>
+    </Compile>
+    <Content Include="Home.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Home.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Content Include="UnderMaintenance.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="UnderMaintenance.aspx.cs">
+      <DependentUpon>UnderMaintenance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="HomePage.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="HomePage.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="HomePage.aspx.cs">
+      <DependentUpon>HomePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FlowMainFlow2.ExceptionHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\AutoComplete_Bank\AutoComplete_Block.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\AutoComplete_Bank\AutoComplete_Block.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\AutoComplete_Bank\AutoComplete_Block.ascx.cs">
+      <DependentUpon>AutoComplete_Block.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Popup_AutoComplete.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Popup_AutoComplete.aspx.cs">
+      <DependentUpon>Popup_AutoComplete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\AutoComplete_Bank\AutoComplete_Icon.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\AutoComplete_Bank\AutoComplete_Icon.js">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\AutoComplete_Bank\AutoComplete_Icon.ascx.cs">
+      <DependentUpon>AutoComplete_Icon.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FlowAutoComplete_Bank.ExceptionHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Content Include="SSPChange.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="SSPChange.aspx.cs">
+      <DependentUpon>SSPChange.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\Learner_InitialAssessment\TAB_PastoralSupport.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\Learner_InitialAssessment\TAB_PastoralSupport.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\Learner_InitialAssessment\TAB_PastoralSupport.ascx.cs">
+      <DependentUpon>TAB_PastoralSupport.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\Learner_InitialAssessment\TAB_Support.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\Learner_InitialAssessment\TAB_Support.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\Learner_InitialAssessment\TAB_Support.ascx.cs">
+      <DependentUpon>TAB_Support.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\Learner_InitialAssessment\Course_SIAS_IA.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\Learner_InitialAssessment\Course_SIAS_IA.ascx.cs">
+      <DependentUpon>Course_SIAS_IA.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\Learner_InitialAssessment\TAB_QualsOnEntry.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\Learner_InitialAssessment\TAB_QualsOnEntry.ascx.cs">
+      <DependentUpon>TAB_QualsOnEntry.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\Learner_InitialAssessment\TAB_InitialAssessment.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\Learner_InitialAssessment\TAB_InitialAssessment.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\Learner_InitialAssessment\TAB_InitialAssessment.ascx.cs">
+      <DependentUpon>TAB_InitialAssessment.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\Learner_InitialAssessment\TAB_LearningSupport.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\Learner_InitialAssessment\TAB_LearningSupport.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\Learner_InitialAssessment\TAB_LearningSupport.ascx.cs">
+      <DependentUpon>TAB_LearningSupport.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\Learner_InitialAssessment\TAB_SupportNeeds.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\Learner_InitialAssessment\TAB_SupportNeeds.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\Learner_InitialAssessment\TAB_SupportNeeds.ascx.cs">
+      <DependentUpon>TAB_SupportNeeds.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\Learner_InitialAssessment\Course_SIAS_SupportItems_Edit.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\Learner_InitialAssessment\Course_SIAS_SupportItems_Edit.ascx.cs">
+      <DependentUpon>Course_SIAS_SupportItems_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\Learner_InitialAssessment\TAB_RiskAssessment.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\Learner_InitialAssessment\TAB_RiskAssessment.ascx.cs">
+      <DependentUpon>TAB_RiskAssessment.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\Learner_InitialAssessment\Course_SIAS_SupporNeedsListItem.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\Learner_InitialAssessment\Course_SIAS_SupporNeedsListItem.ascx.cs">
+      <DependentUpon>Course_SIAS_SupporNeedsListItem.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Course_SIAS_Support.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Course_SIAS_Support.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Course_SIAS_Support.aspx.cs">
+      <DependentUpon>Course_SIAS_Support.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\Learner_InitialAssessment\Course_SIAS_SupporList.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\Learner_InitialAssessment\Course_SIAS_SupporList.ascx.cs">
+      <DependentUpon>Course_SIAS_SupporList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\Learner_InitialAssessment\Card.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\Learner_InitialAssessment\Card.ascx.cs">
+      <DependentUpon>Card.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\Learner_InitialAssessment\SIAS_Tab.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\Learner_InitialAssessment\SIAS_Tab.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\Learner_InitialAssessment\SIAS_Tab.ascx.cs">
+      <DependentUpon>SIAS_Tab.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\Learner_InitialAssessment\Course_SIAS_SupportNeeds.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\Learner_InitialAssessment\Course_SIAS_SupportNeeds.ascx.cs">
+      <DependentUpon>Course_SIAS_SupportNeeds.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="PrintSupportPlan.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="PrintSupportPlan.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="PrintSupportPlan.aspx.cs">
+      <DependentUpon>PrintSupportPlan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\Learner_InitialAssessment\Course_SIAS_SupportItems.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\Learner_InitialAssessment\Course_SIAS_SupportItems.ascx.cs">
+      <DependentUpon>Course_SIAS_SupportItems.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FlowLearner_InitialAssessment.ExceptionHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Content Include="Courses.Popup_Target.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Courses.Popup_Target.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Courses.Popup_Target.aspx.cs">
+      <DependentUpon>Courses.Popup_Target.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Course_SMS.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Course_SMS.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Course_SMS.aspx.cs">
+      <DependentUpon>Course_SMS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="CourseList.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="CourseList.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="CourseList.aspx.cs">
+      <DependentUpon>CourseList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Course_Email.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Course_Email.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Course_Email.aspx.cs">
+      <DependentUpon>Course_Email.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Courses.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Courses.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Courses.aspx</DependentUpon>
+    </Compile>
+    <Content Include="Popup_Notes.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Popup_Notes.aspx.cs">
+      <DependentUpon>Popup_Notes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Popup_SMSSelection.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Popup_SMSSelection.aspx.cs">
+      <DependentUpon>Popup_SMSSelection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Popup_EmailSelection.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Popup_EmailSelection.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Popup_EmailSelection.aspx.cs">
+      <DependentUpon>Popup_EmailSelection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FlowCourses.ExceptionHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Content Include="Dashboard.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Entry1.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Entry1.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Entry1.aspx</DependentUpon>
+    </Compile>
+    <Content Include="InfoScreen.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="InfoScreen.aspx.cs">
+      <DependentUpon>InfoScreen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FlowDashboard.ExceptionHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\HelpFlow\HelpUpdatesLayout.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\HelpFlow\HelpUpdatesLayout.ascx.cs">
+      <DependentUpon>HelpUpdatesLayout.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="HelpUpdatesMessages.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="HelpUpdatesMessages.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="HelpUpdatesMessages.aspx.cs">
+      <DependentUpon>HelpUpdatesMessages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="HelpUpdatesUserGuide.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="HelpUpdatesUserGuide.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="HelpUpdatesUserGuide.aspx.cs">
+      <DependentUpon>HelpUpdatesUserGuide.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FlowHelpFlow.ExceptionHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Content Include="LearnerContactList.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="LearnerContactList.aspx.cs">
+      <DependentUpon>LearnerContactList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="LearnerList.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="LearnerList.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="LearnerList.aspx.cs">
+      <DependentUpon>LearnerList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Learners.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Learners.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Learners.aspx</DependentUpon>
+    </Compile>
+    <Content Include="Popup_SMS.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Popup_SMS.aspx.cs">
+      <DependentUpon>Popup_SMS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Popup_Email.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Popup_Email.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Popup_Email.aspx.cs">
+      <DependentUpon>Popup_Email.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="EnrolmentToolTip.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="EnrolmentToolTip.aspx.cs">
+      <DependentUpon>EnrolmentToolTip.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="LearnersPENPortraitsList.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="LearnersPENPortraitsList.aspx.cs">
+      <DependentUpon>LearnersPENPortraitsList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Popup_Targets.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Popup_Targets.aspx.cs">
+      <DependentUpon>Popup_Targets.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FlowLearners.ExceptionHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Content Include="Student_Email.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Student_Email.aspx.cs">
+      <DependentUpon>Student_Email.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FlowEmail_Templates.ExceptionHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Content Include="Popup_ProgressReportSection.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Popup_ProgressReportSection.aspx.cs">
+      <DependentUpon>Popup_ProgressReportSection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\Learner_ProgressReport\ProgressReportSection_Introduction.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\Learner_ProgressReport\ProgressReportSection_Introduction.ascx.cs">
+      <DependentUpon>ProgressReportSection_Introduction.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\Learner_ProgressReport\ProgressReport.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\Learner_ProgressReport\ProgressReport.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\Learner_ProgressReport\ProgressReport.ascx.cs">
+      <DependentUpon>ProgressReport.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\Learner_ProgressReport\ProgressReport_Tab.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\Learner_ProgressReport\ProgressReport_Tab.ascx.cs">
+      <DependentUpon>ProgressReport_Tab.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Popup_ProgressReport.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Popup_ProgressReport.aspx.cs">
+      <DependentUpon>Popup_ProgressReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\Learner_ProgressReport\CourseLearnerProgressReportStatus.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\Learner_ProgressReport\CourseLearnerProgressReportStatus.ascx.cs">
+      <DependentUpon>CourseLearnerProgressReportStatus.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\Learner_ProgressReport\ProgressReportSection_Personal.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\Learner_ProgressReport\ProgressReportSection_Personal.ascx.cs">
+      <DependentUpon>ProgressReportSection_Personal.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Popup_LogoSelection.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Popup_LogoSelection.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Popup_LogoSelection.aspx.cs">
+      <DependentUpon>Popup_LogoSelection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\Learner_ProgressReport\ProgressReportSection_Specialist.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\Learner_ProgressReport\ProgressReportSection_Specialist.ascx.cs">
+      <DependentUpon>ProgressReportSection_Specialist.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\Learner_ProgressReport\ProgressReportSection_SignOff.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\Learner_ProgressReport\ProgressReportSection_SignOff.ascx.cs">
+      <DependentUpon>ProgressReportSection_SignOff.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\Learner_ProgressReport\ProgressReportSection_Universal.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\Learner_ProgressReport\ProgressReportSection_Universal.ascx.cs">
+      <DependentUpon>ProgressReportSection_Universal.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\Learner_ProgressReport\ListDetail_Layout.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\Learner_ProgressReport\ListDetail_Layout.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\Learner_ProgressReport\ListDetail_Layout.ascx.cs">
+      <DependentUpon>ListDetail_Layout.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Course_ProgressReportSignOff.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Course_ProgressReportSignOff.aspx.cs">
+      <DependentUpon>Course_ProgressReportSignOff.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FlowLearner_ProgressReport.ExceptionHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Content Include="AutoCompleteBank_List.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="AutoCompleteBank_List.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="AutoCompleteBank_List.aspx.cs">
+      <DependentUpon>AutoCompleteBank_List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="AutoCompleteBank_Edit.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="AutoCompleteBank_Edit.aspx.cs">
+      <DependentUpon>AutoCompleteBank_Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="RiskAssessment_RiskAssessmentKeepInformed_PopupEdi.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="RiskAssessment_RiskAssessmentKeepInformed_PopupEdi.aspx.cs">
+      <DependentUpon>RiskAssessment_RiskAssessmentKeepInformed_PopupEdi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="RolePermissions.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="RolePermissions.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="RolePermissions.aspx.cs">
+      <DependentUpon>RolePermissions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Update_List.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Update_List.aspx.cs">
+      <DependentUpon>Update_List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Backoffice.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Backoffice.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Backoffice.aspx</DependentUpon>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\BackofficeFlow\RolePermissions_Read.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\BackofficeFlow\RolePermissions_Read.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\BackofficeFlow\RolePermissions_Read.ascx.cs">
+      <DependentUpon>RolePermissions_Read.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="RiskAssessments.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="RiskAssessments.aspx.cs">
+      <DependentUpon>RiskAssessments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Update_Show.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Update_Show.aspx.cs">
+      <DependentUpon>Update_Show.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Update_Edit.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Update_Edit.aspx.cs">
+      <DependentUpon>Update_Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="RiskAssessment_Show.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="RiskAssessment_Show.aspx.cs">
+      <DependentUpon>RiskAssessment_Show.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="AutoCompleteBank.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="AutoCompleteBank.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>AutoCompleteBank.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FlowBackofficeFlow.ExceptionHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Content Include="StudentAttendanceDetails.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="StudentAttendanceDetails.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="StudentAttendanceDetails.aspx.cs">
+      <DependentUpon>StudentAttendanceDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\LearnerView\Student_Log.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\LearnerView\Student_Log.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\LearnerView\Student_Log.ascx.cs">
+      <DependentUpon>Student_Log.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\LearnerView\MLW_Notes.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\LearnerView\MLW_Notes.ascx.cs">
+      <DependentUpon>MLW_Notes.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="LearnerDetailsDisciplinary.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="LearnerDetailsDisciplinary.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="LearnerDetailsDisciplinary.aspx.cs">
+      <DependentUpon>LearnerDetailsDisciplinary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="LearnerDetailsExtraCurr.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="LearnerDetailsExtraCurr.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="LearnerDetailsExtraCurr.aspx.cs">
+      <DependentUpon>LearnerDetailsExtraCurr.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="LearnerDetailsAttendance.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="LearnerDetailsAttendance.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="LearnerDetailsAttendance.aspx.cs">
+      <DependentUpon>LearnerDetailsAttendance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="LearnerDetailsRewards.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="LearnerDetailsRewards.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="LearnerDetailsRewards.aspx.cs">
+      <DependentUpon>LearnerDetailsRewards.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="LearnerDetailCategory.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="LearnerDetailCategory.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="LearnerDetailCategory.aspx.cs">
+      <DependentUpon>LearnerDetailCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="LearnerDetailsTabs.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="LearnerDetailsTabs.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="LearnerDetailsTabs.aspx.cs">
+      <DependentUpon>LearnerDetailsTabs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\LearnerView\LearnerDetailsDisciplinaryAttachedDocs.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\LearnerView\LearnerDetailsDisciplinaryAttachedDocs.ascx.cs">
+      <DependentUpon>LearnerDetailsDisciplinaryAttachedDocs.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Popup_ExtraCA.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Popup_ExtraCA.aspx.cs">
+      <DependentUpon>Popup_ExtraCA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\LearnerView\LearnerDetailsLayout.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\LearnerView\LearnerDetailsLayout.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\LearnerView\LearnerDetailsLayout.ascx.cs">
+      <DependentUpon>LearnerDetailsLayout.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Popup_PENPortrait.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Popup_PENPortrait.aspx.cs">
+      <DependentUpon>Popup_PENPortrait.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="LearnerDetailsCauseForConcern.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="LearnerDetailsCauseForConcern.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="LearnerDetailsCauseForConcern.aspx.cs">
+      <DependentUpon>LearnerDetailsCauseForConcern.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="LearnerDetailsPENPortrait.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="LearnerDetailsPENPortrait.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="LearnerDetailsPENPortrait.aspx.cs">
+      <DependentUpon>LearnerDetailsPENPortrait.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\LearnerView\Competencies_List.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\LearnerView\Competencies_List.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\LearnerView\Competencies_List.ascx.cs">
+      <DependentUpon>Competencies_List.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\LearnerView\Student_LogIcon.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\LearnerView\Student_LogIcon.ascx.cs">
+      <DependentUpon>Student_LogIcon.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="LearnerDetailsOverview.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="LearnerDetailsOverview.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="LearnerDetailsOverview.aspx.cs">
+      <DependentUpon>LearnerDetailsOverview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FlowLearnerView.ExceptionHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Content Include="AgenciesInvolvedPopup.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="AgenciesInvolvedPopup.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="AgenciesInvolvedPopup.aspx.cs">
+      <DependentUpon>AgenciesInvolvedPopup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\Safeguarding\PersonsInvolved.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\Safeguarding\PersonsInvolved.ascx.cs">
+      <DependentUpon>PersonsInvolved.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="AttachDocument.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="AttachDocument.aspx.cs">
+      <DependentUpon>AttachDocument.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\Safeguarding\SafeguardingIssue.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\Safeguarding\SafeguardingIssue.ascx.cs">
+      <DependentUpon>SafeguardingIssue.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\Safeguarding\Safeguarding_Tab.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\Safeguarding\Safeguarding_Tab.ascx.cs">
+      <DependentUpon>Safeguarding_Tab.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="PDFExport.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="PDFExport.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="PDFExport.aspx.cs">
+      <DependentUpon>PDFExport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="SafeguardingReport.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="SafeguardingReport.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>SafeguardingReport.aspx</DependentUpon>
+    </Compile>
+    <Content Include="StaffSelectPopup.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="StaffSelectPopup.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="StaffSelectPopup.aspx.cs">
+      <DependentUpon>StaffSelectPopup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Safeguarding.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Safeguarding.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Safeguarding.aspx</DependentUpon>
+    </Compile>
+    <Content Include="Safeguarding_List.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Safeguarding_List.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Safeguarding_List.aspx.cs">
+      <DependentUpon>Safeguarding_List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\Safeguarding\AgenciesInvolved.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\Safeguarding\AgenciesInvolved.ascx.cs">
+      <DependentUpon>AgenciesInvolved.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FlowSafeguarding.ExceptionHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Content Include="PopupExemption.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="PopupExemption.aspx.cs">
+      <DependentUpon>PopupExemption.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\Learner_Programme\LearnerDetails_ProgrammeInfo.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\Learner_Programme\LearnerDetails_ProgrammeInfo.ascx.cs">
+      <DependentUpon>LearnerDetails_ProgrammeInfo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\Learner_Programme\Programme_Tab.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\Learner_Programme\Programme_Tab.ascx.cs">
+      <DependentUpon>Programme_Tab.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\Learner_Programme\TAB_ExamEntries.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\Learner_Programme\TAB_ExamEntries.ascx.cs">
+      <DependentUpon>TAB_ExamEntries.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FlowLearner_Programme.ExceptionHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Content Include="Email1.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Email1.aspx.cs">
+      <DependentUpon>Email1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\StaffView\PercentageComplete.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\StaffView\PercentageComplete.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\StaffView\PercentageComplete.ascx.cs">
+      <DependentUpon>PercentageComplete.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\StaffView\Student_CategoryRAG.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\StaffView\Student_CategoryRAG.ascx.cs">
+      <DependentUpon>Student_CategoryRAG.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\StaffView\LearnerDetails_StudentInfo.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\StaffView\LearnerDetails_StudentInfo.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\StaffView\LearnerDetails_StudentInfo.ascx.cs">
+      <DependentUpon>LearnerDetails_StudentInfo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\StaffView\LearnerDetails_RAG_Notes.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\StaffView\LearnerDetails_RAG_Notes.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\StaffView\LearnerDetails_RAG_Notes.ascx.cs">
+      <DependentUpon>LearnerDetails_RAG_Notes.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\StaffView\PopUp_StudentRAG.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\StaffView\PopUp_StudentRAG.ascx.cs">
+      <DependentUpon>PopUp_StudentRAG.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\StaffView\LearnerDetailsCategoryMenu.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\StaffView\LearnerDetailsCategoryMenu.ascx.cs">
+      <DependentUpon>LearnerDetailsCategoryMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="StaffView.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="StaffView.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="StaffView.aspx.cs">
+      <DependentUpon>StaffView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\StaffView\StaffViewListIcons.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\StaffView\StaffViewListIcons.ascx.cs">
+      <DependentUpon>StaffViewListIcons.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\StaffView\LearnerDetailCategory_Edit.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\StaffView\LearnerDetailCategory_Edit.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\StaffView\LearnerDetailCategory_Edit.ascx.cs">
+      <DependentUpon>LearnerDetailCategory_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\StaffView\PopUp_Notes.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\StaffView\PopUp_Notes.ascx.cs">
+      <DependentUpon>PopUp_Notes.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\StaffView\PopUp_Rewards.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\StaffView\PopUp_Rewards.ascx.cs">
+      <DependentUpon>PopUp_Rewards.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\StaffView\HeaderFilter.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\StaffView\HeaderFilter.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\StaffView\HeaderFilter.ascx.cs">
+      <DependentUpon>HeaderFilter.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="DeleteConcern.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="DeleteConcern.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="DeleteConcern.aspx.cs">
+      <DependentUpon>DeleteConcern.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\StaffView\PopUp_CauseOfConcern.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\StaffView\PopUp_CauseOfConcern.ascx.cs">
+      <DependentUpon>PopUp_CauseOfConcern.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Properties\StaffView_WebExternalSite23.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\StaffView\StaffView_Sort.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\StaffView\StaffView_Sort.ascx.cs">
+      <DependentUpon>StaffView_Sort.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\StaffView\StudentAttendanceSummaryBlock.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\StaffView\StudentAttendanceSummaryBlock.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\StaffView\StudentAttendanceSummaryBlock.ascx.cs">
+      <DependentUpon>StudentAttendanceSummaryBlock.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Default.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Default.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\StaffView\PopUp_Disciplinary.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\StaffView\PopUp_Disciplinary.ascx.cs">
+      <DependentUpon>PopUp_Disciplinary.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\StaffView\PopUp_CategoryRAG.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\StaffView\PopUp_CategoryRAG.ascx.cs">
+      <DependentUpon>PopUp_CategoryRAG.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\StaffView\StudentAttendanceIndicator.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Blocks\CaseConferencing\StaffView\StudentAttendanceIndicator.ascx.cs">
+      <DependentUpon>StudentAttendanceIndicator.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FlowStaffView.ExceptionHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Images.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Content Include="img\MicrosoftOfficeExcel16.png">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="img\NoLogo.jpg">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="img\reward_gold.png">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="img\LogoCC150.jpg">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="img\Duchylogo01.jpg">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="img\GavalRED.jpg">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="img\MicrosoftOfficePowerPoint16.png">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="img\FMSLandscape01.jpg">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="img\LogoCCG150.jpg">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="img\missingphoto.png">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="img\Cluster_BusinessProfessional_100.jpg">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="img\GavalSilver_small.jpg">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="img\MicrosoftOfficeWord16.png">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="img\ccglogosmall.jpg">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="img\cfc_selected.png">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="img\SelectDropDownBackground.png">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="img\bg_column_header.png">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="img\Cluster_RuralEconomy_100.jpg">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="img\document.png">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="img\Cluster_EastLocality_100.jpg">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="img\Cluster_Community_100.jpg">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="img\email_header.png">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="img\bg_header.jpg">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="img\Bus_grey.png">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="img\Cluster_ScienceNaturalEnvironment_100.jpg">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="img\LogoFMS200.jpg">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="img\trophy_silver.png">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="img\Cluster_PartnershipsAndFranchises_100.jpg">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="img\silver_marker.png">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="img\Bus_blue.png">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="img\drop_down_arrow.png">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="img\coc_green.png">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="img\blue_marker.png">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="img\gold_marker.png">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="img\header_separator.png">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="img\reward_selected.png">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="img\Cluster_MidLocality_100.jpg">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="img\Cluster_FoundationLearning_100.jpg">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="img\Cluster_AcademicStudies_100.jpg">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="img\coc_blue.png">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="img\coc_ambar.png">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="img\arrow_dkgrey.png">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="img\ccglogo.jpg">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="img\sg_unselected.png">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="img\Cluster_CulturalVisitorEconomy_100.jpg">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="img\green_marker.png">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="img\LogoDuchy200.jpg">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="img\Cluster_WorkSkills_100.jpg">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="img\reward_green.png">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="img\Filter_pattern.png">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="img\coc_grey.png">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="img\trophy_grey.png">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="img\GavalBlue.jpg">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="img\Cluster_HealthWellbeing_100.jpg">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="img\CClogohirez01.jpg">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="img\cclogowhite.png">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="img\Cluster_WestLocality_100.jpg">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="img\sg_selected.png">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="img\red_marker.png">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="img\pdf.jpg">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="img\reward_unselected.png">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="img\GavalREDSmall.jpg">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="img\amber_marker.png">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="img\CoC_red.png">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="img\Cornwall_Logo.png">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="img\cfc_unselected.png">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="img\Cluster_Technology_100.jpg">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="_image.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="_image.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>_image.aspx</DependentUpon>
+    </Compile>
+    <Content Include="_Basic.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Properties\CaseConferencing.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Content Include="_ping.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="_ping.html">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="_status.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="AbstractProcess.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AbstractProcessActivity.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Content Include="_ActivityHandler.asmx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="_ActivityHandler.asmx.cs">
+      <SubType>Component</SubType>
+      <DependentUpon>_ActivityHandler.asmx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports.asmx.cs">
+      <SubType>Component</SubType>
+      <DependentUpon>Reports.asmx</DependentUpon>
+    </Compile>
+    <Content Include="Reports.asmx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="_TimerHandler.asmx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="_TimerHandler.asmx.cs">
+      <SubType>Component</SubType>
+      <DependentUpon>_TimerHandler.asmx</DependentUpon>
+    </Compile>
+    <Compile Include="_RunningInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Content Include="_debugger.asmx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="TypeFactory\RLStudentAttendanceForCourseRecordList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory\RCStudentAttendanceForCourseRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory\STStudentAttendanceForCourseStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory\RLStudentAttenndance_ListList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory\STStudentAttenndance_ListStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory\ENStudentEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory\RCStudentStudentLogRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory\ENStudentLogEntityRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory\RCDataPointRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory\STDataPointStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory\RCChartFormatRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory\STChartFormatStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory\RLAdvancedDataPointFormatRecordList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory\RCAdvancedDataPointFormatRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory\STAdvancedDataPointFormatStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory\RLAdvancedDataSeriesFormatRecordList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory\RCAdvancedDataSeriesFormatRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory\STAdvancedDataSeriesFormatStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory\RCAdvancedFormatRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory\STAdvancedFormatStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory\RLDataPointRecordList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory\RCXAxisFormatRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory\STXAxisFormatStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory\RCYAxisFormatRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory\STYAxisFormatStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory\RLTextRecordList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory\RCTextRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory\STTextStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory\RCAcademicYear2Record.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory\RLForSkillsInitialAssessmentRecordList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory\RCForSkillsInitialAssessmentRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory\STForSkillsInitialAssessmentStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory\RCForSkillsInitialAssessmentSummaryRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory\STForSkillsInitialAssessmentSummaryStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory\STMarkbookForQualStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory\RLMarkbookUnitsList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory\STMarkbookUnitsStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory\RLMarkbookAssessmentsList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory\STMarkbookAssessmentsStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory\RLMarkbookTasksList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory\STMarkbookTasksStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory.ENTargetTypeEntityRecordTypeFactoryImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory.ENSupportTypeEntityRecordTypeFactoryImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory.ENSIASSupportTypeEntityRecordTypeFactoryImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory.ENCategoryEntityRecordTypeFactoryImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory.ENTrackingTypeEntityRecordTypeFactoryImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory.ENIALevelsEntityRecordTypeFactoryImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory.ENGroupTypeEntityRecordTypeFactoryImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory.ENTargetStatusEntityRecordTypeFactoryImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory.ENIALearningStylesEntityRecordTypeFactoryImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory.ENExamConcessionsEntityRecordTypeFactoryImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory.ENSafeguardingTypeEntityRecordTypeFactoryImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory.ENSafeguardingStatusEntityRecordTypeFactoryImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory.ENSupportNeedsEntityRecordTypeFactoryImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory.ENPermissionTypeEntityRecordTypeFactoryImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory.ENApplicationPermissionEntityRecordTypeFactoryImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory.ENXAxisValuesTypeEntityRecordTypeFactoryImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory.ENLegendPositionEntityRecordTypeFactoryImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory.ENStackingTypeEntityRecordTypeFactoryImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory.ENTabsEntityRecordTypeFactoryImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory.ENColorEntityRecordTypeFactoryImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory.ENTileSizeEntityRecordTypeFactoryImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory.ENMenuItem2EntityRecordTypeFactoryImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory.ENIconNameEntityRecordTypeFactoryImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory.ENIconSizeEntityRecordTypeFactoryImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory.ENMessageTypeEntityRecordTypeFactoryImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory.ENAcademicYearType2EntityRecordTypeFactoryImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory.ENAcademicYear2EntityRecordTypeFactoryImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory.ENSizesEntityRecordTypeFactoryImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory.ENProgressReportSectionTypeEntityRecordTypeFactoryImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory.ENRAGStatusEntityRecordTypeFactoryImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory.ENRiskAssessmentSourceOfEvidenceEntityRecordTypeFactoryImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory.ENAcademicYearsEntityRecordTypeFactoryImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory.ENYesNoEntityRecordTypeFactoryImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory.ENNoteTypeEntityRecordTypeFactoryImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory.ENCommunicationTypeEntityRecordTypeFactoryImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory.ENShortTermRAGStatusEntityRecordTypeFactoryImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory.ENSafeguardingAgencyEntityRecordTypeFactoryImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory.ENRiskAssessmentWhoIsAtRiskEntityRecordTypeFactoryImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory.ENStudentLogTypeEntityRecordTypeFactoryImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory.ENMLWCompetenciesEntityRecordTypeFactoryImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory.ENRiskAssessmentSSPReasonEntityRecordTypeFactoryImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory.ENSafeguardingIssueTypeEntityRecordTypeFactoryImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory.ENProgressReportSubSectionTypeEntityRecordTypeFactoryImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory.ENDestinationsEntityRecordTypeFactoryImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory.ENSafeguardingReferralMadeToEntityRecordTypeFactoryImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory.ENLogoEntityRecordTypeFactoryImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory.ENSafeguardingOutcomeEntityRecordTypeFactoryImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory.ENInternalMessageTypeEntityRecordTypeFactoryImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory.ENRewardReasonEntityRecordTypeFactoryImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory.ENCauseOfConcernReasonEntityRecordTypeFactoryImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory.ENMLWStagesEntityRecordTypeFactoryImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory.ENDocumentTypeEntityRecordTypeFactoryImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory.ENLearningSupportTypesEntityRecordTypeFactoryImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory.ENProgressReportTypeEntityRecordTypeFactoryImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory.ENAutoCompleteBankTypeEntityRecordTypeFactoryImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory.ENSafeguardingNatureOfConcernEntityRecordTypeFactoryImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeFactory.ENDisciplinaryTypeEntityRecordTypeFactoryImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="CaseConferencingLanguage.resources">
+      <SubType>Component</SubType>
+      <LogicalName>CaseConferencingLanguage.resources</LogicalName>
+    </EmbeddedResource>
+    <Content Include="Widgets\Form\Form.css">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Widgets\Form\fastclick.js">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Widgets\Form\Form.js">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Content Include="Global.asax">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Content Include="_CallbackInformation.aspx">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="DefaultValues.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Content Include="Blocks\CaseConferencing\NumberSlider\NumberSlider.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\Common_WB\MLW_PSR_Competencies_Progression_Chart.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\Charts\ColumnChart.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\Common2\TabsSize3Client.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\Common2\TabsClient.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\Common2\BreadCrumb.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\Common2\TileIcon.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\Common2\TabsWizard.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\MainLayouts\Menu_Backoffice.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\MainLayouts\Header_NoHelpLink.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\MainLayouts\Header.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\MainLayouts\Menu_Main.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\MainLayouts\Layout_Main.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\ChosenCommon\chosenWebBlock.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\Layouts\Layout_London.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\RichWidgets\List_Navigation.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\RichWidgets\Icon.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\RichWidgets\Input_SetFocus.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\RichWidgets\List_SortColumn.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\RichWidgets\RemovePopups.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\RichWidgets\List_BulkSelect.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\RichWidgets\Popup_InfoBalloon.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\RichWidgets\List_Counter.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\RichWidgets\Popup_Editor.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\RichWidgets\Input_Calendar.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\LayoutsOther\Layout_Popup.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\LayoutsOther\Layout_Email.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\HunSpell\SpellcheckerLink.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\Common_Webblocks\MLW_PSR_SpiderChart.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\Development\JS.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\Development\jQuery.ascx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Blocks\CaseConferencing\Tracking\TrackingGraph.ascx">
+      <SubType>Component</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>51215</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://127.0.0.1/CaseConferencing</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

@@ -1,0 +1,20 @@
+﻿div.BulkSelect_Wrapper {
+    padding-top: 4px;
+    padding-bottom: 4px;
+    font-size: 11px;
+}
+
+div.TableRecords_Actions div.BulkSelect_Wrapper, 
+div.TableRecords_Footer div.BulkSelect_Wrapper {
+    float: left;
+    padding: 0px;
+}
+
+td.BulkSelect_SelectedLine,
+th.BulkSelect_SelectedLine {
+    background-color: #cccccc;
+    border-bottom: 1px solid #efefef;
+    border-left: 1px solid #cccccc;
+}
+
+/* ExcludeAllFromPickersOutsideBlock */

@@ -1,0 +1,20 @@
+﻿.UpdateIndicatorBackground{
+ 
+    background-color: red;
+    height: 11px;
+    width:11px;
+    color:white;
+    border-radius: 8px;
+    border-color: white;
+    border-width: 1px;
+    border-style: solid;
+
+}
+.UpdateIndicator{
+    color:white;
+    margin-left: 1px;
+    text-align: center;
+    vertical-align: text-top;
+    line-height: 11px;
+    font-size: 11px;
+}

@@ -1,0 +1,23 @@
+﻿.TaskBox{
+    margin: 5px;
+    border: solid;
+    font-size: 12px;
+    background-color: white;
+    color: white;
+    border: solid 1px #DADADA;
+    padding: 10px;
+    border-radius: 3px;
+    width: 165px;
+    height: 90px;
+
+    }
+.TaskBoxInner
+{
+    padding:10px;
+    height: 70px;
+}
+.TaskBoxText{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    }

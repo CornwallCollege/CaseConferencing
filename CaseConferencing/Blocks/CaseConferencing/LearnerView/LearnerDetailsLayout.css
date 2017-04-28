@@ -1,0 +1,14 @@
+﻿.TabLearnerDetail, .TabLearnerDetail:link, .TabLearnerDetail:visited{
+    text-decoration: none; 
+    color:  black ;
+}
+
+.Title_Section {
+    display: none;
+}
+
+.ButtonPopup:hover
+{
+     background-color:#DADADA;
+     border: solid 1px #9D9D9D;
+}

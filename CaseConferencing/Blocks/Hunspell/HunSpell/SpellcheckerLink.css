@@ -1,0 +1,14 @@
+﻿.CheckSpellingButton{
+    color: #757575;
+    text-transform: uppercase;
+    text-shadow: 0px 1px 2px #dadada;
+    font-family: 'Source Sans Pro', sans-serif;
+    display: inline-block;    
+    background-color:#F3F3F3;
+    border: 1px solid #E8E8E8;
+    font-size: 13px;
+    font-weight: 300;
+    border-radius: 7px;
+    Padding: 6px 10px;
+    cursor:pointer;
+}

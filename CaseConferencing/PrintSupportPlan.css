@@ -1,0 +1,18 @@
+﻿.PrintReportLabel{
+    font-weight: bold;
+    font-size: 18px;
+}
+.PrintReportValue{
+    font-size: 18px;
+}
+
+td {
+    border-width: 1px;
+    border-style: solid;
+    padding: 5px;
+}
+.AddBorder{
+    border-width: 1px;
+    border-style: solid;
+    padding: 5px;
+}

@@ -1,0 +1,205 @@
+﻿
+/* @@@@@@@@@@@@@@@@  Custom Form  @@@@@@@@@@@@@@@@ */
+
+/***    Import icons    ***/
+@import url(/RichWidgets/Theme.FontAwesome.css?667);
+
+.Form:empty:after {
+
+
+
+}
+
+.Form:empty {
+
+
+}
+
+.Form label {
+	color: #999;
+    vertical-align: top;
+}
+
+.Form label.MandatoryLabel:after {
+    content: "*";
+	color: #BF1601;
+	position: absolute;
+	padding: 0px 5px 5px 3px;
+	font-size: 12px;
+	font-weight: normal;
+}
+
+/* Don't render InputMandatorySymbol span, since we use labels */
+span.InputMandatorySymbol {
+	display: none;
+}
+	
+.Form input[type="text"],
+.Form input[type="password"],
+.Form input[type="datetime"],
+.Form input[type="datetime-local"],
+.Form input[type="date"],
+.Form input[type="month"],
+.Form input[type="time"],
+.Form input[type="week"],
+.Form input[type="number"],
+.Form input[type="email"],
+.Form input[type="url"],
+.Form input[type="search"],
+.Form input[type="tel"],
+.Form input[type="color"],
+.Form select,
+.Form textarea {
+    /* remove box shadow from london */
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    vertical-align: top;
+
+    /* readonly look inside SS */
+
+
+
+
+}
+
+.Form input::-ms-clear {
+    display: none;
+}
+
+.Form input.Not_Valid,
+.Form textarea.Not_Valid {
+    /* override invalid inputs padding */
+    padding: 0px 12px;
+}
+
+.Form input[type="checkbox"] {
+    /* Same height as inputs */
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.Form input.ReadOnly,
+.Form textarea.ReadOnly,
+.Form select.ReadOnly {
+     /* override readonly color to look like labels*/
+    color: #333;
+    font-size: 16px;
+    background: #FAFAFA;
+}
+
+.Form input.ReadOnly:not(.Not_Valid),
+.Form textarea.ReadOnly:not(.Not_Valid),
+.Form select.ReadOnly:not(.Not_Valid) {
+     border-color: transparent;
+ }
+
+.Form:not(.ReadOnly) input.ReadOnly,
+.Form:not(.ReadOnly) textarea.ReadOnly,
+.Form:not(.ReadOnly) select.ReadOnly {
+    cursor: pointer;
+}
+
+.Form.ReadOnly select {
+    pointer-events: none;
+}
+
+.Form textarea.ReadOnly {
+	resize: none;
+}
+
+.Form a.SmartInput_Undo {
+	margin-left: -30px;
+	padding: 2px 5px;
+	text-decoration: none;
+	display: none;
+	position: absolute;
+}
+
+.Form a.SmartInput_Undo:after {
+	font-family: FontAwesome;	
+	font-size: 20px;
+	content: "\f0e2";
+	color: #AAA;
+}
+
+.Form input.SmartInput_Changed.ReadOnly + a.SmartInput_Undo,
+.Form textarea.SmartInput_Changed.ReadOnly + a.SmartInput_Undo,
+.Form select.SmartInput_Changed.ReadOnly + a.SmartInput_Undo {
+	display: inline-block;
+}
+
+.Form .FormEditPencil {
+	display: none;
+	position: absolute;	
+	font-size: 16px;
+	color: #CFCFCF;
+	cursor: pointer;
+    pointer-events: none; /* caught by input */
+	padding: 5px;
+	margin-left: -30px;
+	margin-top: 5px;
+}
+
+/* pencil should be after input (possibly with undo between) */
+.Form:not(.WithTouchEvents) input.ReadOnly:hover:not(.SmartInput_Changed) + .SmartInput_Undo + .FormEditPencil,
+.Form:not(.WithTouchEvents) textarea.ReadOnly:hover:not(.SmartInput_Changed) + .SmartInput_Undo + .FormEditPencil,
+.Form:not(.WithTouchEvents) select.ReadOnly:hover:not(.SmartInput_Changed) + .SmartInput_Undo + .FormEditPencil { 
+	display: inline-block;
+}
+
+/* Label positioning */
+.Form.form-top label {
+	display: block;
+	padding-bottom: 3px;
+}
+
+.Form:not(.form-top) label {
+	padding-top: 5px;
+}
+
+.Form.form-top input[type="text"],
+.Form.form-top input[type="password"],
+.Form.form-top input[type="datetime"],
+.Form.form-top input[type="datetime-local"],
+.Form.form-top input[type="date"],
+.Form.form-top input[type="month"],
+.Form.form-top input[type="time"],
+.Form.form-top input[type="week"],
+.Form.form-top input[type="number"],
+.Form.form-top input[type="email"],
+.Form.form-top input[type="url"],
+.Form.form-top input[type="search"],
+.Form.form-top input[type="tel"],
+.Form.form-top input[type="color"],
+.Form.form-top select,
+.Form.form-top textarea {
+    margin-left: 0px; /* override MarginGutter */
+}
+
+.Form.form-top>div.OSAutoMarginTop {
+	margin-top: 15px;
+}
+
+.Form.form-right label {
+	text-align: right;
+}
+
+/* Smartphones */
+@media screen and (max-width: 764px) {
+	/* Override london 'display-block' to avoid undo wrapping */
+	.Responsive .Form [class*='ThemeGrid_Width'] {
+		display: inline-block;
+	}
+	
+	/* To be on front of select elements */
+	.Form a.SmartInput_Undo{
+		z-index: 1;
+	}
+	
+	.Form.form-right label {
+		text-align: left;
+	}
+}
+
+/* ExcludeFromPickers: Form, Form_Changed, form-top, form-left, form-right, Responsive, OSAutoMarginTop, WithTouchEvents, FormEditPencil, MandatoryLabel, ReadOnly, SmartInput_Changed, SmartInput_Undo, ThemeGrid_MarginGutter */

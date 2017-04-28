@@ -1,0 +1,3 @@
+﻿<%@ Control Language="c#" AutoEventWireup="false" Inherits="proxy_ThemeProvider_RichWidgets.Flows.FlowRichWidgets.WBlkResponsiveTableRecords,ThemeProviderReferencesProxy" TargetSchema="http://schemas.microsoft.com/intellisense/ie5"%>
+<%@ Register TagPrefix="client" TagName="node" Src="..\..\RichWidgets\RichWidgets\ResponsiveTableRecords.ascx" %>
+<client:node id="block" runat="server" OnBindDelegates="BindProxyDelegates" />

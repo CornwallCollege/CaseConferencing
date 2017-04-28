@@ -1,0 +1,14 @@
+﻿.ButtonPopup{
+    color:#757575;
+    font-size: 12px;
+    font-weight: 300;
+    display:inline-block; 
+    border: 1px solid #E8E8E8;
+    background-color:#F3F3F3;
+    cursor:pointer;
+    border-radius: 3px;
+    Padding: 6px 10px;
+    cursor:pointer;
+    margin-left: 36px;
+    font-size:13px;
+}

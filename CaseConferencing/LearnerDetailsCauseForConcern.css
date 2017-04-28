@@ -1,0 +1,57 @@
+﻿.CauseForConcernDetail
+{
+    display:inline-block;
+    width:600px;
+    height:70px;
+    margin-top:15px;
+    border: 1px solid #E8E8E8;
+
+}
+
+.TitleCauseForConcern
+{
+    font-size:18px;
+    padding: 15px;
+    color: #757575;
+    text-shadow: 0px 1px 2px #dadada;
+    border-bottom: solid 1px #dadada;
+}
+.LearnerCauseForConcern {
+    border: 0px;
+    line-height: 10px;
+    font-size: 14px;
+    border-bottom:solid 1px #b1b1b1;
+    padding-left: 15px;
+
+}
+
+.ButtonPopup{
+    color:#757575;
+    font-size: 12px;
+    font-weight: 300;
+    display:inline-block; 
+    border: 1px solid #E8E8E8;
+    background-color:#F3F3F3;
+    cursor:pointer;
+    border-radius: 3px;
+    Padding: 6px 10px;
+    cursor:pointer;
+    margin-left: 36px;
+    font-size:13px;
+}
+
+.ButtonPopup:hover
+{
+     background-color:#DADADA;
+     border: solid 1px #9D9D9D;
+}
+
+.ContentDetailWrapper{
+    background-color:white;
+    box-shadow: 0px 1px 2px #b1b1b1;
+    border: solid 1px #DADADA;
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 20px;
+}
+

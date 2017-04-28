@@ -1,0 +1,5 @@
+﻿<%@ Control Language="c#" AutoEventWireup="false" Codebehind="Blocks\CaseConferencing\Learner_ILP\jQuery_Easing.ascx.cs" Inherits="ssCaseConferencing.Flows.FlowLearner_ILP.WBlkjQuery_Easing,CaseConferencing" TargetSchema="http://schemas.microsoft.com/intellisense/ie5"%>
+<%@ Register TagPrefix="osweb" Namespace="OutSystems.HubEdition.WebWidgets" Assembly="OutSystems.HubEdition.WebWidgets" %>
+<%@ Assembly Name="OutSystems.WidgetsRuntimeAPI" %>
+<%@ Import namespace="ssCaseConferencing" %>
+<%@ Register TagPrefix="SilkUIFramework_widgets" TagName="KZml38nBieEuvHocZXhWx8g" Src="..\..\CaseConferencing\Development\jQuery.ascx" %><%# PageStartHook() %><SilkUIFramework_widgets:KZml38nBieEuvHocZXhWx8g runat="server" id="SilkUIFramework_wt_WebBlockInstance2" OnEvaluateParameters="SilkUIFramework_webBlck_WebBlockInstance2_onDataBinding" InstanceID="_WebBlockInstance2"><phDescription><osweb:PlaceHolder runat="server"><%# "Easing v1.3" %></osweb:PlaceHolder></phDescription></SilkUIFramework_widgets:KZml38nBieEuvHocZXhWx8g><%# PageEndHook() %>

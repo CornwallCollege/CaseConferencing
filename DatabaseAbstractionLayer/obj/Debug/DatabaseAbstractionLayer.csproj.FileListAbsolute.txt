@@ -1,0 +1,8 @@
+C:\temp\CaseConferencing_v112_Source\DatabaseAbstractionLayer\bin\Debug\OutSystems.HubEdition.DatabaseAbstractionLayer.XML
+C:\temp\CaseConferencing_v112_Source\DatabaseAbstractionLayer\bin\Debug\OutSystems.HubEdition.DatabaseAbstractionLayer.dll
+C:\temp\CaseConferencing_v112_Source\DatabaseAbstractionLayer\bin\Debug\OutSystems.HubEdition.DatabaseAbstractionLayer.pdb
+C:\temp\CaseConferencing_v112_Source\DatabaseAbstractionLayer\bin\Debug\OutSystems.RuntimeCommon.dll
+C:\temp\CaseConferencing_v112_Source\DatabaseAbstractionLayer\bin\Debug\OutSystems.RuntimeCommon.pdb
+C:\temp\CaseConferencing_v112_Source\DatabaseAbstractionLayer\obj\Debug\DatabaseAbstractionLayer.csprojResolveAssemblyReference.cache
+C:\temp\CaseConferencing_v112_Source\DatabaseAbstractionLayer\obj\Debug\OutSystems.HubEdition.DatabaseAbstractionLayer.dll
+C:\temp\CaseConferencing_v112_Source\DatabaseAbstractionLayer\obj\Debug\OutSystems.HubEdition.DatabaseAbstractionLayer.pdb

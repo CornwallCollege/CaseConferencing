@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A99F44D3-9D76-4AA1-A833-BA2D283AD22E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OutSystems.RuntimeCommon</RootNamespace>
+    <AssemblyName>OutSystems.RuntimeCommon</AssemblyName>
+    <KeyContainerName>
+    </KeyContainerName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SignAssembly>false</SignAssembly>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <BaseAddress>4194304</BaseAddress>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" /><Reference Include="System.Data" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base64.cs" />
+    <Compile Include="BreakpointId.cs" />
+    <Compile Include="Cryptography\CryptograpicAlgorithmParameters.cs" />
+    <Compile Include="Cryptography\Helpers\SecureHashHelper.cs" />
+    <Compile Include="Cryptography\Helpers\GuidHelper.cs" />
+    <Compile Include="Cryptography\Helpers\Insecure\MD5PasswordHelper.cs" />
+    <Compile Include="Cryptography\Helpers\HashSHA512Helper.cs" />
+    <Compile Include="Cryptography\Implementations\Crypt\AES256Managed.cs" />
+    <Compile Include="Cryptography\Implementations\Crypt\CryptTransform.cs" />
+    <Compile Include="Cryptography\Implementations\Crypt\CryptManagedAdapter.cs" />
+    <Compile Include="Cryptography\Implementations\Crypt\CryptManaged.cs" />
+    <Compile Include="Cryptography\Implementations\Crypt\AES128Managed.cs" />
+    <Compile Include="Cryptography\Implementations\Crypt\Insecure\RC4.cs" />
+    <Compile Include="Cryptography\Implementations\Crypt\Insecure\RC4Adapter.cs" />
+    <Compile Include="Cryptography\Implementations\DotNetHashGenerator.cs" />
+    <Compile Include="Cryptography\Implementations\Hash\Insecure\MD5HashAdapter.cs" />
+    <Compile Include="Cryptography\Interfaces\ICryptTransform.cs" />
+    <Compile Include="Cryptography\VersionedAlgorithms\IVersionedCryptographyAlgorithm.cs" />
+    <Compile Include="Cryptography\VersionedAlgorithms\IVersionedEncryptAlgorithm.cs" />
+    <Compile Include="Cryptography\VersionedAlgorithms\SingletonVersionedCryptographyAlgorithm.cs" />
+    <Compile Include="Cryptography\VersionedAlgorithms\SingletonVersionedEncryptAlgorithm.cs" />
+    <Compile Include="Cryptography\VersionedAlgorithms\VersionedCryptographyAlgorithms.cs" />
+    <Compile Include="Cryptography\VersionedAlgorithms\VersionedEncryptAlgorithms.cs" />
+    <Compile Include="DatabaseProviderKey.cs" />
+    <Compile Include="Extensibility\Plugins\AbstractPluginProvider.cs" />
+    <Compile Include="Extensibility\WebReferenceExtensionPoint.cs" />
+    <Compile Include="Extensibility\ErrorMessage.cs" />
+    <Compile Include="Extensibility\Exceptions\IllegalExtensibilityContextException.cs" />
+    <Compile Include="Extensibility\Exceptions\ExtensibilityException.cs" />
+    <Compile Include="Extensibility\ExtensibilityContext.cs" />
+    <Compile Include="Extensibility\Model\XmlConfigurationFile.cs" />
+    <Compile Include="Extensibility\ConfigurationParameter.cs" />
+    <Compile Include="ConnectionString.cs" />
+    <Compile Include="Cryptography\Helpers\HashSHA1Helper.cs" />
+    <Compile Include="Cryptography\Helpers\HashSHA256Helper.cs" />
+    <Compile Include="Cryptography\Helpers\SymmCryptHelper.cs" />
+    <Compile Include="Cryptography\Helpers\Insecure\SymmRC4CryptHelper.cs" />
+    <Compile Include="Cryptography\CryptManager.cs" />
+    <Compile Include="Cryptography\Helpers\Insecure\MD5GuidHelper.cs" />
+    <Compile Include="Cryptography\HashGenerator.cs" />
+    <Compile Include="Cryptography\Helpers\Insecure\MD5HashHelper.cs" />
+    <Compile Include="Cryptography\Implementations\Crypt\BigInteger.cs" />
+    <Compile Include="Cryptography\Implementations\Crypt\KeysFactories.cs" />
+    <Compile Include="Cryptography\Implementations\Crypt\RSA.cs" />
+    <Compile Include="Cryptography\Implementations\Crypt\RSAAdapter.cs" />
+    <Compile Include="Cryptography\Implementations\Crypt\RsaKey.cs" />
+    <Compile Include="Cryptography\Implementations\Crypt\RsaKeyPair.cs" />
+    <Compile Include="Cryptography\Implementations\Crypt\RsaPrivateKey.cs" />
+    <Compile Include="Cryptography\Implementations\Hash\SHA1HashAdapter.cs" />
+    <Compile Include="Cryptography\Interfaces\IAsymmetricCrypt.cs" />
+    <Compile Include="Cryptography\Implementations\Signature\HMACSHA1HashAdapter.cs" />
+    <Compile Include="Cryptography\Implementations\Signature\HMACSHA512HashAdapter.cs" />
+    <Compile Include="Cryptography\Implementations\Password\PBKDF2HashAdapter.cs" />
+    <Compile Include="Cryptography\Implementations\SecureRNGAdapter.cs" />
+    <Compile Include="Cryptography\Implementations\Hash\SHA256HashAdapter.cs" />
+    <Compile Include="Cryptography\Implementations\Hash\SHA384HashAdapter.cs" />
+    <Compile Include="Cryptography\Implementations\Hash\SHA512HashAdapter.cs" />
+    <Compile Include="Cryptography\Implementations\Hash\SHA512_256HashAdapter.cs" />
+    <Compile Include="Cryptography\Implementations\Hash\SHA512_384HashAdapter.cs" />
+    <Compile Include="Cryptography\Interfaces\ICrypt.cs" />
+    <Compile Include="Cryptography\Interfaces\IHashGenerator.cs" />
+    <Compile Include="Cryptography\Interfaces\IPasswordHashGenerator.cs" />
+    <Compile Include="Cryptography\Interfaces\ISaltGenerator.cs" />
+    <Compile Include="Cryptography\Interfaces\ISignGenerator.cs" />
+    <Compile Include="Cryptography\Interfaces\ISymmetricCrypt.cs" />
+    <Compile Include="Cryptography\Interfaces\ISymmetricTransformCrypt.cs" />
+    <Compile Include="Cryptography\PasswordHashGenerator.cs" />
+    <Compile Include="Cryptography\Helpers\PasswordHelper.cs" />
+    <Compile Include="Cryptography\Helpers\SignatureHelper.cs" />
+    <Compile Include="CssSizeUnits.cs" />
+    <Compile Include="JQueryVersion.cs" />
+    <Compile Include="Labeling.cs" />
+    <Compile Include="LabelingResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LabelingResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LogUtils\IPublishLog.cs" />
+    <Compile Include="EventLogger.cs" />
+    <Compile Include="SymbolicLinksHandler.cs" />
+    <Compile Include="MutexHelper.cs" />
+    <Compile Include="Extensibility\Exceptions\DeploymentException.cs" />
+    <Compile Include="Extensibility\Model\IObject.cs" />
+    <Compile Include="Extensibility\AsynchronousMessage.cs" />
+    <Compile Include="Extensibility\Configurator.cs" />
+    <Compile Include="Extensibility\UserInteractions.cs" />
+    <Compile Include="Extensibility\Deployer.cs" />
+    <Compile Include="Extensibility\DeploymentDescription.cs" />
+    <Compile Include="Extensibility\ESpaceConfiguration.cs" />
+    <Compile Include="Extensibility\Model\IESpace.cs" />
+    <Compile Include="Extensibility\ExtensionPointLoader.cs" />
+    <Compile Include="Extensibility\OutSystemsExtensionPoint.cs" />
+    <Compile Include="Extensibility\LogType.cs" />
+    <Compile Include="ObfuscationProperties.cs" />
+    <Compile Include="ProfilerPastData.cs" />
+    <Compile Include="CollectionsExtensions.cs" />
+    <Compile Include="CollectionsExtensions.DynamicComparer.cs" />
+    <Compile Include="CollectionsExtensions.DynamicEqualityComparer.cs" />
+    <Compile Include="ScriptableEmailFunctions.cs" />
+    <Compile Include="OrderRespectingDictionary.cs" />
+    <Compile Include="SignUtils.cs" />
+    <Compile Include="FormatInfoLogic.cs" />
+    <Compile Include="GuidUtils.cs" />
+    <Compile Include="IDebuggerSerializable.cs" />
+    <Compile Include="ScriptableBuiltInFunction.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="EmptyArray.cs" />
+    <Compile Include="LocalKeyValueUtils.cs" />
+    <Compile Include="ObjectKeys\ObjectKeyType.cs" />
+    <Compile Include="ObjectKeys\Pre50Key.cs" />
+    <Compile Include="ObjectKeys\ObjectKey.SerializationHelper.cs" />
+    <Compile Include="LogUtils\ExceptionUtils.cs" />
+    <Compile Include="LogUtils\OSDirectoryEntry.cs" />
+    <Compile Include="LogUtils\OSTrace.cs" />
+    <Compile Include="FileSystemUtils.cs" />
+    <Compile Include="LogUtils\HEMessage.cs" />
+    <Compile Include="ObjectKeys\LocalKeyValue.cs" />
+    <Compile Include="ObjectKeys\ObjectKeyUtils.cs" />
+    <Compile Include="ObjectKeys\GlobalObjectKey.cs" />
+    <Compile Include="MessageDefinition.cs" />
+    <Compile Include="MessageId.cs" />
+    <Compile Include="MessageType.cs" />
+    <Compile Include="ObjectKeys\GuidKey.cs" />
+    <Compile Include="ObjectKeys\LocalKey.cs" />
+    <Compile Include="ObjectKeys\ObjectKey.cs" />
+    <Compile Include="OutSystemsPlatform.cs" />
+    <Compile Include="Pair.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Security\TrustWhitelistCertificatePolicy.cs" />
+    <Compile Include="Extensibility\Configurations.cs" />
+    <Compile Include="StreamUtils.cs" />
+    <Compile Include="StringUtils.cs" />
+    <Compile Include="Triplet.cs" />
+    <Compile Include="TypeKind.cs" />
+    <Compile Include="Extensibility\UserMessage.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Cryptography\Crypt.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="LabelingResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>LabelingResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PreBuildEvent></PreBuildEvent>
+    <PostBuildEvent></PostBuildEvent>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EFB0D1E3-076D-4F16-A595-B33BFC5B3F18}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyName>OutSystems.HubEdition.RuntimePlatform</AssemblyName>
+    <KeyContainerName>
+    </KeyContainerName>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>OutSystems.HubEdition.RuntimePlatform</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <SignAssembly>false</SignAssembly>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <IntermediateOutputPath>$(OutputPath)</IntermediateOutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE;DEBUG;RUNTIMEPLATFORM</DefineConstants>
+    <DocumentationFile>bin\Debug\OutSystems.HubEdition.RuntimePlatform.XML</DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>1591</NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <IntermediateOutputPath>$(OutputPath)</IntermediateOutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE;RUNTIMEPLATFORM</DefineConstants>
+    <DocumentationFile>bin\Release\OutSystems.HubEdition.RuntimePlatform.XML</DocumentationFile>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>1591</NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>pdbonly</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GemBox.Spreadsheet, Version=35.1.30.1060, Culture=neutral, PublicKeyToken=b1b72c69714d4847, processorArchitecture=MSIL">
+      <HintPath>..\GemboxSpreadSheet\Bin\NET35\GemBox.Spreadsheet.dll</HintPath>
+      <SpecificVersion>True</SpecificVersion>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.85.5.452, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <SpecificVersion>True</SpecificVersion>
+      <HintPath>..\ICSharpCode.SharpZipLib\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" /><Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Messaging">
+      <Name>System.Messaging</Name>
+    </Reference>
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Web">
+      <Name>System.Web</Name>
+    </Reference>
+    <Reference Include="System.Web.Mobile">
+      <Name>System.Web.Mobile</Name>
+    </Reference>
+    <Reference Include="System.Web.Services">
+      <Name>System.Web.Services</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <ProjectReference Include="..\OutSystems.RuntimeCommon\OutSystems.RuntimeCommon.csproj">
+      <Project>{A99F44D3-9D76-4AA1-A833-BA2D283AD22E}</Project>
+      <Name>OutSystems.RuntimeCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DatabaseAbstractionLayer\DatabaseAbstractionLayer.csproj">
+      <Project>{e451fec9-2b6b-45a2-8ab9-57196f4557e8}</Project>
+      <Name>DatabaseAbstractionLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SMSInterface\SMSInterface.csproj">
+      <Project>{66D6B91F-CCF4-495D-89FD-0290CBC9D06E}</Project>
+      <Name>SMSInterface</Name>
+    </ProjectReference>
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CryptMethods.cs" /><Compile Include="SecureConfidentialInformationEncryption.cs" /><Compile Include="SharedKeys.cs" /><Compile Include="EncryptPasswordForWebServiceRequest.cs" /><Compile Include="CssHelper.cs" />
+    <Compile Include="Internal\Db\DatabaseConfigurationHelper.cs" />
+    <Compile Include="Internal\Db\DatabaseConfigurationHelperOracle.cs" />
+    <Compile Include="Extensibility\LifecyleListenerManager.cs" />
+    <Compile Include="Extensibility\LifecyleListener.cs" />
+    <Compile Include="ISimpleRecord.cs" />
+    <Compile Include="DBRuntimePlatform.Taskbox.cs" />
+    <Compile Include="DBRuntimePlatformOracle.cs" />
+    <Compile Include="DBRuntimePlatformMySQL.cs" />
+    <Compile Include="Deprecated\DBCompatibilityProxies\Adapters\DBCompatibilityReflectionUtils.cs" />
+    <Compile Include="DBRuntimePlatformSqlServer.cs" />
+    <Compile Include="Internal\Db\DatabaseConnectionUpgrader.cs" />
+    <Compile Include="Internal\Db\DataReader.cs" />
+    <Compile Include="Internal\Db\IDatabaseAccessProvider.cs" />
+    <Compile Include="Internal\Db\PrivateManagedTransaction.cs" />
+    <Compile Include="Internal\Db\DatabaseSettingsSerialization.cs" />
+    <Compile Include="GemBoxLicensing.cs" />
+    <Compile Include="Internal\Db\ManagedCommand.cs" />
+    <Compile Include="Internal\Db\ManagedTransaction.cs" />
+    <Compile Include="Internal\Db\Command.cs" />
+    <Compile Include="Internal\Db\DatabaseConnection.cs" />
+    <Compile Include="Internal\Db\DataParameter.cs" />
+    <Compile Include="Internal\Db\Transaction.cs" />
+    <Compile Include="Deprecated\DBCompatibilityProxies\Adapters\AdaptersUtils.cs" />
+    <Compile Include="Deprecated\DBCompatibilityProxies\Adapters\DBConnectionManagerAdapter.cs" />
+    <Compile Include="DBRuntimePlatform.APIs.cs" />
+    <Compile Include="DBRuntimePlatform.cs" />
+    <Compile Include="DBRuntimePlatform.Email.cs" />
+    <Compile Include="DBRuntimePlatform.Processes.cs" />
+    <Compile Include="Internal\Db\DatabaseAccess.cs" />
+    <Compile Include="Deprecated\DBCompatibilityProxies\Adapters\ADOAdaptersUtils.cs" />
+    <Compile Include="AppCache.cs" />
+    <Compile Include="BaseAppUtils.cs" />
+    <Compile Include="Cache\ReadThru.cs" />
+    <Compile Include="CacheHelper.cs" />
+    <Compile Include="CodeInjection\Callbacks\AbstractCallback.cs" />
+    <Compile Include="CodeInjection\Callbacks\AbstractCallback.EventListener.cs" />
+    <Compile Include="CodeInjection\Callbacks\CallbackEvent.cs" />
+    <Compile Include="CodeInjection\CodeInjectionFactory.cs" />
+    <Compile Include="CodeInjection\InjectionCache.cs" />
+    <Compile Include="CodeInjection\Callbacks\AbstractNotContentCallback.cs" />
+    <Compile Include="CodeInjection\Callbacks\CallbackResultStorage.cs" />
+    <Compile Include="CodeInjection\Callbacks\DummyCallback.DummyInvoke.cs" />
+    <Compile Include="CodeInjection\Callbacks\DummyCallback.cs" />
+    <Compile Include="CodeInjection\Callbacks\DummyCallback.EventListener.cs" />
+    <Compile Include="CodeInjection\Callbacks\ECT\ECTGetHtmlCallback.EventListener.cs" />
+    <Compile Include="CodeInjection\Callbacks\ECT\ECTShowFeedbackCallback.EventListener.cs" />
+    <Compile Include="CodeInjection\Callbacks\ILibraryCallbackHandler.cs" />
+    <Compile Include="CodeInjection\Callbacks\Invoke\ForeignCallbackProviderInvoke.cs" />
+    <Compile Include="CodeInjection\Callbacks\Invoke\LibraryCallbackInvoke.cs" />
+    <Compile Include="CodeInjection\Callbacks\StaticContentCallback.EventListener.cs" />
+    <Compile Include="CodeInjection\Callbacks\VolatileContentCallback.cs" />
+    <Compile Include="CodeInjection\Callbacks\ECT\ECTGetHtmlCallback.cs" />
+    <Compile Include="CodeInjection\Callbacks\Invoke\AbstractCallbackInvoke.cs" />
+    <Compile Include="CodeInjection\Callbacks\CallbackPageContext.cs" />
+    <Compile Include="CodeInjection\Callbacks\AbstractContentCallback.cs" />
+    <Compile Include="CodeInjection\Callbacks\ECT\ECTShowFeedbackCallback.cs" />
+    <Compile Include="CodeInjection\Callbacks\Invoke\AbstractStringCallbackInvoke.cs" />
+    <Compile Include="CodeInjection\Callbacks\Invoke\WebServiceCallbackInvoke.cs" />
+    <Compile Include="CodeInjection\Callbacks\StaticContentCallback.cs" />
+    <Compile Include="BasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CodeInjection\Callbacks\VolatileContentCallback.EventListener.cs" />
+    <Compile Include="CodeInjection\InjectedJavascript.cs" />
+    <Compile Include="CodeInjection\ICodeInjectionElement.cs" />
+    <Compile Include="Internal\Db\DatabaseAccessProvider.cs" />
+    <Compile Include="Log\IntDetailLog.cs" />
+    <Compile Include="Log\IntegrationLog.cs" />
+    <Compile Include="OsISAPIFilter.cs" />
+    <Compile Include="ProcessDeletion.cs" />
+    <Compile Include="Log\LicensingLog.cs" />
+    <Compile Include="Log\PublishLog.cs" />
+    <Compile Include="RuntimePlatform.APIs.cs" />
+    <Compile Include="EspaceInfo.cs" />
+    <Compile Include="EspaceTenantInfo.cs" />
+    <Compile Include="Email\EmailNotifier.cs" />
+    <Compile Include="ESpaceInfoForAppStart.cs" />
+    <Compile Include="IBroadcastListener.cs" />
+    <Compile Include="IterationMultiplicity.cs" />
+    <Compile Include="NetworkInterfaceUtils.cs" />
+    <Compile Include="Processes\ActivityHandlerFactory.cs" />
+    <Compile Include="Processes\IActivityHandler.cs" />
+    <Compile Include="Processes\IActivityHandlerFactory.cs" />
+    <Compile Include="Processes\InboxQueries.cs" />
+    <Compile Include="Remoting.cs" />
+    <Compile Include="RuntimePlatformUtils.Hashing.cs" />
+    <Compile Include="RuntimePublic\Db\Command.cs" />
+    <Compile Include="RuntimePublic\Db\CommittableTransaction.cs" />
+    <Compile Include="RuntimePublic\Db\Connection.cs" />
+    <Compile Include="RuntimePublic\Db\DatabaseAccess.cs" />
+    <Compile Include="RuntimePublic\DatabaseConnection.cs" />
+    <Compile Include="RuntimePublic\Db\DatabaseProvider.cs" />
+    <Compile Include="RuntimePublic\Db\DataParameter.cs" />
+    <Compile Include="RuntimePublic\Db\SqlHelper.cs" />
+    <Compile Include="Deprecated\ProcessDeletion.cs" />
+    <Compile Include="RuntimePublic\Db\RequestTransaction.cs" />
+    <Compile Include="RuntimePublic\Processes\ProcessDeletion.cs" />
+    <Compile Include="SecureCookieUtils.cs" />
+    <Compile Include="SerializationUtils.cs" />
+    <Compile Include="BitArrayUtils.cs" />
+    <Compile Include="PerformanceCounterUtils.cs" />
+    <Compile Include="RegularExpressionUtils.cs" />
+    <Compile Include="HttpSimulator\ReflectionHelper.cs" />
+    <Compile Include="HttpSimulator\SimulatedHttpRequest.cs" />
+    <Compile Include="HttpSimulator\HttpSimulator.cs" />
+    <Compile Include="ConfigurationsImpl.cs" />
+    <Compile Include="ServerLog.cs" />
+    <Compile Include="Internal\SettingsInternal.cs" />
+    <Compile Include="TestActionCaller.cs" />
+    <Compile Include="Log\CustomLog.cs" />
+    <Compile Include="DatabaseResourcesManager.cs" />
+    <Compile Include="RuntimeCache.cs" />
+    <Compile Include="QueriesCoverage.cs" />
+    <Compile Include="DataReaderUtils.cs" />
+    <Compile Include="Email\ControlCss.cs" />
+    <Compile Include="Email\SimpleCss.cs" />
+    <Compile Include="Email\SimpleCssStyleDefinition.cs" />
+    <Compile Include="Email\EmailHelper.cs" />
+    <Compile Include="Email\EmailProcessor.cs" />
+    <Compile Include="Email\EmailEncoding.cs" />
+    <Compile Include="Email\EmailFunctions.cs" />
+    <Compile Include="Email\SimpleCssParser.cs" />
+    <Compile Include="Email\SimpleCssSelectorElement.cs" />
+    <Compile Include="EmbeddedResourcesManager.cs" />
+    <Compile Include="ForeignApplicationHostedService.cs" />
+    <Compile Include="IResourceManager.cs" />
+    <Compile Include="ICache.cs" />
+    <Compile Include="Log\CyclicJobLog.cs" />
+    <Compile Include="Log\ErrorLog.cs" />
+    <Compile Include="Log\ExtensionLog.cs" />
+    <Compile Include="Log\GeneralLog.cs" />
+    <Compile Include="Log\GeneralLogType.cs" />
+    <Compile Include="Log\RuntimeLogger.cs" />
+    <Compile Include="Log\ScreenLog.cs" />
+    <Compile Include="Log\SmsLog.cs" />
+    <Compile Include="Log\WebReferenceLog.cs" />
+    <Compile Include="Log\WebServiceLog.cs" />
+    <Compile Include="IProfiler.cs" />
+    <Compile Include="OSJSONResponse.cs" />
+    <Compile Include="Processes\AbstractProcessActivityBase.cs" />
+    <Compile Include="Processes\ActivityHandlerProxy.cs" />
+    <Compile Include="Processes\ActivityKind.cs" />
+    <Compile Include="Processes\ActivityStatus.cs" />
+    <Compile Include="Processes\ActivityVariable.cs" />
+    <Compile Include="Processes\BPMRuntime.cs" />
+    <Compile Include="Processes\InboxHandler.cs" />
+    <Compile Include="Processes\IProcess.cs" />
+    <Compile Include="Processes\ProcessBase.cs" />
+    <Compile Include="Processes\IProcessActivity.cs" />
+    <Compile Include="Deprecated\DBCompatibilityProxies\DBConnectionManager.cs" />
+    <Compile Include="Deprecated\DBCompatibilityProxies\DBConnectionManagersFactory.cs" />
+    <Compile Include="ExcelResultSet.cs" />
+    <Compile Include="HttpCompressionModule.cs" />
+    <Compile Include="Deprecated\DBCompatibilityProxies\IDBConnectionManager.cs" />
+    <Compile Include="JSONSharp\JSONArrayCollection.cs" />
+    <Compile Include="JSONSharp\JSONBoolValue.cs" />
+    <Compile Include="JSONSharp\JSONNumberValue.cs" />
+    <Compile Include="JSONSharp\JSONObjectCollection.cs" />
+    <Compile Include="JSONSharp\JSONStringValue.cs" />
+    <Compile Include="JSONSharp\JSONValue.cs" />
+    <Compile Include="JSONSharp\JSONValueCollection.cs" />
+    <Compile Include="MetaInformation.cs" />
+    <Compile Include="Deprecated\DBCompatibilityProxies\OracleConnectionManager.cs" />
+    <Compile Include="Processes\ProcessStatus.cs" />
+    <Compile Include="Processes\VariableKind.cs" />
+    <Compile Include="Profiler.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BuiltInFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RegularExpressionLibrary.cs" />
+    <Compile Include="SessionSR.cs" />
+    <Compile Include="Deprecated\DBCompatibilityProxies\SqlServerConnectionManager.cs" />
+    <Compile Include="SqlSessionStateStore.cs" />
+    <Compile Include="SessionConfiguration.cs" />
+    <Compile Include="Sql\CheckReadOnlyEntities.cs" />
+    <Compile Include="Sql\PrepareQueryForCount.cs" />
+    <Compile Include="Sql\ReplaceEntities.cs" />
+    <Compile Include="Sql\SimpleSQLParser.cs" />
+    <Compile Include="StaticEntityRuntime.cs" />
+    <Compile Include="UnhandledExceptionModule.cs" />
+    <Compile Include="CompilerMessageGenerator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Context.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FormatInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Deprecated\DBCompatibilityProxies\DBHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Deprecated\DBCompatibilityProxies\DBTransactionManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Debugger.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DebuggerClient.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DotNetEnvironment.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Exception.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GenericExtendedActions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HEUrlBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IBookmarkableURL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ICompiler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IISAdmin.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="INegotiateTabIndexes.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Info.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CodeInjection\JavaScript.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IPing.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Db\IRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="JavaScriptManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Log\Log.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OSHttpValueCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Ping.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Db\RecordList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RunningInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServiceCenterClient.cs">
+      <SubType>code</SubType>
+    </Compile>
+    <Compile Include="Settings.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SmsClasses.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SMSConnector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SmsEncoder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Timer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RuntimePlatformUtils.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Web\IRecordRtWidget.cs" />
+    <Compile Include="Web\IListBoxRtWidget.cs" />
+    <Compile Include="Web\IListRecordRtWidget.cs" />
+    <Compile Include="Web\IRtCustomWidget.cs" />
+    <Compile Include="Web\UnknownWidgetRtWidget.cs" />
+    <Compile Include="Web\IRtWidget.cs" />
+    <Compile Include="Web\IEmailScreen.cs" />
+    <Compile Include="Web\IOSControl.cs" />
+    <Compile Include="Web\IScreen.cs" />
+    <Compile Include="Web\IWebListRecordWidget.cs" />
+    <Compile Include="Web\IWebScreen.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="XCopy.cs" />
+    <EmbeddedResource Include="Debugger.resx">
+      <DependentUpon>Debugger.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent></PreBuildEvent>
+    <PostBuildEvent></PostBuildEvent>
+  </PropertyGroup>
+</Project>

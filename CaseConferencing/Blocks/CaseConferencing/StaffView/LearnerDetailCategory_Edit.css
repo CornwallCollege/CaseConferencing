@@ -1,0 +1,31 @@
+﻿.ContentDetailWrapper{
+    background-color:white;
+    box-shadow: 0px 1px 2px #b1b1b1;
+    border: solid 1px #DADADA;
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 20px;
+}
+
+.TitleCategory
+{
+    font-size:18px;
+    padding: 0px 0px 10px;
+    color: #757575;
+    text-shadow: 1px 1px 2px #dadada;
+}
+
+.ButtonPopup{
+    color:#757575;
+    font-size: 12px;
+    font-weight: 300;
+    display:inline-block; 
+    border: 1px solid #E8E8E8;
+    background-color:#F3F3F3;
+    cursor:pointer;
+    border-radius: 3px;
+    Padding: 6px 10px;
+    cursor:pointer;
+    margin-left: 36px;
+    font-size:13px;
+}

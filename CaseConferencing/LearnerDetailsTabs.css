@@ -1,0 +1,61 @@
+﻿.PlannedLearningHoursWrapper{
+    text-align:center;
+    background-color: #FFFFFF;
+    margin:20px;
+    width:45%;
+    border-style: solid;
+    border-width:1px;
+    border-color: #C0C0C0;  
+}
+
+.PlannedLearningHoursValue{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.note{
+    font-size: 12px;
+    color:darkgray;
+    border-style: solid;
+    border-width:1px;
+    border-color:#C0C0C0;
+    padding-top:5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    
+    margin-left:20px;
+    margin-right:20px;
+}
+
+.HistoricalEnrolmentsWrapper{
+    margin-top:20px;
+}
+.HistoricalEnrolmentsLink{
+    text-align: center;
+    
+}
+
+.TargetWrapper
+{
+    /*padding: 10px;*/
+    background-color: #f8f8f8;
+    border: solid 1px #DADADA;
+    box-shadow: 0px 0px 12px #b1b1b1;
+    border: solid 1px #B1B1B1;
+}
+
+.TitleTargetHeader
+{
+    padding: 15px; 
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 18px;
+    text-shadow: 0px 1px 2px #dadada;
+    box-shadow: 0px 0px 12px #b1b1b1;
+}
+
+.DisplayNone
+{
+    display: none;
+}

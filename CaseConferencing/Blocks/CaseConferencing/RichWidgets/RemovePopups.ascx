@@ -1,0 +1,3 @@
+﻿<%@ Control Language="c#" AutoEventWireup="false" Inherits="proxy_CaseConferencing_RichWidgets.Flows.FlowRichWidgets.WBlkRemovePopups,CaseConferencingReferencesProxy" TargetSchema="http://schemas.microsoft.com/intellisense/ie5"%>
+<%@ Register TagPrefix="client" TagName="node" Src="..\..\RichWidgets\RichWidgets\RemovePopups.ascx" %>
+<client:node id="block" runat="server" OnBindDelegates="BindProxyDelegates" />

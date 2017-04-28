@@ -1,0 +1,60 @@
+﻿.WrapperSession
+{
+    font-size: 14px;
+    cursor: pointer;
+    background-color: white;
+    box-shadow: 0px 1px 2px #b1b1b1;
+    border: solid 1px #DADADA;
+    border-radius: 3px;
+    position: fixed;
+    right: 0px;
+    width: 150px;
+    z-index: 10;
+    margin-top: 10px;
+}
+
+.WrapperSessionTitle
+{
+    text-shadow: 0px 1px 2px #dadada;
+    color: white;
+    background-color: #1F3D60;
+    padding: 5px;
+    font-size: 14px;
+}
+
+.WrapperSession .ContentWrapper
+{
+    padding: 10px;
+}
+
+.ShowTab
+{
+    width: 20px;
+    height: 40px;
+    position: absolute;
+    left: -22px;
+    cursor: pointer;
+    border: 1px solid #CCC;
+    border-right: none;
+    top:40px;
+    line-height: 40px;
+}
+.ShowTab:hover
+{
+    background-color: #DADADA;
+}
+.ShowTabHidden
+{
+    width: 20px;
+    height: 80px;
+    position: fixed;
+    right: 0px;
+    cursor: pointer;
+    border: 1px solid #CCC;
+    border-right: none;
+    line-height: 80px;
+}
+.ShowTabHidden:hover
+{
+    background-color: #DADADA;
+}

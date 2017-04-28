@@ -1,0 +1,255 @@
+﻿.LearnerDetailsOverviewWrapper{
+     border: solid 1px #DADADA;
+     position: relative;
+}
+
+
+.LearnerDetailsRAGGreen {
+    display: inline-block;
+    height: 204px;
+    width: 10px;
+    background-image: url('../../../img/green_marker.png?667');
+    background-repeat: repeat;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    background-color: #84AA19;
+    vertical-align: top;
+    background-size: cover;
+}
+
+.LearnerDetailsRAGBlue {
+    display: inline-block;
+    height: 204px;
+    width: 10px;
+    background-image: url('../../../img/blue_marker.png?667');
+    background-repeat: repeat;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    background-color:#1F3D60;
+    vertical-align: top;
+    background-size: cover;
+}
+
+
+.LearnerDetailsRAGAmber {
+    display: inline-block;
+    height: 204px;
+    width: 10px;
+    background-image: url('../../../img/amber_marker.png?667');
+    background-repeat: repeat;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    background-color: #F5A623;
+    vertical-align: top;
+    background-size: cover;
+}
+
+.LearnerDetailsRAGRed {
+    display: inline-block;
+    height: 204px;
+    width: 10px;
+    background-image: url('../../../img/red_marker.png?667');
+    background-repeat: repeat;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    background-color: #D0021B;
+    vertical-align: top;
+    background-size: cover;
+}
+
+.LearnerDetailsSilverRAG{
+    display: inline-block;
+    height: 204px;
+    width: 10px;
+    background-image: url('../../../img/silver_marker.png?667');
+    background-repeat: repeat;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    background-color: #C0C0C0;
+    vertical-align: top;
+    background-size: cover;
+}
+
+.LearnerOverviewPhotoWrapper {
+    display: inline-block;
+    height: 132px; 
+    margin:20px 16px 20px 34px;
+}
+
+.LearnerPhotoDetails {
+    height: 130px; 
+    width: 101px;
+    border: solid 1px #84AA19;
+    border-radius: 10px;
+    
+}
+
+.LearnerOverviewInfo {
+    display: inline-block;
+    margin-top:24px;
+    margin-left:20px;
+    width: 885px;
+    border:8px;
+}
+
+
+.SNameDetails {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 24px;
+    width: 778px;
+}
+
+.SCarearDetails {
+    white-space: nowrap;
+    font-size: 16px;
+    font-weight: 700;
+    color:#4E4C4C
+}
+
+.AttendanceDetails {
+    font-size: 12px;
+    font-weight: 600;
+    color:#4E4C4C;
+    margin-top: 20px;
+    
+}
+
+.SuportDetails {
+    font-size: 12px;
+    font-weight: 600;
+    color:#4E4C4C;
+    margin-top: 20px;
+    width:500px;
+    height: 70px;
+}
+
+
+.IndicatorDetailGreen {
+    display: inline-block;
+    margin-left: 6px;
+    margin-right: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16px;
+    border: solid 1px #DDEDCF;
+    color: #A3BE87;
+    border-radius: 50px;
+    padding: 2px 4px;
+    width: 90px;
+}
+
+.IndicatorDetailGray {
+    display: inline-block;
+    margin-left: 6px;
+    margin-right: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16px;
+    border: solid 1px #DADADA;
+    color: #DADADA;
+    border-radius: 50px;
+    padding: 2px 4px;
+    width: 90px;
+}
+
+.IndicatorDetailAmber {
+    display: inline-block;
+    margin-left: 6px;
+    margin-right: 6px;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 14px;
+    border: solid 2px #F5A623;
+    color: #F5A623;
+    border-radius: 50px;
+    padding: 2px 4px;
+    width: 90px;
+}
+
+.IndicatorDetailRed {
+    display: inline-block;
+    margin-left: 6px;
+    margin-right: 6px;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 14px;
+    border: solid 2px #D0021B;
+    color: #D0021B;
+    border-radius: 50px;
+    padding: 2px 4px;
+    width: 90px;
+}
+
+
+.IndicatorSupport {
+    display: inline-block;
+    margin-left: 3px;
+    margin-right: 3px;
+    margin-bottom: 2px;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 14px;
+    border: solid 1px #004B83;
+    color: #004B83;
+    border-radius: 50px;
+    padding: 2px 4px;
+
+}
+
+
+.LearnerOverviewRight {
+    display: inline-block;
+    height: 125px; 
+    margin:20px;
+    margin-left:40px;
+    width: 450px;
+    border:0px;
+}
+
+.SaveGuarding {
+    width: 170px;
+    font-size: 16px;
+    font-weight: 700;
+    color:#4E4C4C;
+    line-height: 30px;
+}
+
+.LabelsDetails
+{
+   line-height: 22px;
+   width:100px;
+   font-weight: 700;
+   color:#4E4C4C;
+}
+
+.ContactSection {
+    font-size:12px;
+    margin-bottom: 0px;
+    vertical-align: top;
+    padding: 0px;
+    margin-top:15px;
+}
+
+.ContactBlock {
+    margin-right: 40px;
+    display: inline-block;
+    vertical-align: top;
+    line-height: 19px;
+    color: #666;
+}
+
+.ContactTitle {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: black;
+    border-bottom: dotted 1px #ccc;
+    padding-bottom: 2px;
+}
+
+a {
+    color:#666;
+    
+}

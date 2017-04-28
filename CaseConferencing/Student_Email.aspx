@@ -1,0 +1,16 @@
+﻿<%@ Page Language="c#" Codebehind="Student_Email.aspx.cs" AutoEventWireup="false" Inherits="ssCaseConferencing.Flows.FlowEmail_Templates.ScrnStudent_Email" EnableViewState="false" EnableSessionState="false" %><%@ Register TagPrefix="osweb" Namespace="OutSystems.HubEdition.WebWidgets" Assembly="OutSystems.HubEdition.WebWidgets" %><%@ Assembly Name="OutSystems.WidgetsRuntimeAPI" %><%@ Import namespace="ssCaseConferencing" %><%@ Import namespace="OutSystems.HubEdition.RuntimePlatform" %>
+<%= CaseConferencing_Properties.DocType %>
+<html xmlns="http://www.w3.org/1999/xhtml" >
+  <head runat="server">
+	<title><%= HttpUtility.HtmlEncode (Title) %></title>
+    <meta http-equiv="Content-Type" content="<%= "text/html; charset=" + "utf-8" %>" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+<%= "\n" + GetStyleSheetIncludes() %>
+  </head>
+  <osweb:Body runat="server">
+    <osweb:Form id="WebForm1" method="post"  action="-" runat="server">
+<osweb:Container runat="server" id="wt_EmailContainer20" anonymous="true" onDataBinding="cnt_EmailContainer20_onDataBinding" GridCssClasses="OSFillParent" align="center"></osweb:Container><osweb:Container runat="server" id="wt_EmailContainer12" anonymous="true" onDataBinding="cnt_EmailContainer12_onDataBinding" GridCssClasses="OSFillParent"><osweb:Table runat="server" id="wt_Table6" anonymous="true" GridCssClasses="OSFillParent"><osweb:Tr runat="server"><osweb:Td runat="server" id="wt_TableCell3" anonymous="true"><osweb:DynamicImage runat="server" id="wt_Image1" anonymous="true" StaticSource="<%# Images.email_header_Source() %>" ImageType="Static" StaticPath="<%# AppUtils.Instance.getImagePath() %>" alt=""/></osweb:Td></osweb:Tr><osweb:Tr runat="server"><osweb:Td runat="server" id="wt_TableCell4" anonymous="true"><osweb:Table runat="server" id="wt_Table13" anonymous="true" onDataBinding="wt_Table13_onDataBinding" GridCssClasses="OSInline" style="width: 768px"><osweb:Tr runat="server"><osweb:Td runat="server" id="wt_TableCell10" anonymous="true" onDataBinding="wt_TableCell10_onDataBinding"><osweb:Container runat="server" id="wt_EmailContainer2" anonymous="true" onDataBinding="cnt_EmailContainer2_onDataBinding" GridCssClasses="OSFillParent" style="margin-top: 10px"><osweb:PlaceHolder runat="server"><%# OutSystems.HubEdition.RuntimePlatform.RuntimePlatformUtils.ExtendedHtmlEncode(expression_InlineExpression5()) %></osweb:PlaceHolder></osweb:Container></osweb:Td></osweb:Tr><osweb:Tr runat="server"><osweb:Td runat="server" id="wt_TableCell19" anonymous="true" onDataBinding="wt_TableCell19_onDataBinding"><osweb:Container runat="server" id="wt_EmailContainer14" anonymous="true" onDataBinding="cnt_EmailContainer14_onDataBinding" GridCssClasses="OSFillParent"><osweb:PlaceHolder runat="server"><%# "<br/>" %></osweb:PlaceHolder><osweb:PlaceHolder runat="server"><%# "Best Regards,<br/>" %></osweb:PlaceHolder><osweb:PlaceHolder runat="server"><%# "<br/>" %></osweb:PlaceHolder><osweb:PlaceHolder runat="server"><%# "Cornwall College" %></osweb:PlaceHolder></osweb:Container></osweb:Td></osweb:Tr></osweb:Table></osweb:Td></osweb:Tr></osweb:Table></osweb:Container><osweb:DummySubmitLink runat="server" id="Dummy_Submit_Link"/>
+</osweb:Form>
+  </osweb:Body>
+</html>

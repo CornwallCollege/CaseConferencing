@@ -1,0 +1,63 @@
+﻿
+.SessionEditWrapper
+{
+   /* border: solid 1px #DADADA;*/
+    /*padding: 10px;*/
+    
+}
+
+.ColumnStyle
+{
+    background-color: #f8f8f8;
+    /*padding-left: 10px;*/
+
+    border: solid 1px #DADADA;
+}
+
+.ColumnBlock
+{
+    padding-bottom: 10px;
+}
+
+.SelectedCard
+{
+    background-color: white;
+    color: rgb(76, 76, 76);
+    -moz-box-shadow: 0px -2px 17px #000000;
+    -webkit-box-shadow: 0px -2px 17px #000000;
+    box-shadow: 0px -2px 17px #000000;
+}
+
+
+.CardCurriculumLead
+{
+    font-size: 14px;
+    cursor: pointer;
+    background-color: white;
+    box-shadow: 0px 1px 2px #b1b1b1;
+    border: solid 1px #DADADA;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 10px;
+    border-radius: 3px; 
+}
+
+.CardCurriculumLeadTitle
+{
+    color: white;
+    background-color: #1F3D60;
+    padding: 5px;
+    font-size: 14px;
+}
+
+.CardTitle
+{
+    font-weight: 700;
+}
+
+
+.CardCurriculumLead:hover {
+    -moz-box-shadow: 0px -2px 17px #000000;
+    -webkit-box-shadow: 0px -2px 17px #000000;
+    box-shadow: 0px -2px 17px #000000;
+}

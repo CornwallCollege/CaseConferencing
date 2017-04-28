@@ -1,0 +1,36 @@
+﻿.PopTitle
+{
+    font-size: 18px;
+    text-shadow: 0px 1px 2px #dadada;
+    color: #757575;
+}
+.CCCardPopup
+{
+    cursor: pointer;
+    border: 1px solid #1F3D60;
+    height: 160px;
+}
+
+.CCCardPopup .CardTitlePopup
+{
+    background-color: #1F3D60;
+    color: white;
+    padding: 2px;
+    font-size: 12px;
+    min-height: 35px;
+}
+
+
+.CCCardPopup .CardWhitePopup {
+    background-color: #FFF;
+    color: #333;
+    padding: 0px;
+}
+
+
+.CCCardPopup:hover {
+    background-color: rgb(246, 246, 246);
+    -moz-box-shadow: 0px -2px 17px #000000;
+    -webkit-box-shadow: 0px -2px 17px #000000;
+    box-shadow: 0px -2px 17px #000000;
+}

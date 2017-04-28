@@ -1,0 +1,209 @@
+﻿.ClusterInfoWrapper{
+     border: solid 1px #DADADA;
+}
+
+.ColumnStyle
+{
+    position: relative;
+    background-color: #f8f8f8;
+    /*padding-left: 10px;*/
+    width: 300px;
+    border: solid 1px #DADADA;
+}
+.CardCurriculumLeadTitle:after
+{
+    background: #1F3D60;
+    content: "";
+    z-index: 10;
+    width: 20px;
+    height: 20px;
+    margin-top: 4px;
+    right: 6px;
+    top: 0px;
+    left:291px;
+    position: absolute;
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    border-top: 1px solid #e2e2e2;
+    border-right: 1px solid #e2e2e2; 
+}
+.ColumnBlock
+{
+    padding-bottom: 10px;
+}
+
+.SelectedCard
+{
+    font-size: 14px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 10px;
+    border-radius: 3px;
+    background-color: white;
+    color: rgb(76, 76, 76);
+    -moz-box-shadow: 0px -2px 17px #000000;
+    -webkit-box-shadow: 0px -2px 17px #000000;
+    box-shadow: 0px -2px 17px #000000;
+}
+
+.HeaderColumnStyle
+{
+
+    cursor:pointer;
+    font-size:18px;
+    text-shadow: 0px 1px 2px #dadada;
+    color:white;
+    
+}
+
+
+/*Cards*/
+.CardCurriculumLead
+{
+    font-size: 14px;
+    cursor: pointer;
+    background-color: white;
+    box-shadow: 0px 1px 2px #b1b1b1;
+    border: solid 1px #DADADA;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 10px;
+    border-radius: 3px; 
+}
+
+.CardCurriculumLeadTitle
+{
+    color: white;
+    background-color: #1F3D60;
+    padding: 5px;
+    font-size: 14px;
+}
+
+.CardTitle
+{
+    font-weight: 700;
+    min-Height:40px;
+}
+
+
+.CardCurriculumLead:hover {
+    -moz-box-shadow: 0px -2px 17px #000000;
+    -webkit-box-shadow: 0px -2px 17px #000000;
+    box-shadow: 0px -2px 17px #000000;
+}
+
+/*CARD TEAM*/
+
+.CardTeam
+{
+    border: 1px solid #366CAB;
+    font-size: 12px;
+    cursor: pointer;
+}
+.CardTeamTitle
+{
+    color: white;
+    background-color: #366CAB;
+    padding: 5px;
+    font-size: 14px;
+}
+.CardTeamTitle:after
+{
+    background: #366CAB;
+    content: "";
+    z-index: 10;
+    width: 20px;
+    height: 20px;
+    margin-top: 4px;
+    right: 6px;
+    top: 0px;
+    left:291px;
+    position: absolute;
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    border-top: 1px solid #e2e2e2;
+    border-right: 1px solid #e2e2e2; 
+}
+
+.CardTeamValues
+{
+    background-color: #FFF;
+    color: #333;
+    padding: 10px;
+}
+
+.CardTeam:hover {
+    -moz-box-shadow: 0px -2px 17px #000000;
+    -webkit-box-shadow: 0px -2px 17px #000000;
+    box-shadow: 0px -2px 17px #000000;
+}
+
+/*CARD Course*/
+
+
+.CardCourse
+{
+    border: 1px solid #00A8C4;
+    font-size: 12px;
+    cursor: pointer;
+}
+.CardCourseTitle
+{
+    color: white;
+    background-color: #00A8C4;
+    padding: 5px;
+    font-size: 14px;
+}
+
+/*
+.CardCourseTitle:after
+{
+    background: #00A8C4;
+    content: "";
+    z-index: 10;
+    width: 20px;
+    height: 20px;
+    margin-top: 4px;
+    right: 6px;
+    top: 0px;
+    left:291px;
+    position: absolute;
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    border-top: 1px solid #e2e2e2;
+    border-right: 1px solid #e2e2e2; 
+}*/
+
+.CardCourseValues
+{
+    background-color: #FFF;
+    color: #333;
+    padding: 10px;
+}
+
+.CardCourse:hover {
+    -moz-box-shadow: 0px -2px 17px #000000;
+    -webkit-box-shadow: 0px -2px 17px #000000;
+    box-shadow: 0px -2px 17px #000000;
+}
+
+.WrapperNotes
+{
+    position:relative;
+}
+
+.TitlesNotes
+{
+    font-size: 12px;
+    color: #B1B1B1;
+    line-height: 12px;
+}

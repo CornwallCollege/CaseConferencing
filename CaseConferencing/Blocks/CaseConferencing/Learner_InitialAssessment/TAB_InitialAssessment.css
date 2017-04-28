@@ -1,0 +1,117 @@
+﻿select 
+{
+    font-size:14px !important;
+    height:25px !important;
+    line-height:20px !important;
+    padding:2px !important;  
+}
+
+.StudenLogDetail
+{
+    display:inline-block;
+    width:600px;
+    height:70px;
+    margin-top:15px;
+    border: 1px solid #E8E8E8;
+
+}
+
+.TitleLog
+{
+    font-size:17px;
+    padding: 15px;
+    border-top: solid 1px #dadada;
+}
+.LearnerLog {
+    border: 0px;
+    line-height: 10px;
+    font-size: 14px;
+    border-bottom:solid 1px #b1b1b1;
+    padding-left: 15px;
+
+}
+
+.ContentDetailWrapper{
+    background-color:white;
+    box-shadow: 0px 0px 12px #b1b1b1;
+    border: solid 1px #B1B1B1;
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 20px;
+}
+
+.ContentWrapper
+{
+    font-size: 13px;
+    padding: 5px;
+    background-color: #F8F8F8;
+    border-top: solid 1px #dadada;
+}
+
+.TextSmallLine
+{
+    font-size: 12px;
+    color:#C2C2C2;
+}
+
+.InputStyle
+{
+    font-size: 11px;
+    padding: 3px;
+}
+
+.ValueReadOnly
+{
+   padding-left: 18px;
+    height: 20px;
+}
+
+.TableAlign td
+{
+    vertical-align: middle;
+}
+
+.vertical-text {
+    transform: rotate(340deg);
+}
+.IAHeader
+{
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 15px;
+    height: 15px;
+}
+
+.IAColumn
+{
+    font-weight: bold;
+    font-size: 12px;
+    background-color: #;
+}
+
+.IATable
+{
+    background: white;
+    border: 1px solid #DADADA;
+    border-radius: 5px;
+}
+
+.IATable .IAHeader td
+{
+
+    height: 20px;
+    line-height: 20px;
+    padding: 3px;
+    border: 1px solid #DADADA;
+}
+
+
+.IATable td
+{
+
+    height: 50px;
+    line-height: 50px;
+    padding: 3px;
+    border: 1px solid #DADADA;
+}
+

@@ -1,0 +1,72 @@
+﻿/*
+    The CSS of the client side tabs.
+*/
+.Tabs {
+    margin-top: 10px;
+    min-height: 80px;
+}
+.Tabs_header {
+    display: table;
+    width: 100%;
+}
+
+.Tabs__tab {
+    display: table-cell;
+    cursor: pointer;
+    padding: 5px 0px;
+    text-align: center;
+    vertical-align: middle;
+  
+    background: #e4e4e4;
+    border: solid 1px #ccc;   
+    border-left-width: 0;
+}
+
+
+.Tabs__tab:first-child {
+    border-left-width: 1px;
+}
+
+.Tabs__tab:hover {
+    background: #FFFFFF;
+}
+
+.Tabs__tab.active {
+    background: #FFF;
+    cursor: default;
+    border-bottom-color: #FFF;
+}
+
+.Tabs_body {
+    border: solid 1px #ccc;
+    border-top: 0px;
+    padding: 10px;
+    
+    z-index: 0;
+    position: relative;
+    margin-top: 0px;
+}
+
+.Tabs__content {
+    display: block;
+    opacity: 0; 
+
+    height: 0;
+
+
+    overflow: hidden;
+
+
+    margin-top: 0px;
+
+}
+
+.Tabs__content.active {
+    opacity: 1;
+    height: auto;
+}
+
+.Tabs__Loading{
+    padding: 25px 40px;
+}
+

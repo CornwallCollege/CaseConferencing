@@ -1,0 +1,3 @@
+﻿<%@ Control Language="c#" AutoEventWireup="false" Inherits="proxy_CaseConferencing_ThemeProvider.Flows.FlowMainLayouts.WBlkMenu_Backoffice,CaseConferencingReferencesProxy" TargetSchema="http://schemas.microsoft.com/intellisense/ie5"%>
+<%@ Register TagPrefix="client" TagName="node" Src="..\..\ThemeProvider\MainLayouts\Menu_Backoffice.ascx" %>
+<client:node id="block" runat="server" OnBindDelegates="BindProxyDelegates" />

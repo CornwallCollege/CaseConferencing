@@ -1,0 +1,3 @@
+C:\temp\CaseConferencing_v112_Source\SMSInterface\bin\Debug\SMSInterface.csprojResolveAssemblyReference.cache
+C:\temp\CaseConferencing_v112_Source\SMSInterface\bin\Debug\OutSystems.HubEdition.SMS.dll
+C:\temp\CaseConferencing_v112_Source\SMSInterface\bin\Debug\OutSystems.HubEdition.SMS.pdb

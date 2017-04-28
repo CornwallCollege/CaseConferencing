@@ -1,0 +1,63 @@
+﻿.OSFillParent { 
+	display: block;
+	width: 100%;
+}
+
+table.OSFillParent {
+	display: table;
+}
+
+input.OSFillParent,
+button.OSFillParent,
+select.OSFillParent,
+textarea.OSFillParent {
+	display: inline-block;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+.OSInline {
+	display: inline-block;
+	*zoom: 1;
+	*display: inline;
+	vertical-align: top;
+}
+
+table.OSInline {
+	display: inline-table;
+}
+
+.OSAutoMarginTop {
+	margin-top: 10px;
+}
+
+table[class*="ThemeGrid_Width"] {
+	display: inline-table;
+	vertical-align: top;
+}
+
+div[class*="ThemeGrid_Width"] {
+	vertical-align: top;
+}
+
+th[class*="ThemeGrid_Width"],
+td[class*="ThemeGrid_Width"] {
+	display: table-cell;
+}
+
+[class*="ThemeGrid_Width"] {
+	display: inline-block;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	*zoom: 1;
+	*display: inline;
+}
+
+.ThemeGrid_Container {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+

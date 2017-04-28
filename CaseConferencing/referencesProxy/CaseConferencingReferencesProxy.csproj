@@ -1,0 +1,302 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F3BEB653-9E30-4E65-A8BB-3192461CBF8D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>ssCaseConferencing</RootNamespace>
+    <AssemblyName>CaseConferencingReferencesProxy</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+    <WarningLevel>1</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <WarningLevel>1</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Core">
+      <Name>System.Core</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Web">
+      <Name>System.Web</Name>
+    </Reference>
+    <Reference Include="System.Web.Services">
+      <Name>System.Web.Services</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <ProjectReference Include="..\..\OutSystems.RuntimeCommon\OutSystems.RuntimeCommon.csproj">
+      <Project>{A99F44D3-9D76-4AA1-A833-BA2D283AD22E}</Project>
+      <Name>OutSystems.RuntimeCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\RuntimePlatform\RuntimePlatform.csproj">
+      <Project>{EFB0D1E3-076D-4F16-A595-B33BFC5B3F18}</Project>
+      <Name>RuntimePlatform</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SMSInterface\SMSInterface.csproj">
+      <Project>{66D6B91F-CCF4-495D-89FD-0290CBC9D06E}</Project>
+      <Name>SMSInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\WebWidgets\WebWidgets.csproj">
+      <Project>{0F14B756-1F80-421A-9837-79B64857331C}</Project>
+      <Name>WebWidgets</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\WidgetsRuntimeAPI\WidgetsRuntimeAPI.csproj">
+      <Project>{F686984C-5ABE-4529-9AE1-4BBF1EA7F93E}</Project>
+      <Name>WidgetsRuntimeAPI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PluginWidgets\OutSystems.Plugin.Widgets.Runtime.csproj">
+      <Project>{E1542247-C244-4EC3-99F1-F39717106886}</Project>
+      <Name>OutSystems.Plugin.Widgets.Runtime</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DatabaseAbstractionLayer\DatabaseAbstractionLayer.csproj">
+      <Project>{E451FEC9-2B6B-45A2-8AB9-57196F4557E8}</Project>
+      <Name>DatabaseAbstractionLayer</Name>
+    </ProjectReference>
+    <Reference Include="CornwallCollegeData.dll">
+      <Name>CornwallCollegeData.dll</Name>
+      <HintPath>..\bin\CornwallCollegeData.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="CornwallCollegeData.CsRESTExpose.dll">
+      <Name>CornwallCollegeData.CsRESTExpose.dll</Name>
+      <HintPath>..\bin\CornwallCollegeData.CsRESTExpose.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UserPermissions.dll">
+      <Name>UserPermissions.dll</Name>
+      <HintPath>..\bin\UserPermissions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="OutSystems.NssAuthentication.dll">
+      <Name>OutSystems.NssAuthentication.dll</Name>
+      <HintPath>..\bin\OutSystems.NssAuthentication.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="HtmlToPdfConverter.dll">
+      <Name>HtmlToPdfConverter.dll</Name>
+      <HintPath>..\bin\HtmlToPdfConverter.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="OutSystems.NssZip.dll">
+      <Name>OutSystems.NssZip.dll</Name>
+      <HintPath>..\bin\OutSystems.NssZip.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="NumberSlider.dll">
+      <Name>NumberSlider.dll</Name>
+      <HintPath>..\bin\NumberSlider.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="OutSystems.NssCC_VersionOne_Service.dll">
+      <Name>OutSystems.NssCC_VersionOne_Service.dll</Name>
+      <HintPath>..\bin\OutSystems.NssCC_VersionOne_Service.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="CornwallCollegeFunct.dll">
+      <Name>CornwallCollegeFunct.dll</Name>
+      <HintPath>..\bin\CornwallCollegeFunct.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Charts.dll">
+      <Name>Charts.dll</Name>
+      <HintPath>..\bin\Charts.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Users.dll">
+      <Name>Users.dll</Name>
+      <HintPath>..\bin\Users.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ThemeProvider.dll">
+      <Name>ThemeProvider.dll</Name>
+      <HintPath>..\bin\ThemeProvider.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Chosen.dll">
+      <Name>Chosen.dll</Name>
+      <HintPath>..\bin\Chosen.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="RichWidgets.dll">
+      <Name>RichWidgets.dll</Name>
+      <HintPath>..\bin\RichWidgets.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="OutSystems.NssHtmlConvertToPdf.dll">
+      <Name>OutSystems.NssHtmlConvertToPdf.dll</Name>
+      <HintPath>..\bin\OutSystems.NssHtmlConvertToPdf.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Hunspell.dll">
+      <Name>Hunspell.dll</Name>
+      <HintPath>..\bin\Hunspell.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="BaseTheme.dll">
+      <Name>BaseTheme.dll</Name>
+      <HintPath>..\bin\BaseTheme.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="OutSystems.NssHTTPRequestHandler.dll">
+      <Name>OutSystems.NssHTTPRequestHandler.dll</Name>
+      <HintPath>..\bin\OutSystems.NssHTTPRequestHandler.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="OutSystems.NssMaintainScrollPositionOnPostback.dll">
+      <Name>OutSystems.NssMaintainScrollPositionOnPostback.dll</Name>
+      <HintPath>..\bin\OutSystems.NssMaintainScrollPositionOnPostback.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="OutSystems.NssText.dll">
+      <Name>OutSystems.NssText.dll</Name>
+      <HintPath>..\bin\OutSystems.NssText.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="OutSystems.NssUniflow_Extension.dll">
+      <Name>OutSystems.NssUniflow_Extension.dll</Name>
+      <HintPath>..\bin\OutSystems.NssUniflow_Extension.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="CommonFunctions.dll">
+      <Name>CommonFunctions.dll</Name>
+      <HintPath>..\bin\CommonFunctions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ForSkillsConnector.dll">
+      <Name>ForSkillsConnector.dll</Name>
+      <HintPath>..\bin\ForSkillsConnector.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SilkUIFramework.dll">
+      <Name>SilkUIFramework.dll</Name>
+      <HintPath>..\bin\SilkUIFramework.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="CaseConferencingCore.dll">
+      <Name>CaseConferencingCore.dll</Name>
+      <HintPath>..\bin\CaseConferencingCore.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TwilioCon.dll">
+      <Name>TwilioCon.dll</Name>
+      <HintPath>..\bin\TwilioCon.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ProMonitorConnector.dll">
+      <Name>ProMonitorConnector.dll</Name>
+      <HintPath>..\bin\ProMonitorConnector.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="eSpace_CornwallCollegeData_proxy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="eSpace_UserPermissions_proxy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Extension_Authentication_proxy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="eSpace_HtmlToPdfConverter_proxy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Extension_Zip_proxy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="eSpace_NumberSlider_proxy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Extension_CC_VersionOne_Service_proxy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="eSpace_CornwallCollegeFunct_proxy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="eSpace_Charts_proxy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="eSpace_Users_proxy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="eSpace_ThemeProvider_proxy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="eSpace_Chosen_proxy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="eSpace_RichWidgets_proxy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Extension_HtmlConvertToPdf_proxy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="eSpace_Hunspell_proxy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="eSpace_BaseTheme_proxy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Extension_HTTPRequestHandler_proxy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Extension_MaintainScrollPositionOnPostback_proxy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Extension_Text_proxy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Extension_Uniflow_Extension_proxy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="eSpace_CommonFunctions_proxy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="eSpace_ForSkillsConnector_proxy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="eSpace_SilkUIFramework_proxy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="eSpace_CaseConferencingCore_proxy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="eSpace_TwilioCon_proxy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="eSpace_ProMonitorConnector_proxy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

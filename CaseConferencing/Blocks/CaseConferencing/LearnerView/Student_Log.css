@@ -1,0 +1,33 @@
+﻿.StudenLogDetail
+{
+    display:inline-block;
+    width:600px;
+    height:70px;
+    margin-top:15px;
+    border: 1px solid #E8E8E8;
+
+}
+
+.TitleLog
+{
+    font-size:17px;
+    padding: 15px;
+    border-top: solid 1px #dadada;
+}
+.LearnerLog {
+    border: 0px;
+    line-height: 10px;
+    font-size: 14px;
+    border-bottom:solid 1px #b1b1b1;
+    padding-left: 15px;
+
+}
+
+.ContentDetailWrapper{
+    background-color:white;
+    box-shadow: 0px 0px 12px #b1b1b1;
+    border: solid 1px #B1B1B1;
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 20px;
+}

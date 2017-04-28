@@ -1,0 +1,86 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaseConferencing", "CaseConferencing\CaseConferencing.csproj", "{CD3096B6-9D30-4623-AA05-E93CB56CEF09}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaseConferencingReferencesProxy", "CaseConferencing\referencesProxy\CaseConferencingReferencesProxy.csproj", "{F3BEB653-9E30-4E65-A8BB-3192461CBF8D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuntimePlatform", "RuntimePlatform\RuntimePlatform.csproj", "{EFB0D1E3-076D-4F16-A595-B33BFC5B3F18}"
+	ProjectSection(WebsiteProperties) = preProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseAbstractionLayer", "DatabaseAbstractionLayer\DatabaseAbstractionLayer.csproj", "{E451FEC9-2B6B-45A2-8AB9-57196F4557E8}"
+	ProjectSection(WebsiteProperties) = preProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMSInterface", "SMSInterface\SMSInterface.csproj", "{66D6B91F-CCF4-495D-89FD-0290CBC9D06E}"
+	ProjectSection(WebsiteProperties) = preProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OutSystems.RuntimeCommon", "OutSystems.RuntimeCommon\OutSystems.RuntimeCommon.csproj", "{A99F44D3-9D76-4AA1-A833-BA2D283AD22E}"
+	ProjectSection(WebsiteProperties) = preProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WidgetsRuntimeAPI", "WidgetsRuntimeAPI\WidgetsRuntimeAPI.csproj", "{F686984C-5ABE-4529-9AE1-4BBF1EA7F93E}"
+	ProjectSection(WebsiteProperties) = preProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebWidgets", "WebWidgets\WebWidgets.csproj", "{0F14B756-1F80-421A-9837-79B64857331C}"
+	ProjectSection(WebsiteProperties) = preProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OutSystems.Plugin.Widgets.Runtime", "PluginWidgets\OutSystems.Plugin.Widgets.Runtime.csproj", "{E1542247-C244-4EC3-99F1-F39717106886}"
+	ProjectSection(WebsiteProperties) = preProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E1542247-C244-4EC3-99F1-F39717106886}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1542247-C244-4EC3-99F1-F39717106886}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1542247-C244-4EC3-99F1-F39717106886}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1542247-C244-4EC3-99F1-F39717106886}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F14B756-1F80-421A-9837-79B64857331C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F14B756-1F80-421A-9837-79B64857331C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F14B756-1F80-421A-9837-79B64857331C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F14B756-1F80-421A-9837-79B64857331C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F686984C-5ABE-4529-9AE1-4BBF1EA7F93E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F686984C-5ABE-4529-9AE1-4BBF1EA7F93E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F686984C-5ABE-4529-9AE1-4BBF1EA7F93E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F686984C-5ABE-4529-9AE1-4BBF1EA7F93E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A99F44D3-9D76-4AA1-A833-BA2D283AD22E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A99F44D3-9D76-4AA1-A833-BA2D283AD22E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A99F44D3-9D76-4AA1-A833-BA2D283AD22E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A99F44D3-9D76-4AA1-A833-BA2D283AD22E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66D6B91F-CCF4-495D-89FD-0290CBC9D06E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66D6B91F-CCF4-495D-89FD-0290CBC9D06E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66D6B91F-CCF4-495D-89FD-0290CBC9D06E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66D6B91F-CCF4-495D-89FD-0290CBC9D06E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E451FEC9-2B6B-45A2-8AB9-57196F4557E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E451FEC9-2B6B-45A2-8AB9-57196F4557E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E451FEC9-2B6B-45A2-8AB9-57196F4557E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E451FEC9-2B6B-45A2-8AB9-57196F4557E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFB0D1E3-076D-4F16-A595-B33BFC5B3F18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFB0D1E3-076D-4F16-A595-B33BFC5B3F18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFB0D1E3-076D-4F16-A595-B33BFC5B3F18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFB0D1E3-076D-4F16-A595-B33BFC5B3F18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD3096B6-9D30-4623-AA05-E93CB56CEF09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD3096B6-9D30-4623-AA05-E93CB56CEF09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD3096B6-9D30-4623-AA05-E93CB56CEF09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD3096B6-9D30-4623-AA05-E93CB56CEF09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3BEB653-9E30-4E65-A8BB-3192461CBF8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3BEB653-9E30-4E65-A8BB-3192461CBF8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3BEB653-9E30-4E65-A8BB-3192461CBF8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3BEB653-9E30-4E65-A8BB-3192461CBF8D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

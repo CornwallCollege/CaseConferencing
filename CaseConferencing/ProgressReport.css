@@ -1,0 +1,20 @@
+﻿.nobreak {
+    page-break-inside: avoid;
+}
+.WarningText
+{
+    font-size: 25px;
+    font-weight: bolder;
+    color:red;
+}
+
+.Heading3 {
+    font-size: 18px;
+    line-height:150%;
+}
+
+.Heading2 {
+    font-size: 22px; 
+    text-decoration:underline;
+    line-height: 1.25;
+}

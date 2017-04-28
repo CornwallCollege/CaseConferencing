@@ -1,0 +1,23 @@
+﻿.jQueryUiSlider .steps {
+    border: 1px solid transparent;
+    position: relative;
+    height: 30px;
+}
+
+.jQueryUiSlider .tick {
+    border: 1px solid transparent;
+    position: absolute;
+    width: 1.2em;
+    margin-left: -.6em;
+    text-align:center;
+    left: 0;
+}
+
+.jQueryUiSlider .steps .tick {
+    border: 1px solid transparent;
+    position: absolute;
+    width: 3em;
+    margin-left: -1.5em;
+    text-align:center;
+    left: 0;
+}

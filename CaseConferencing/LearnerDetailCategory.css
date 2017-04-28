@@ -1,0 +1,33 @@
+﻿.LabelStyle {
+    font-size: 12px;
+    font-weight: 600;
+    color: #888;
+    border: solid 1px #DADADA;
+    padding: 2px;
+}
+
+.ValueStyle {
+    font-size: 14px;
+    font-weight: normal;
+    border: solid 1px #DADADA;
+    color: #AAA;
+    padding: 2px;
+}
+
+
+
+
+.LearnerDetailsContent {
+    border: solid 1px #B1B1B1;
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 20px;
+}
+
+
+/*
+.LearnerDetailsUnits {
+    border: 0px;
+    line-height: 10px;
+    font-size: 14px;
+}*/

@@ -1,0 +1,10 @@
+﻿.Breadcrumbs {
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.Breadcrumbs div {-servicestudio-min-width: 100px;}
+
+.Breadcrumbs a {
+    color: #5EA1F2 !important;
+}

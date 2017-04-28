@@ -1,0 +1,5 @@
+﻿<%@ Control Language="c#" AutoEventWireup="false" Codebehind="Blocks\RichWidgets\Private\NotifyWidget.ascx.cs" Inherits="ssRichWidgets.Flows.FlowPrivate.WBlkNotifyWidget,RichWidgets" TargetSchema="http://schemas.microsoft.com/intellisense/ie5"%>
+<%@ Register TagPrefix="osweb" Namespace="OutSystems.HubEdition.WebWidgets" Assembly="OutSystems.HubEdition.WebWidgets" %>
+<%@ Assembly Name="OutSystems.WidgetsRuntimeAPI" %>
+<%@ Import namespace="ssRichWidgets" %>
+<%# PageStartHook() %><osweb:IfPlaceHolder runat="server"><osweb:If runat="server" visible="<%# if_wt1() %>"><osweb:Span runat="server" id="wt6" anonymous="true" class="Text_Note"><%# OutSystems.HubEdition.RuntimePlatform.RuntimePlatformUtils.ExtendedHtmlEncode(expression6()) %></osweb:Span></osweb:If><osweb:If runat="server" visible="<%# !if_wt1() %>"><osweb:Span runat="server" id="wt4" anonymous="true" class="NotifyWidget"><%# OutSystems.HubEdition.RuntimePlatform.RuntimePlatformUtils.ExtendedHtmlEncode(expression4()) %></osweb:Span><osweb:PlaceHolder runat="server"><%# expression3() %></osweb:PlaceHolder></osweb:If></osweb:IfPlaceHolder><%# PageEndHook() %>

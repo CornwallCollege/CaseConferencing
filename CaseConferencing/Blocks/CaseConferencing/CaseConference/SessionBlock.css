@@ -1,0 +1,26 @@
+﻿.LineColumn {
+    height: 60px;
+    padding-top: 20px;
+}
+
+.ListLine {
+    display: inline-block;
+    height: 65px; 
+    border-top: solid 1px #DADADA;
+    border-bottom: solid 1px #DADADA;
+    border-right: solid 1px #DADADA;
+    padding: 2px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    box-shadow: 0px 2px 3px #E7E7E7;
+    background-color: white;
+}
+
+
+.ListLine:hover
+{
+    background-color: rgb(246, 246, 246);
+    -moz-box-shadow: 3px 3px 3px #808182;
+    -webkit-box-shadow: 3px 3px 3px #808182;
+    box-shadow: 3px 3px 3px #808182;
+}

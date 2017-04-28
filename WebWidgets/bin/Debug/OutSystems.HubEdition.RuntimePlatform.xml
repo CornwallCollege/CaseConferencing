@@ -1,0 +1,3269 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OutSystems.HubEdition.RuntimePlatform</name>
+    </assembly>
+    <members>
+        <member name="F:OutSystems.HubEdition.RuntimePlatform.SecureConfidentialInformationEncryption.algorithms">
+            <summary>
+            List of algorithms by order of security. A more secure algorithm should always be added to the end of this list.
+            </summary>
+        </member>
+        <member name="T:OutSystems.HubEdition.RuntimePlatform.Extensibility.LifecyleListenerManager">
+            <summary>
+            Provides methods for plugins to register in Page LifeCycle events
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Extensibility.LifecyleListenerManager.OnApplicationStart">
+            <summary>
+            Notify all plugins registered in the OnApplicationStart event
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Extensibility.LifecyleListenerManager.RegisterListener(System.String,System.Reflection.AssemblyName)">
+            <summary>
+            Register a new LifecycleListener
+            </summary>
+            <param name="className">The full class name</param>
+            <param name="assemblyName">The asssembly name</param>
+        </member>
+        <member name="T:OutSystems.HubEdition.RuntimePlatform.Extensibility.LifecyleListener">
+            <summary>
+            Provides a mechanism to listen por Page LifeCycle events
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Extensibility.LifecyleListener.OnApplicationStart">
+            <summary>
+            Called when Application Start is executed
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.DBRuntimePlatform.GetDatabaseConfiguration(OutSystems.Internal.Db.Transaction,System.String)">
+            <summary>
+            <para>Returns the serialized database configuration for a specified connection.</para>
+            </summary>
+            <param name="trans">Transaction used to retrive the database configuration.</param>
+            <param name="connectionName">The connection name for the database configuration.</param>
+            <returns>
+            <para>The serialized database configuration for the connection with name <paramref name="connectionName"/>.</para>
+            <para>Or <c>null</c> if the database connection doesn't exist.</para></returns>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.DBRuntimePlatform.GetSMSEntryNodes(OutSystems.Internal.Db.Transaction,System.Int32,System.Int32)">
+            <summary>
+            Given a the current tenant, return the
+            ApplicationPhone nodes in the eSpace that are associated with the phone number
+            for that tenant
+            </summary>
+            <param name="tenantId">the tenant to search for</param>
+            <param name="tran">a valid transaction</param>
+            <param name="espaceId">the espace to search for</param>
+            <returns>reader with properties <strong>ss_Key</strong>
+            and <strong>tenantId</strong></returns>
+        </member>
+        <member name="T:OutSystems.Internal.Db.DatabaseConnectionUpgrader">
+            <summary>
+            Represents an upgrader of database connections.
+            </summary>
+        </member>
+        <member name="M:OutSystems.Internal.Db.DatabaseConnectionUpgrader.Upgrade(System.String,System.String)">
+            <summary>
+            Upgrades the specified connection.
+            </summary>
+            <param name="dbmsName">Name of the DBMS.</param>
+            <param name="connStr">The connection string.</param>
+            <returns>The upgraded database configuration.</returns>
+            <exception cref="T:OutSystems.Internal.Db.ConnectionUpgradeException">Unable to upgrade database connection.</exception>
+        </member>
+        <member name="T:OutSystems.Internal.Db.ConnectionUpgradeException">
+            <summary>
+            Class that represents an excpetion that occurs while upgrading connections.
+            </summary>
+        </member>
+        <member name="M:OutSystems.Internal.Db.ConnectionUpgradeException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:OutSystems.Internal.Db.ConnectionUpgradeException"/> class.
+            </summary>
+            <param name="s">The message</param>
+        </member>
+        <member name="T:OutSystems.Internal.Db.PrivateManagedTransaction">
+            <summary>
+            Extended implementation of a <c>ManagedTransaction</c> that have a <c>TransactionManager</c> associated 
+            and that is responsible to perform the operations about the transaction.
+            The difference is related to the dispose of this object.
+            </summary>
+        </member>
+        <member name="P:OutSystems.Internal.Db.Transaction.Completed">
+            <summary>
+            Flag that indicates if this instance was already commit or rolled back.
+            </summary>
+        </member>
+        <member name="T:OutSystems.Internal.Db.DatabaseSettingsSerialization.ConfigurationUnWrapException">
+            <summary>
+            Class that represents an exception that occurs during deserialization of a configuration.
+            </summary>
+        </member>
+        <member name="M:OutSystems.Internal.Db.Command.TransformParametersSyntax">
+            <summary>
+            Replaces the parameters prefix '@' with the one defined in <see cref="P:OutSystems.HubEdition.Extensibility.Data.ExecutionService.IExecutionService.ParameterPrefix"/>
+            in both the command text and the command parameters. Nothing is done if the defined prefix is '@'.
+            </summary>
+        </member>
+        <member name="T:OutSystems.Internal.Db.DatabaseAccess">
+            <summary>
+            Class intended for OutSystems use only! Provides easy access to the database for different runtime configurations (CurrentEspace, DBConnection, System Database and Particular Database)
+            </summary>
+        </member>
+        <member name="F:OutSystems.Internal.Db.DatabaseAccess.systemProvider">
+            <summary>
+            The systemProvider is the one used by the application to access the OutSystems database
+            </summary>
+        </member>
+        <member name="F:OutSystems.Internal.Db.DatabaseAccess.databaseProviders">
+            <summary>
+            The DatabaseProviders dictionary stores all connections that are used to access different databases
+            </summary>
+        </member>
+        <member name="F:OutSystems.Internal.Db.DatabaseAccess.dbConnectionProviders">
+            <summary>
+            The dbConnectionProviders dictionary stores all external database connections
+            </summary>
+        </member>
+        <member name="M:OutSystems.Internal.Db.DatabaseAccess.#ctor">
+            <summary>
+            Create a new instance of the <see cref="T:OutSystems.Internal.Db.DatabaseAccess"/> class.
+            </summary>
+        </member>
+        <member name="M:OutSystems.Internal.Db.DatabaseAccess.#ctor(System.Boolean)">
+            <summary>
+            Create a new instance of the <see cref="T:OutSystems.Internal.Db.DatabaseAccess"/> class using the given <c>IDatabaseServices</c>.
+            </summary>
+            <param name="initialize">True to initialize the providers, false otherwise</param>
+        </member>
+        <member name="M:OutSystems.Internal.Db.DatabaseAccess.IsInitialized">
+            <summary>
+            Indicates if the underlying database access objects are initialized and this class is ready to be used
+            </summary>
+            <returns><c>true</c> if it is initialized, otherwise <c>false</c>.</returns>
+        </member>
+        <member name="M:OutSystems.Internal.Db.DatabaseAccess.SingletonOverride(OutSystems.Internal.Db.DatabaseAccess.SingletonGetterDelegate,OutSystems.Internal.Db.DatabaseAccess.SingletonSetterDelegate)">
+            <summary>
+            Overrides the current DatabaseAccess with a custom provider.
+            </summary>
+            <param name="getOverride">The new getter.</param>
+            <param name="setOverride">The new setter.</param>
+        </member>
+        <member name="M:OutSystems.Internal.Db.DatabaseAccess.ForEspaceDatabase(System.Int32)">
+            <summary>
+            Gets a provider for a specific eSpace database.
+            This should be used to access data that is managed by that specific eSpace.
+            </summary>
+            <param name="eSpaceId">eSpace identifier.</param>
+            <returns>The <c>DatabaseAccessProvider</c> to access the given database.</returns>
+        </member>
+        <member name="M:OutSystems.Internal.Db.DatabaseAccess.ForDatabase(System.String)">
+            <summary>
+            Gets a provider for a specific database.
+            This should be used to access data that is managed by applications that are configured to use this database.
+            </summary>
+            <param name="databaseName">Name of the database.</param>
+            <returns>The <c>DatabaseAccessProvider</c> to access the given database.</returns>
+        </member>
+        <member name="M:OutSystems.Internal.Db.DatabaseAccess.ForDBConnection(System.String)">
+            <summary>
+            Gets a provider for a specific external database connection.
+            This should be used to access data that is managed by external systems that use this connection.
+            </summary>
+            <param name="connectionName">Name of the external database connection.</param>
+            <returns>The <c>DatabaseAccessProvider</c> based on the given connection.</returns>
+        </member>
+        <member name="M:OutSystems.Internal.Db.DatabaseAccess.CreateConnection(OutSystems.HubEdition.Extensibility.Data.ConfigurationService.IRuntimeDatabaseConfiguration)">
+            <summary>
+            Creates a new unmanaged connection using a custom configuration.
+            </summary>
+            <param name="config">Database configuration.</param>
+            <returns>An instance of a <c>DatabaseConnection</c> using the given configuration.</returns>
+        </member>
+        <member name="M:OutSystems.Internal.Db.DatabaseAccess.CommitAllTransactions">
+            <summary>
+            Commits all transactions (main transactions only).
+            </summary>
+        </member>
+        <member name="M:OutSystems.Internal.Db.DatabaseAccess.RollbackAllTransactions">
+            <summary>
+            Rolls back all transactions (main transactions only).
+            </summary>
+        </member>
+        <member name="M:OutSystems.Internal.Db.DatabaseAccess.FreeupResources(System.Boolean)">
+            <summary>
+            Releases all transactions (pooled and main), commiting or rollingback depending on the
+            the value of "commit".
+            </summary>
+            <param name="commit">True to commit the transactions, false to rollback.</param>
+        </member>
+        <member name="M:OutSystems.Internal.Db.DatabaseAccess.ResetConfiguration">
+            <summary>
+            Resets the current DatabaseAccess configuration.
+            NOTE: this method frees up any resources that may still be allocated.
+            </summary>
+        </member>
+        <member name="M:OutSystems.Internal.Db.DatabaseAccess.GetProviderForTransaction(System.Data.IDbTransaction)">
+            <summary>
+            Finds the correct DatabaseAccessProvider for an unmanaged transaction object.
+            </summary>
+            <param name="trans">Unmanaged transaction.</param>
+            <returns>The <c>DatabaseAccessProvider</c> based on the given trasaction.</returns>
+        </member>
+        <member name="M:OutSystems.Internal.Db.DatabaseAccess.GetProviderForTransaction(System.Data.IDbTransaction,System.String)">
+            <summary>
+            Finds the correct DatabaseAccessProvider for an unmanaged transaction object, belonging to a particular database.
+            </summary>
+            <param name="trans">The unmanaged transaction.</param>
+            <param name="database"></param>
+            <returns>The <c>DatabaseAccessProvider</c> based on the given trasaction to access the given database.</returns>
+        </member>
+        <member name="M:OutSystems.Internal.Db.DatabaseAccess.GetEspaceDatabaseProvider(System.Int32)">
+            <summary>
+            The DatabaseAccessProvider responsible for connecting to a specific eSpace's database in the the OutSystems database server
+            </summary>
+            <param name="eSpaceId">eSpace identifier.</param>
+            <returns>An object to access the database</returns>
+        </member>
+        <member name="M:OutSystems.Internal.Db.DatabaseAccess.GetDatabaseProvider(System.String)">
+            <summary>
+            The DatabaseAccessProvider responsible for connecting to a specific database in the the OutSystems database server
+            </summary>
+            <param name="databaseName">Name of the database.</param>
+            <returns>An object to access the database</returns>
+        </member>
+        <member name="M:OutSystems.Internal.Db.DatabaseAccess.GetDBConnectionProvider(System.String)">
+            <summary>
+            The DatabaseAccessProvider responsible for connecting to a specific external database connection
+            </summary>
+            <param name="connectionName">Name of the connection.</param>
+            <returns>An object to access the database</returns>
+        </member>
+        <member name="M:OutSystems.Internal.Db.DatabaseAccess.GetTransactionManager(System.String)">
+            <summary>
+            Gets the transaction manager.
+            </summary>
+            <param name="connectionName">Name of the connection.</param>
+            <returns>An instance of a <c>ITransactionManager</c> for the given connection.</returns>
+        </member>
+        <member name="M:OutSystems.Internal.Db.DatabaseAccess.InnerGetDatabaseConfigurationByConnectionName(System.String)">
+            <summary>
+            Gets database services for the given connection
+            </summary>
+            <param name="connectionName">Name of the connection.</param>
+            <returns>An instance of a <c>IDatabaseServices</c> to the given connection.</returns>
+            <exception cref="T:OutSystems.Internal.Db.ConnectionNotFoundException"></exception>
+        </member>
+        <member name="M:OutSystems.Internal.Db.DatabaseAccess.InnerCommitAllTransactions">
+            <summary>
+            Commit all transactions.
+            </summary>
+        </member>
+        <member name="M:OutSystems.Internal.Db.DatabaseAccess.InnerRollbackAllTransactions">
+            <summary>
+            Roll back all transactions.
+            </summary>
+        </member>
+        <member name="M:OutSystems.Internal.Db.DatabaseAccess.InnerFreeupResources(System.Boolean)">
+            <summary>
+            Freeup resources.
+            </summary>
+            <param name="commit">If set to <c>true</c> the transactions will be committed.</param>
+            <exception cref="T:OutSystems.HubEdition.Extensibility.Data.TransactionService.TransactionException">Exception launched to when an error occurs trying to close the transaction.</exception>
+        </member>
+        <member name="M:OutSystems.Internal.Db.DatabaseAccess.TryGetProviderForTransaction(System.Data.IDbTransaction,OutSystems.Internal.Db.IDatabaseAccessProvider@)">
+            <summary>
+            Tries to get a database access based on the given transaction.
+            </summary>
+            <param name="trans">The transaction.</param>
+            <param name="provider">The object to access the database.</param>
+            <returns><c>true</c> if the <c>DatabaseAccessProvider</c> could be created, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:OutSystems.Internal.Db.DatabaseAccess.TryGetProviderForTransaction(System.Data.IDbTransaction,System.String,OutSystems.Internal.Db.IDatabaseAccessProvider@)">
+            <summary>
+            Tries to get a database access based on the given transaction.
+            </summary>
+            <param name="trans">The transaction.</param>
+            <param name="databaseName">Name of database to connect to.</param>
+            <param name="provider">The object to access the database.</param>
+            <returns><c>true</c> if the <c>DatabaseAccessProvider</c> could be created, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:OutSystems.Internal.Db.DatabaseAccess.InnerGetProviderForTransaction(System.Data.IDbTransaction,System.String)">
+            <summary>
+            Tries to get a database access based on the given transaction for the database identifier.
+            </summary>
+            <param name="trans">The transaction.</param>
+            <param name="databaseName">Name of database to connect to.</param>
+            <returns>A database access to the given database identifier.</returns>
+        </member>
+        <member name="M:OutSystems.Internal.Db.DatabaseAccess.CheckAccess(System.String)">
+            <summary>
+            Checks the access to the <c>DatabaseAccess</c>.
+            </summary>
+            <param name="name">The element name.</param>
+            <exception cref="T:OutSystems.Internal.Db.InvalidDatabaseAccessException">Blocked access when trying to to access 'DatabaseAccess. + name + '.</exception>
+        </member>
+        <member name="P:OutSystems.Internal.Db.DatabaseAccess.Current">
+            <summary>
+            Gets the current DatabaseAccess. 
+            If inside a web application, fetchs it from the request. Otherwise, it returns a static one.
+            </summary>
+        </member>
+        <member name="P:OutSystems.Internal.Db.DatabaseAccess.CurrentIntegrationDatabasesPluginProvider">
+            <summary>
+            The plugin provider that is used to create the integration database services
+            </summary>
+        </member>
+        <member name="P:OutSystems.Internal.Db.DatabaseAccess.ForCurrentDatabase">
+            <summary>
+            Gets a provider for the main database associated with the currently running application.
+            This should be used to access data that is managed by this or other applications that share the same database.
+            </summary>
+            <value>The <c>DatabaseAccessProvider</c> used to acces the main database.</value>
+        </member>
+        <member name="P:OutSystems.Internal.Db.DatabaseAccess.ForSystemDatabase">
+            <summary>
+            Gets a provider for the system database.
+            This should be used to access data that is managed by the platform.
+            </summary>
+            <value>The <c>DatabaseAccessProvider</c> used to acces the system database.</value>
+        </member>
+        <member name="P:OutSystems.Internal.Db.DatabaseAccess.DisableCommits">
+            <summary>
+            Disable transaction commits for the remaining duration of the current request
+            NOTE: Leaving this setting set to true will affect all future commit. It should only be changed
+            inside a 'try .. finally' block, making sure it is set to false in the end.
+            </summary>
+            <value><c>true</c> if commits are disabled otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:OutSystems.Internal.Db.DatabaseAccess.BlockAccess">
+            <summary>
+            Blocks all access to the database while the value is true
+            NOTE: Leaving this setting set to true will affect all future commit. It should only be changed
+            inside a 'try .. finally' block, making sure it is set to false in the end
+            </summary>
+            <value><c>true</c> if the access to the batabase is blocked otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:OutSystems.Internal.Db.DatabaseAccess.SystemProvider">
+            <summary>
+            The DatabaseAccessProvider responsible for connecting to the OutSystems system database.
+            </summary>
+            <value>The <c>DatabaseAccessProvider</c> to the system database.</value>
+        </member>
+        <member name="P:OutSystems.Internal.Db.DatabaseAccess.MainProvider">
+            <summary>
+            The DatabaseAccessProvider responsible for connecting to the current main database (that can be the system database) in the the OutSystems database server
+            </summary>
+            <value>The <c>DatabaseAccessProvider</c> to the main database.</value>
+        </member>
+        <member name="P:OutSystems.Internal.Db.DatabaseAccess.QueryTimeout">
+            <summary>
+            Gets or sets the query timeout, in seconds.
+            </summary>
+            <value>The query timeout, in seconds.</value>
+        </member>
+        <member name="P:OutSystems.Internal.Db.DatabaseAccess.IntrospectionQueryTimeout">
+            <summary>
+            Gets or sets the query timeout, in seconds.
+            </summary>
+            <value>The query timeout, in seconds.</value>
+        </member>
+        <member name="T:OutSystems.Internal.Db.InvalidDatabaseAccessException">
+            <summary>
+            Class that represents an exception that occurs due to an invalid access to a database.
+            </summary>
+        </member>
+        <member name="T:OutSystems.Internal.Db.ConnectionNotFoundException">
+            <summary>
+            Exception that represents an error that occurs due to an external database connection configuration not found in the database.
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.AppCache.GetESpaceCachedValue``2(``0,System.String,System.Int32,System.Func{``0,``1})">
+            <summary>
+            Gets a cached value that is calculated with a specific key and it's invalidation is bound to the eSpace.
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.AppCache.GetTenantCachedValue``2(``0,System.String,System.Int32,System.Int32,System.Func{``0,``1})">
+            <summary>
+            Gets a cached value that is calculated with a specific key and it's invalidation is bound to the tenant.
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.AppCache.GetESpaceCachedValue``1(System.String,System.Int32,System.Func{``0})">
+            <summary>
+            Gets a cached value that it's invalidation is bound to the eSpace.
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.AppCache.GetTenantCachedValue``1(System.String,System.Int32,System.Int32,System.Func{``0})">
+            <summary>
+            Gets a cached value that it's invalidation is bound to the tenant.
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.AppCache.GetESpaceCachedValue``1(System.String,System.Int32,System.Func{System.Int32,``0})">
+            <summary>
+            Gets a cached value that depends on the eSpaceId, and it's invalidation is also bound to the eSpace.
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.AppCache.GetTenantCachedValue``1(System.String,System.Int32,System.Int32,System.Func{OutSystems.RuntimeCommon.Pair{System.Int32,System.Int32},``0})">
+            <summary>
+            Gets a cached value that depends on the tenantId, and it's invalidation is also bound to the tenant.
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.BaseAppUtils.UrlAttributeMustBeEncoded(System.Web.HttpRequest)">
+            <summary>
+            Due to differences in url escape between xhtml and wml (adapters related). Returns true or false
+            </summary>
+            <param name="req">current Request</param>
+            <returns>True if the URL must be encodes, false otherwise.</returns>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Callbacks.AbstractCallback.EventListener.NormalizeCallback(System.Collections.Generic.HashSet{OutSystems.HubEdition.RuntimePlatform.Callbacks.AbstractCallback})">
+            <summary>
+            Calling this method makes sure every event listener is bound to the same callback object
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Callbacks.ILibraryCallbackHandler.GetDynamicHtmlInjection(OutSystems.HubEdition.RuntimePlatform.AppInfo,OutSystems.HubEdition.RuntimePlatform.SessionInfo,System.String,System.String)">
+            <summary>
+            Returns the Html code that will be injected in each Web Page request through the runtime callback engine
+            </summary>
+            <param name="app"></param>
+            <param name="session"></param>
+            <param name="locale"></param>
+            <param name="data"></param>
+            <returns>A String with the the Html code to be used in the Web Page request.</returns>
+        </member>
+        <member name="M:OutSystems.Internal.Db.DatabaseAccessProvider`1.#ctor(`0,OutSystems.HubEdition.Extensibility.Data.TransactionService.ITransactionManager)">
+            <summary>
+            Initializes a new instance of the <see cref="T:OutSystems.Internal.Db.DatabaseAccessProvider`1"/> class.
+            This constructor can be used to create a provider with a shared transaction manager, 
+            while keeping its own database services.
+            </summary>
+            <param name="services">The database services associated with the provider</param>
+            <param name="manager">The transaction manager used to obtain transactions.</param>        
+        </member>
+        <member name="M:OutSystems.Internal.Db.DatabaseAccessProvider`1.GetRequestTransaction">
+            <summary>
+            Gets the main transaction from this provider that is automatically commited in the end of the request. 
+            This should be used mostly for inserts and updates, but it can also be used for readers that are closed immediatelly.
+            </summary>
+        </member>
+        <member name="M:OutSystems.Internal.Db.DatabaseAccessProvider`1.GetCommitableTransaction">
+            <summary>
+            Creates a new private transaction from this provider that can be explicitly commited and rolledback. 
+            This should be used for inserts and updates that require an immediate commit or rollback.
+            </summary>
+        </member>
+        <member name="M:OutSystems.Internal.Db.DatabaseAccessProvider`1.GetReadOnlyTransaction">
+            <summary>
+            Gets a transaction from this provider that is automatically closed in the end of the request. 
+            This should be used mostly for long living readers or readers that are used at the same time as other readers.
+            NOTE: this can be the main or a pooled transaction depending on the SGBD.
+            </summary>
+        </member>
+        <member name="M:OutSystems.Internal.Db.DatabaseAccessProvider`1.GetConnection">
+            <summary>
+            Creates a new unmanaged connection using this provider's configuration
+            </summary>
+        </member>
+        <member name="M:OutSystems.Internal.Db.DatabaseAccessProvider`1.ExecuteQuery``1(OutSystems.Internal.Db.Command,OutSystems.HubEdition.RuntimePlatform.Db.GenericRecordList{``0},System.String)">
+            <summary>
+            Executes a query using this provider's transaction manager and associates it to a given record list.
+            This should be used for fetching results in batches to a record list (e.g. simple and advanced queries).
+            </summary>
+            <param name="cmd">The command to execute</param>
+            <param name="rl">Record list to associate with the data reader</param>
+            <param name="description">Brief description of the query, for audit</param>
+        </member>
+        <member name="M:OutSystems.Internal.Db.DatabaseAccessProvider`1.CommitAllTransactions">
+            <summary>
+            Commits all transactions managed by this provider
+            </summary>
+        </member>
+        <member name="M:OutSystems.Internal.Db.DatabaseAccessProvider`1.RollbackAllTransactions">
+            <summary>
+            Rollsback all transactions managed by this provider
+            </summary>
+        </member>
+        <member name="M:OutSystems.Internal.Db.DatabaseAccessProvider`1.FreeupResources(System.Boolean)">
+            <summary>
+            Releases all transactions (pooled and main) from this provider, commiting or rollingback
+            depending on the value of "commit".
+            </summary>
+            <param name="commit">True to commit the transactions, false to rollback.</param>
+        </member>
+        <member name="M:OutSystems.Internal.Db.DatabaseAccessProvider`1.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:OutSystems.Internal.Db.DatabaseAccessProvider`1.Equals(System.Object)">
+            <summary>
+            Determines whether the specified <see cref="T:System.Object"/>, is equal to this instance.
+            This method will compare the database configurations of each object.
+            </summary>
+            <param name="obj">The <see cref="T:System.Object"/> to compare with this instance.</param>
+            <returns>
+              <c>true</c> if the specified <see cref="T:System.Object"/> is equal to this instance; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:OutSystems.Internal.Db.DatabaseAccessProvider`1.GetHashCode">
+            <summary>
+            Returns a hash code for this instance.
+            </summary>
+            <returns>A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. </returns>
+        </member>
+        <member name="P:OutSystems.Internal.Db.DatabaseAccessProvider`1.TransactionManager">
+            <summary>
+            Gets the transaction manager used by the provider.
+            </summary>
+            <value>The transaction manager.</value>
+        </member>
+        <member name="P:OutSystems.Internal.Db.DatabaseAccessProvider`1.DatabaseServices">
+            <summary>
+            Gets the database services used by the provider.
+            </summary>
+            <value>The database services.</value>
+        </member>
+        <member name="T:OutSystems.HubEdition.RuntimePlatform.OsISAPIFilter">
+            <summary>
+            This class is to be used in all interactions with Headers that are set in the OsISAPI Filter.
+            If the feature is disabled ("IIS.OsISAPIFilterEnabled" setting) all headers are ignored for security reasons.
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.ProcessDeletion.ProcessesToDeleteQuery(OutSystems.HubEdition.Extensibility.Data.IDatabaseServices,System.Boolean)">
+            <summary>
+            Construct the select that gather which are the actual processes that will be deleted
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.ProcessDeletion.DeleteProcesses(OutSystems.Internal.Db.Transaction)">
+            <summary>
+            Deletes all the logged information of the instances of Processes that fit the criteria specified in the constructor.
+            The information that is deleted is all the logging of: process instances, activities instances, input parameters values, output parameters values, processes instances executed within other process instances, etc.
+            </summary>
+            <param name="trans">Transaction to use</param>
+            <returns>True if the operation deleted all the processes that fit the criteria.</returns>
+        </member>
+        <member name="F:OutSystems.HubEdition.RuntimePlatform.RuntimePlatformUtils.CacheFileExtension">
+            <summary>
+            This is the extension for the eSpace cache files... used by the compiler and the compiler service...
+            </summary>
+        </member>
+        <member name="F:OutSystems.HubEdition.RuntimePlatform.RuntimePlatformUtils.CACHE_CONTROL_FILE_EXT">
+            <summary>
+            This is the extesion for the cache control files... those used by the tenant invalidate cache, etc...
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.RuntimePlatformUtils.CheckAndWaitForDebugger">
+            <summary>
+            Stops execution until VS Debugger is attached
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.RuntimePlatformUtils.ConvertToString(System.Object)">
+            <summary>
+            Convert an object to string
+            To be used for saving values in a database string field
+            </summary>
+            <param name="val">Object to be converted into a String.</param>
+            <returns>A String representing the given object</returns>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.RuntimePlatformUtils.ConvertFromString(System.String,System.String)">
+            <summary>
+            Convert an string to object.
+            To be used for retrieve values from a database string field
+            </summary>
+            <param name="val">String to be converted</param>
+            <param name="datatype">The runtime string representation of the desired datatype.</param>
+            <returns>An object created from the given String based on the data type.</returns>
+        </member>
+        <member name="F:OutSystems.HubEdition.RuntimePlatform.RuntimePlatformUtils.Hashing.hashes">
+            <summary>
+            List of hashes by order of security. A more secure hash should always be added to the end of this list.
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.RuntimePlatformUtils.Hashing.GeneratePasswordHashWithBestAlgorithm(System.String)">
+            <summary>
+            Creates a salted password hash using a strong one-way hashing algorithm.
+            </summary>
+            <param name="password">The password being hashed</param>
+            <returns>The hash of the given password</returns>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.RuntimePlatformUtils.Hashing.GeneratePasswordHashWithAlgorithm(System.String,OutSystems.HubEdition.RuntimePlatform.RuntimePlatformUtils.Hashing.IHash)">
+            <summary>
+            Creates a salted password hash using a strong one-way hashing algorithm.
+            </summary>
+            <param name="password">The password being hashed</param>
+            <param name="hashAlgorithm">Algorithm to use to generate the hash</param>
+            <returns>The hash of the given password</returns>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.RuntimePlatformUtils.Hashing.GeneratePasswordHashWithAlgorithm(System.String,System.Int32)">
+            <summary>
+            Creates a salted password hash using a strong one-way hashing algorithm.
+            </summary>
+            <param name="password">The password being hashed</param>
+            <param name="hashAlgorithmIndex">Index of the algorithm to use to generate the hash</param>
+            <returns>The hash of the given password</returns>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.RuntimePlatformUtils.Hashing.ValidatePasswordAgainstHash(System.String,System.String)">
+            <summary>
+            Checks if the given password corresponds to the given hash.
+            </summary>
+            <param name="password">The password being validated.</param>
+            <param name="hash">The hash the password corresponds to.</param>
+            <return>True if the password is valid for the given hash.</return>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.RuntimePlatformUtils.Hashing.IsPasswordHashGeneratedWithAlgorithm(System.String,OutSystems.HubEdition.RuntimePlatform.RuntimePlatformUtils.Hashing.IHash)">
+            <summary>
+            Checks if the given hash was generated using the given algorithm.
+            </summary>
+            <param name="passwordHash">The hash being validated.</param>
+            <param name="algorithmToCheck">The algorithm to check</param>
+            <return>True if the hash was generated using the given hash algorithm.</return>
+        </member>
+        <member name="T:OutSystems.HubEdition.RuntimePlatform.EspaceInfo">
+            <summary>
+            Contains all the information about the tenant.
+            </summary>
+        </member>
+        <member name="T:OutSystems.HubEdition.RuntimePlatform.EspaceTenantInfo">
+            <summary>
+            Contains all the information about a tenant on a single eSpace scope.
+            </summary>
+        </member>
+        <member name="T:OutSystems.HubEdition.IBroadcastListener">
+            <summary>
+            NOTE: Don't use ref or out parameters here because the Java Remoting doesn't support them...
+            </summary>
+        </member>
+        <member name="T:OutSystems.RuntimePublic.Db.Command">
+            <summary>
+            Represents a command to execute queries.
+            </summary>
+        </member>
+        <member name="M:OutSystems.RuntimePublic.Db.Command.#ctor(OutSystems.Internal.Db.Command)">
+            <summary>
+            Initializes a new instance of the <see cref="T:OutSystems.RuntimePublic.Db.Command"/> class.
+            </summary>
+            <param name="command">The command.</param>
+        </member>
+        <member name="M:OutSystems.RuntimePublic.Db.Command.GetDriverCommand">
+            <summary>
+            Returns the native command object used by the stack in which the application
+            is running.
+            </summary>
+            <returns>The native command object.</returns>
+        </member>
+        <member name="M:OutSystems.RuntimePublic.Db.Command.ExecuteNonQuery">
+            <summary>
+            Executes the command and returns the number of rows affected.
+            </summary>
+            <returns>The number of rows affected.</returns>
+        </member>
+        <member name="M:OutSystems.RuntimePublic.Db.Command.ExecuteScalar">
+            <summary>
+            Executes the query, and returns the first column of the first row in the resultset
+            returned by the query. Extra columns or rows are ignored.
+            </summary>
+            <returns>An object with the command resultset.</returns>
+        </member>
+        <member name="M:OutSystems.RuntimePublic.Db.Command.ExecuteReader">
+            <summary>
+            Executes the command text returning the resulting <see cref="T:System.Data.IDataReader"/>.
+            </summary>
+            <returns>A reader with the command resultset.</returns>
+        </member>
+        <member name="M:OutSystems.RuntimePublic.Db.Command.GetConnection">
+            <summary>
+            Returns the database connection associated to this command.
+            </summary>
+            <returns>A <see cref="T:OutSystems.RuntimePublic.Db.Connection"/> associated with this command.</returns>
+        </member>
+        <member name="M:OutSystems.RuntimePublic.Db.Command.CreateParameter(System.String)">
+            <summary>
+            Adds a parameter to the command. 
+            The parameter value is modified to a compatible database value.
+            </summary>
+            <param name="name">The parameter name.</param>
+            <returns>The parameter associated with this command.</returns>
+        </member>
+        <member name="M:OutSystems.RuntimePublic.Db.Command.CreateParameter(System.String,System.Data.DbType,System.Object)">
+            <summary>
+            Adds a parameter to the command with a given type and value.
+            The parameter value is modified to a compatible database value.
+            </summary>
+            <param name="name">The parameter name.</param>
+            <param name="type">The parameter type.</param>
+            <param name="value">The parameter value.</param>
+            <returns>The parameter associated with this command.</returns>
+        </member>
+        <member name="M:OutSystems.RuntimePublic.Db.Command.GetParameter(System.String)">
+            <summary>
+            Gets the parameter with the specified name.
+            </summary>
+            <param name="columnName">Name of the parameter.</param>
+            <returns>A parameter associated with this command.</returns>
+        </member>
+        <member name="M:OutSystems.RuntimePublic.Db.Command.Dispose">
+            <summary>
+            Frees the resources used by this object.
+            </summary>
+        </member>
+        <member name="P:OutSystems.RuntimePublic.Db.Command.CommandText">
+            <summary>
+            Gets or sets the SQL statements to execute.
+            </summary>
+        </member>
+        <member name="P:OutSystems.RuntimePublic.Db.Command.CommandTimeout">
+            <summary>
+            Gets or sets the command execution timeout.
+            </summary>
+        </member>
+        <member name="T:OutSystems.RuntimePublic.Db.CommittableTransaction">
+            <summary>
+            Represents a transaction that needs to be explicitly managed using commit and roll back
+            operations.
+            Can be used for selecting, inserting, updating, and deleting data.
+            </summary>
+        </member>
+        <member name="M:OutSystems.RuntimePublic.Db.CommittableTransaction.GetDriverTransaction">
+            <summary>
+            Returns the native transaction object used by the stack in which the application is running.
+            It allows to reuse existing code that receives a native transaction object as parameter.
+            </summary>
+            <returns>The native transaction object.</returns>
+        </member>
+        <member name="M:OutSystems.RuntimePublic.Db.CommittableTransaction.Commit">
+            <summary>
+            Commits the transaction.
+            </summary>
+        </member>
+        <member name="M:OutSystems.RuntimePublic.Db.CommittableTransaction.Rollback">
+            <summary>
+            Rolls back a transaction from a pending state.
+            </summary>
+        </member>
+        <member name="M:OutSystems.RuntimePublic.Db.CommittableTransaction.Close">
+            <summary>
+            Rolls back a transaction from a pending state and closes the transaction.
+            </summary>
+        </member>
+        <member name="M:OutSystems.RuntimePublic.Db.CommittableTransaction.CreateCommand">
+            <summary>
+            Creates an empty command to be executed in this transaction.
+            </summary>
+            <returns>A <see cref="T:OutSystems.RuntimePublic.Db.Command"/> with no SQL associated.</returns>
+        </member>
+        <member name="M:OutSystems.RuntimePublic.Db.CommittableTransaction.CreateCommand(System.String)">
+            <summary>
+            Creates a command to be executed in this transaction.
+            </summary>
+            <param name="sql">The SQL to be associated to the command.</param>
+            <returns>A <see cref="T:OutSystems.RuntimePublic.Db.Command"/> with SQL associated.</returns>
+        </member>
+        <member name="M:OutSystems.RuntimePublic.Db.CommittableTransaction.GetConnection">
+            <summary>
+            Gets the database connection associated with this transaction.
+            </summary>
+            <returns>A <see cref="T:OutSystems.RuntimePublic.Db.Connection"/> based on this transaction, or Null if the connection is Null.</returns>
+        </member>
+        <member name="M:OutSystems.RuntimePublic.Db.CommittableTransaction.Dispose">
+            <summary>
+            Releases the transaction and frees the resources used by this object.
+            </summary>
+        </member>
+        <member name="T:OutSystems.RuntimePublic.Db.Connection">
+            <summary>
+            Represents a connection to a database.
+            </summary>
+        </member>
+        <member name="M:OutSystems.RuntimePublic.Db.Connection.GetDriverConnection">
+            <summary>
+            Returns the native connection object used by the stack in which the application is running.
+            It allows to reuse existing code that receives a native connection object as parameter.
+            </summary>
+            <returns>The native connection object.</returns>
+        </member>
+        <member name="M:OutSystems.RuntimePublic.Db.Connection.BeginReadUncommittedTransaction">
+            <summary>
+            Creates a <see cref="T:OutSystems.RuntimePublic.Db.CommittableTransaction"/> with the transaction isolation level set
+            to read uncommitted.
+            </summary>
+            <returns>A <see cref="T:OutSystems.RuntimePublic.Db.CommittableTransaction"/>.</returns>
+        </member>
+        <member name="M:OutSystems.RuntimePublic.Db.Connection.BeginTransaction">
+            <summary>
+            Creates a <see cref="T:OutSystems.RuntimePublic.Db.CommittableTransaction"/> with the transaction isolation level set
+            to read committed.
+            </summary>
+            <returns>A <see cref="T:OutSystems.RuntimePublic.Db.CommittableTransaction"/>.</returns>
+        </member>
+        <member name="M:OutSystems.RuntimePublic.Db.Connection.CreateCommand">
+            <summary>
+            Creates an empty command that does not have an associated transaction.
+            </summary>
+            <returns>A <see cref="T:OutSystems.RuntimePublic.Db.Command"/> with no SQL associated.</returns>
+        </member>
+        <member name="M:OutSystems.RuntimePublic.Db.Connection.CreateCommand(System.String)">
+            <summary>
+            Creates a command that does not have an associated transaction.
+            </summary>
+            <param name="sql">The SQL Statement to be executed</param>
+            <returns>A <see cref="T:OutSystems.RuntimePublic.Db.Command"/> with SQL associated.</returns>
+        </member>
+        <member name="M:OutSystems.RuntimePublic.Db.Connection.Close">
+            <summary>
+            Closes the connection to the database.
+            </summary>
+        </member>
+        <member name="M:OutSystems.RuntimePublic.Db.Connection.IsClosed">
+            <summary>
+            Checks if the connection is closed.
+            </summary>
+            <returns>True if the connection is closed, False otherwise.</returns>
+        </member>
+        <member name="M:OutSystems.RuntimePublic.Db.Connection.Dispose">
+            <summary>
+            Closes the connection and frees the resources used by this object.
+            </summary>
+        </member>
+        <member name="T:OutSystems.RuntimePublic.Db.DatabaseAccess">
+            <summary>
+            Creates <see cref="T:OutSystems.RuntimePublic.Db.DatabaseProvider"/> instances to access a database.
+            </summary>
+        </member>
+        <member name="M:OutSystems.RuntimePublic.Db.DatabaseAccess.ForSystemDatabase">
+            <summary>
+            Returns a database provider to access the system database.
+            Use it to query the platform metamodel.
+            </summary>
+            <returns>A <see cref="T:OutSystems.RuntimePublic.Db.DatabaseProvider"/> to access the system database.</returns>
+        </member>
+        <member name="M:OutSystems.RuntimePublic.Db.DatabaseAccess.ForRunningApplication">
+            <summary>
+            Returns a database provider to access the database of the currently running application.
+            Use it to access data managed by the currently running application, or other applications
+            sharing the same database.
+            </summary>
+            <returns>A <see cref="T:OutSystems.RuntimePublic.Db.DatabaseProvider"/> to access the currently running application database.</returns>
+        </member>
+        <member name="M:OutSystems.RuntimePublic.Db.DatabaseAccess.ForDatabase(System.String)">
+            <summary>
+            Returns a database provider for a given database catalog or schema.
+            Use it to access data managed by applications that are configured to use this database.
+            </summary>
+            <param name="databaseName">The database name.</param>
+            <returns>A <see cref="T:OutSystems.RuntimePublic.Db.DatabaseProvider"/> to access the specified database.</returns>
+        </member>
+        <member name="M:OutSystems.RuntimePublic.Db.DatabaseAccess.ForExternalDatabase(System.String)">
+            <summary>
+            Returns a database provider for a specific external database connection.
+            Use it to access data managed by external systems.
+            </summary>
+            <param name="connectionName">The external database connection name.</param>
+            <returns>A <see cref="T:OutSystems.RuntimePublic.Db.DatabaseProvider"/> to access the external database connection.</returns>
+        </member>
+        <member name="T:OutSystems.RuntimePublic.DatabaseConnection">
+            <summary>
+            API used to control the use of External Database Connections
+            </summary>
+        </member>
+        <member name="M:OutSystems.RuntimePublic.DatabaseConnection.SetConnectionStringForSession(System.String,System.String,System.String)">
+             <summary>
+             Set the Connection String for a specific Database Connection to be applied in the current Session.
+            
+             - This method will not affect queries in the current request if the connection was already used.
+             - The target database must have the same type as configured in Service Center (e.g. Oracle, SQL Server, MySQL).
+             - Requires the Platform Extensibility APIs Feature.
+             </summary>
+             <param name="connectionName">Name of the Database Connection</param>
+             <param name="connectionString">Connection String to use</param>
+             <param name="databaseIdentifier">The initial database to use (effective only for Oracle databases, indicating the schema to be initialy used)</param>
+        </member>
+        <member name="T:OutSystems.RuntimePublic.Db.DatabaseProvider">
+            <summary>
+            Provides access to a specific database.
+            </summary>
+        </member>
+        <member name="M:OutSystems.RuntimePublic.Db.DatabaseProvider.GetRequestTransaction">
+            <summary>
+            Returns the transaction that starts at the beginning of the web request and is
+            committed when the response is sent to the client.
+            This transaction cannot be committed or rolled back inside extensions.
+            </summary>
+            <returns>The transaction associated with the web request.</returns>
+        </member>
+        <member name="M:OutSystems.RuntimePublic.Db.DatabaseProvider.GetCommittableTransaction">
+            <summary>
+            Returns a new transaction that needs to be managed explicitly using a commit or
+            roll back.
+            </summary>
+            <returns>A <see cref="T:OutSystems.RuntimePublic.Db.CommittableTransaction"/></returns>
+        </member>
+        <member name="P:OutSystems.RuntimePublic.Db.DatabaseProvider.SqlHelper">
+            <summary>
+            Returns an SqlHelper instance targeted at the manipulation of SQL statements members
+            </summary>
+        </member>
+        <member name="T:OutSystems.RuntimePublic.Db.DataParameter">
+            <summary>
+            Represents the query parameters associated with a command.
+            </summary>
+        </member>
+        <member name="M:OutSystems.RuntimePublic.Db.DataParameter.GetDriverParameter">
+            <summary>
+            Returns the native parameter object used by the stack in which the application is running.
+            </summary>
+            <returns>The native parameter object.</returns>
+        </member>
+        <member name="P:OutSystems.RuntimePublic.Db.DataParameter.Value">
+            <summary>
+            Gets or sets the parameter value.
+            </summary>
+        </member>
+        <member name="P:OutSystems.RuntimePublic.Db.DataParameter.DbType">
+            <summary>
+            Gets or sets the database type.
+            </summary>
+        </member>
+        <member name="P:OutSystems.RuntimePublic.Db.DataParameter.Size">
+            <summary>
+            Sets the size of the parameter.
+            </summary>
+        </member>
+        <member name="T:OutSystems.RuntimePublic.Db.SqlHelper">
+            <summary>
+            Functions to assist on the manipulation of SQL statements members
+            </summary>
+        </member>
+        <member name="M:OutSystems.RuntimePublic.Db.SqlHelper.EscapeIdentifier(System.String)">
+            <summary>
+            Escapes an identifier so it can be used in an query.
+            </summary>
+            <param name="identifier">The identifier to escape.</param>
+            <returns>The identifier escaped.</returns>
+        </member>
+        <member name="M:OutSystems.RuntimePublic.Db.SqlHelper.PrefixParam(System.String)">
+            <summary>
+            Prefixes a parameter name in order to be used as a placeholder in a query or to be used as the
+            defacto parameter name when creating command parameters.
+            </summary>
+            <param name="paramName">The parameter name to prefix.</param>
+            <returns>The prefixed parameter name.</returns>
+        </member>
+        <member name="T:OutSystems.HubEdition.RuntimePlatform.RuntimePublic.ProcessDeletion">
+            <summary>
+            CLass to perform the deletion of processes.
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.RuntimePublic.ProcessDeletion.DeleteProcesses">
+            <summary>
+            Deletes all the logged information of the instances of Processes that fit the criteria specified in the constructor.
+            The information that is deleted is all the logging of: process instances, activities instances, input parameters values, output parameters values, processes instances executed within other process instances, etc.
+            </summary>
+            <returns>True if the operation deleted all the processes that fit the criteria.</returns>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.RuntimePublic.ProcessDeletion.HasProcessesToDelete">
+            <summary>
+            Determines whether there are processes to delete.
+            </summary>
+            <returns><c>true</c> if there are processes to delete, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="T:OutSystems.RuntimePublic.Db.RequestTransaction">
+            <summary>
+            Represents the transaction that is automatically managed by the platform.
+            The transaction starts at the beginning of the web request, and is committed
+            when the response is sent to the client.
+            Can be used for selecting, inserting, updating, and deleting data.
+            </summary>
+        </member>
+        <member name="M:OutSystems.RuntimePublic.Db.RequestTransaction.GetDriverTransaction">
+            <summary>
+            Returns the native transaction object used by the stack in which the application is running.
+            It allows to reuse existing code that receives a native data object as parameter.
+            </summary>
+            <returns>The native transaction object.</returns>
+        </member>
+        <member name="M:OutSystems.RuntimePublic.Db.RequestTransaction.Release">
+            <summary>
+            Checks if the transaction exists, and frees the resources associated with it.
+            Since this transaction is automatically managed by the platform, no commit or rollback
+            operations are performed when releasing the transaction.
+            </summary>
+        </member>
+        <member name="M:OutSystems.RuntimePublic.Db.RequestTransaction.CreateCommand">
+            <summary>
+            Creates an empty command to be executed in this transaction.
+            </summary>
+            <returns>A <see cref="T:OutSystems.RuntimePublic.Db.Command"/> with no SQL associated.</returns>
+        </member>
+        <member name="M:OutSystems.RuntimePublic.Db.RequestTransaction.CreateCommand(System.String)">
+            <summary>
+            Creates a command to be executed in this transaction.
+            </summary>
+            <param name="sql">The SQL to be associated to the command.</param>
+            <returns>A <see cref="T:OutSystems.RuntimePublic.Db.Command"/> with SQL associated.</returns>
+        </member>
+        <member name="M:OutSystems.RuntimePublic.Db.RequestTransaction.GetConnection">
+            <summary>
+            Gets the database connection associated with this transaction.
+            </summary>
+            <returns>A <see cref="T:OutSystems.RuntimePublic.Db.Connection"/> based on this transaction, or Null if the connection is Null.</returns>
+        </member>
+        <member name="M:OutSystems.RuntimePublic.Db.RequestTransaction.Dispose">
+            <summary>
+            Releases the transaction and frees the resources used by this object.
+            </summary>
+        </member>
+        <member name="T:OutSystems.RuntimePublic.Processes.ProcessDeletion">
+            <summary>
+            Class to perform the deletion of processes.
+            </summary>
+        </member>
+        <member name="M:OutSystems.RuntimePublic.Processes.ProcessDeletion.DeleteProcesses">
+            <summary>
+            Deletes all the logged information of the instances of Processes that fit the criteria specified in the constructor.
+            The information that is deleted is all the logging of: process instances, activities instances, input parameters values, output parameters values, processes instances executed within other process instances, etc.
+            </summary>
+            <returns>True if the operation deleted all the processes that fit the criteria.</returns>
+        </member>
+        <member name="M:OutSystems.RuntimePublic.Processes.ProcessDeletion.HasProcessesToDelete">
+            <summary>
+            Determines whether there are processes to delete.
+            </summary>
+            <returns><c>true</c> if there are processes to delete, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="T:UnitTests.Subtext.ReflectionHelper">
+            <summary>
+            Helper class to simplify common reflection tasks.
+            </summary>
+        </member>
+        <member name="M:UnitTests.Subtext.ReflectionHelper.GetStaticFieldValue``1(System.String,System.Type)">
+            <summary>
+            Returns the value of the private member specified.
+            </summary>
+            <param name="fieldName">Name of the member.</param>
+            /// <param name="type">Type of the member.</param>
+        </member>
+        <member name="M:UnitTests.Subtext.ReflectionHelper.GetStaticFieldValue``1(System.String,System.String)">
+            <summary>
+            Returns the value of the private member specified.
+            </summary>
+            <param name="fieldName">Name of the member.</param>
+            <param name="typeName"></param>
+        </member>
+        <member name="M:UnitTests.Subtext.ReflectionHelper.SetStaticFieldValue``1(System.String,System.Type,``0)">
+            <summary>
+            Sets the value of the private static member.
+            </summary>
+            <param name="fieldName"></param>
+            <param name="type"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:UnitTests.Subtext.ReflectionHelper.SetStaticFieldValue``1(System.String,System.String,``0)">
+            <summary>
+            Sets the value of the private static member.
+            </summary>
+            <param name="fieldName"></param>
+            <param name="typeName"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:UnitTests.Subtext.ReflectionHelper.GetPrivateInstanceFieldValue``1(System.String,System.Object)">
+            <summary>
+            Returns the value of the private member specified.
+            </summary>
+            <param name="fieldName">Name of the member.</param>
+            <param name="source">The object that contains the member.</param>
+        </member>
+        <member name="M:UnitTests.Subtext.ReflectionHelper.SetPrivateInstanceFieldValue(System.String,System.Object,System.Object)">
+            <summary>
+            Returns the value of the private member specified.
+            </summary>
+            <param name="memberName">Name of the member.</param>
+            <param name="source">The object that contains the member.</param>
+            <param name="value">The value to set the member to.</param>
+        </member>
+        <member name="M:UnitTests.Subtext.ReflectionHelper.InvokeNonPublicMethod``1(System.Type,System.String,System.Object[])">
+            <summary>
+            Invokes a non-public static method.
+            </summary>
+            <typeparam name="TReturn"></typeparam>
+            <param name="type"></param>
+            <param name="methodName"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="T:UnitTests.Subtext.SimulatedHttpRequest">
+            <summary>
+            Used to simulate an HttpRequest.
+            </summary>
+        </member>
+        <member name="M:UnitTests.Subtext.SimulatedHttpRequest.#ctor(System.String,System.String,System.String,System.String,System.String,System.IO.TextWriter,System.String,System.Int32,System.String)">
+            <summary>
+            Creates a new <see cref="T:UnitTests.Subtext.SimulatedHttpRequest"/> instance.
+            </summary>
+            <param name="applicationPath">App virtual dir.</param>
+            <param name="physicalAppPath">Physical Path to the app.</param>
+            <param name="physicalFilePath">Physical Path to the file.</param>
+            <param name="page">The Part of the URL after the application.</param>
+            <param name="query">Query.</param>
+            <param name="output">Output.</param>
+            <param name="host">Host.</param>
+            <param name="port">Port to request.</param>
+            <param name="verb">The HTTP Verb to use.</param>
+        </member>
+        <member name="M:UnitTests.Subtext.SimulatedHttpRequest.GetHttpVerbName">
+            <summary>
+            Returns the specified member of the request header.
+            </summary>
+            <returns>
+            The HTTP verb returned in the request
+            header.
+            </returns>
+        </member>
+        <member name="M:UnitTests.Subtext.SimulatedHttpRequest.GetServerName">
+            <summary>
+            Gets the name of the server.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:UnitTests.Subtext.SimulatedHttpRequest.GetUnknownRequestHeaders">
+            <summary>
+            Get all nonstandard HTTP header name-value pairs.
+            </summary>
+            <returns>An array of header name-value pairs.</returns>
+        </member>
+        <member name="M:UnitTests.Subtext.SimulatedHttpRequest.GetAppPath">
+            <summary>
+            Returns the virtual path to the currently executing
+            server application.
+            </summary>
+            <returns>
+            The virtual path of the current application.
+            </returns>
+        </member>
+        <member name="M:UnitTests.Subtext.SimulatedHttpRequest.GetPreloadedEntityBody">
+            <summary>
+            Reads request data from the client (when not preloaded).
+            </summary>
+            <returns>The number of bytes read.</returns>
+        </member>
+        <member name="M:UnitTests.Subtext.SimulatedHttpRequest.IsEntireEntityBodyIsPreloaded">
+            <summary>
+            Returns a value indicating whether all request data
+            is available and no further reads from the client are required.
+            </summary>
+            <returns>
+            	<see langword="true"/> if all request data is available; otherwise,
+            <see langword="false"/>.
+            </returns>
+        </member>
+        <member name="P:UnitTests.Subtext.SimulatedHttpRequest.Headers">
+            <summary>
+            Gets the headers.
+            </summary>
+            <value>The headers.</value>
+        </member>
+        <member name="P:UnitTests.Subtext.SimulatedHttpRequest.Form">
+            <summary>
+            Gets the format exception.
+            </summary>
+            <value>The format exception.</value>
+        </member>
+        <member name="T:UnitTests.Subtext.HttpSimulator">
+            <summary>
+            Useful class for simulating the HttpContext. This does not actually 
+            make an HttpRequest, it merely simulates the state that your code 
+            would be in "as if" handling a request. Thus the HttpContext.Current 
+            property is populated.
+            </summary>
+        </member>
+        <member name="M:UnitTests.Subtext.HttpSimulator.SimulateRequest">
+            <summary>
+            Sets up the HttpContext objects to simulate a GET request.
+            </summary>
+            <remarks>
+            Simulates a request to http://localhost/
+            </remarks>
+        </member>
+        <member name="M:UnitTests.Subtext.HttpSimulator.SimulateRequest(System.Uri)">
+            <summary>
+            Sets up the HttpContext objects to simulate a GET request.
+            </summary>
+            <param name="url"></param>
+        </member>
+        <member name="M:UnitTests.Subtext.HttpSimulator.SimulateRequest(System.Uri,UnitTests.Subtext.HttpVerb)">
+            <summary>
+            Sets up the HttpContext objects to simulate a request.
+            </summary>
+            <param name="url"></param>
+            <param name="httpVerb"></param>
+        </member>
+        <member name="M:UnitTests.Subtext.HttpSimulator.SimulateRequest(System.Uri,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Sets up the HttpContext objects to simulate a POST request.
+            </summary>
+            <param name="url"></param>
+            <param name="formVariables"></param>
+        </member>
+        <member name="M:UnitTests.Subtext.HttpSimulator.SimulateRequest(System.Uri,System.Collections.Specialized.NameValueCollection,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Sets up the HttpContext objects to simulate a POST request.
+            </summary>
+            <param name="url"></param>
+            <param name="formVariables"></param>
+            <param name="headers"></param>
+        </member>
+        <member name="M:UnitTests.Subtext.HttpSimulator.SimulateRequest(System.Uri,UnitTests.Subtext.HttpVerb,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Sets up the HttpContext objects to simulate a request.
+            </summary>
+            <param name="url"></param>
+            <param name="httpVerb"></param>
+            <param name="headers"></param>
+        </member>
+        <member name="M:UnitTests.Subtext.HttpSimulator.SimulateRequest(System.Uri,UnitTests.Subtext.HttpVerb,System.Collections.Specialized.NameValueCollection,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Sets up the HttpContext objects to simulate a request.
+            </summary>
+            <param name="url"></param>
+            <param name="httpVerb"></param>
+            <param name="formVariables"></param>
+            <param name="headers"></param>
+        </member>
+        <member name="M:UnitTests.Subtext.HttpSimulator.SetReferer(System.Uri)">
+            <summary>
+            Sets the referer for the request. Uses a fluent interface.
+            </summary>
+            <param name="referer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UnitTests.Subtext.HttpSimulator.SetFormVariable(System.String,System.String)">
+            <summary>
+            Sets a form variable.
+            </summary>
+            <param name="name"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UnitTests.Subtext.HttpSimulator.SetHeader(System.String,System.String)">
+            <summary>
+            Sets a header value.
+            </summary>
+            <param name="name"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UnitTests.Subtext.HttpSimulator.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="P:UnitTests.Subtext.HttpSimulator.Page">
+            <summary>
+            Portion of the URL after the application.
+            </summary>
+        </member>
+        <member name="P:UnitTests.Subtext.HttpSimulator.ApplicationPath">
+            <summary>
+            The same thing as the IIS Virtual directory. It's 
+            what gets returned by Request.ApplicationPath.
+            </summary>
+        </member>
+        <member name="P:UnitTests.Subtext.HttpSimulator.PhysicalApplicationPath">
+            <summary>
+            Physical path to the application (used for simulation purposes).
+            </summary>
+        </member>
+        <member name="P:UnitTests.Subtext.HttpSimulator.PhysicalPath">
+            <summary>
+            Physical path to the requested file (used for simulation purposes).
+            </summary>
+        </member>
+        <member name="P:UnitTests.Subtext.HttpSimulator.ResponseText">
+            <summary>
+            Returns the text from the response to the simulated request.
+            </summary>
+        </member>
+        <member name="M:UnitTests.Subtext.HttpSimulator.FakeHttpSessionState.Abandon">
+            <summary>
+            Ends the current session.
+            </summary>
+            
+        </member>
+        <member name="M:UnitTests.Subtext.HttpSimulator.FakeHttpSessionState.Add(System.String,System.Object)">
+            <summary>
+            Adds a new item to the session-state collection.
+            </summary>
+            
+            <param name="name">The name of the item to add to the session-state collection. </param>
+            <param name="value">The value of the item to add to the session-state collection. </param>
+        </member>
+        <member name="M:UnitTests.Subtext.HttpSimulator.FakeHttpSessionState.Remove(System.String)">
+            <summary>
+            Deletes an item from the session-state item collection.
+            </summary>
+            
+            <param name="name">The name of the item to delete from the session-state item collection. </param>
+        </member>
+        <member name="M:UnitTests.Subtext.HttpSimulator.FakeHttpSessionState.RemoveAt(System.Int32)">
+            <summary>
+            Deletes an item at a specified index from the session-state item collection.
+            </summary>
+            
+            <param name="index">The index of the item to remove from the session-state collection. </param>
+        </member>
+        <member name="M:UnitTests.Subtext.HttpSimulator.FakeHttpSessionState.Clear">
+            <summary>
+            Clears all values from the session-state item collection.
+            </summary>
+            
+        </member>
+        <member name="M:UnitTests.Subtext.HttpSimulator.FakeHttpSessionState.RemoveAll">
+            <summary>
+            Clears all values from the session-state item collection.
+            </summary>
+            
+        </member>
+        <member name="M:UnitTests.Subtext.HttpSimulator.FakeHttpSessionState.CopyTo(System.Array,System.Int32)">
+            <summary>
+            Copies the collection of session-state item values to a one-dimensional array, starting at the specified index in the array.
+            </summary>
+            
+            <param name="array">The <see cref="T:System.Array"></see> that receives the session values. </param>
+            <param name="index">The index in array where copying starts. </param>
+        </member>
+        <member name="P:UnitTests.Subtext.HttpSimulator.FakeHttpSessionState.SessionID">
+            <summary>
+            Gets the unique session identifier for the session.
+            </summary>
+            
+            <returns>
+            The session ID.
+            </returns>
+            
+        </member>
+        <member name="P:UnitTests.Subtext.HttpSimulator.FakeHttpSessionState.Timeout">
+            <summary>
+            This property represents the time-out period (in minutes) allowed between requests before the session-state provider terminates the session.
+            </summary>
+            <returns>
+            The time-out period, in minutes.
+            </returns>
+        </member>
+        <member name="P:UnitTests.Subtext.HttpSimulator.FakeHttpSessionState.IsNewSession">
+            <summary>
+            Gets a value indicating whether the session was created with the current request.
+            </summary>
+            
+            <returns>
+            true if the session was created with the current request; otherwise, false.
+            </returns>
+            
+        </member>
+        <member name="P:UnitTests.Subtext.HttpSimulator.FakeHttpSessionState.Mode">
+            <summary>
+            Gets the current session-state mode.
+            </summary>
+            
+            <returns>
+            One of the <see cref="T:System.Web.SessionState.SessionStateMode"></see> values.
+            </returns>
+            
+        </member>
+        <member name="P:UnitTests.Subtext.HttpSimulator.FakeHttpSessionState.IsCookieless">
+            <summary>
+            Gets a value indicating whether the session ID is embedded in the URL or stored in an HTTP cookie.
+            </summary>
+            
+            <returns>
+            true if the session is embedded in the URL; otherwise, false.
+            </returns>
+            
+        </member>
+        <member name="P:UnitTests.Subtext.HttpSimulator.FakeHttpSessionState.CookieMode">
+            <summary>
+            Gets a value that indicates whether the application is configured for cookieless sessions.
+            </summary>
+            
+            <returns>
+            One of the <see cref="T:System.Web.HttpCookieMode"></see> values that indicate whether the application is configured for cookieless sessions. The default is <see cref="F:System.Web.HttpCookieMode.UseCookies"></see>.
+            </returns>
+            
+        </member>
+        <member name="P:UnitTests.Subtext.HttpSimulator.FakeHttpSessionState.LCID">
+            <summary>
+            Gets or sets the locale identifier (LCID) of the current session.
+            </summary>
+            
+            <returns>
+            A <see cref="T:System.Globalization.CultureInfo"></see> instance that specifies the culture of the current session.
+            </returns>
+            
+        </member>
+        <member name="P:UnitTests.Subtext.HttpSimulator.FakeHttpSessionState.CodePage">
+            <summary>
+            Gets or sets the code-page identifier for the current session.
+            </summary>
+            
+            <returns>
+            The code-page identifier for the current session.
+            </returns>
+            
+        </member>
+        <member name="P:UnitTests.Subtext.HttpSimulator.FakeHttpSessionState.StaticObjects">
+            <summary>
+            Gets a collection of objects declared by &lt;object Runat="Server" Scope="Session"/&gt; tags within the ASP.NET application file Global.asax.
+            </summary>
+            
+            <returns>
+            An <see cref="T:System.Web.HttpStaticObjectsCollection"></see> containing objects declared in the Global.asax file.
+            </returns>
+            
+        </member>
+        <member name="P:UnitTests.Subtext.HttpSimulator.FakeHttpSessionState.Item(System.String)">
+            <summary>
+            Gets or sets a session-state item value by name.
+            </summary>
+            
+            <returns>
+            The session-state item value specified in the name parameter.
+            </returns>
+            
+            <param name="name">The key name of the session-state item value. </param>
+        </member>
+        <member name="P:UnitTests.Subtext.HttpSimulator.FakeHttpSessionState.Item(System.Int32)">
+            <summary>
+            Gets or sets a session-state item value by numerical index.
+            </summary>
+            
+            <returns>
+            The session-state item value specified in the index parameter.
+            </returns>
+            
+            <param name="index">The numerical index of the session-state item value. </param>
+        </member>
+        <member name="P:UnitTests.Subtext.HttpSimulator.FakeHttpSessionState.SyncRoot">
+            <summary>
+            Gets an object that can be used to synchronize access to the collection of session-state values.
+            </summary>
+            
+            <returns>
+            An object that can be used to synchronize access to the collection.
+            </returns>
+            
+        </member>
+        <member name="P:UnitTests.Subtext.HttpSimulator.FakeHttpSessionState.IsSynchronized">
+            <summary>
+            Gets a value indicating whether access to the collection of session-state values is synchronized (thread safe).
+            </summary>
+            <returns>
+            true if access to the collection is synchronized (thread safe); otherwise, false.
+            </returns>
+            
+        </member>
+        <member name="P:UnitTests.Subtext.HttpSimulator.FakeHttpSessionState.System#Web#SessionState#IHttpSessionState#IsReadOnly">
+            <summary>
+            Gets a value indicating whether the session is read-only.
+            </summary>
+            
+            <returns>
+            true if the session is read-only; otherwise, false.
+            </returns>
+            
+        </member>
+        <member name="T:OutSystems.HubEdition.RuntimePlatform.Log.ServerLog">
+            <summary>
+            Summary description for serverlog.
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.QueriesCoverage.ExecAllQueriesGetXml(OutSystems.HubEdition.RuntimePlatform.HeContext,System.Type)">
+            <summary>
+            Retrieves information about Queries
+            </summary>
+            <param name="heContext"> Context</param>
+            <param name="screenType">The type of the screen.</param>
+            <returns>A Xml Document with the information</returns>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Email.EmailHelper.HttpGetContent(System.String,System.String,System.String,System.String,System.Net.Cookie,OutSystems.HubEdition.RuntimePlatform.Email.EmailHelper.QueryParameter[],System.String@,System.String@)">
+            <summary>
+            Downloads Text content from the specified URL
+            </summary>
+            <param name="ssUrl">URL to get the content from</param>
+            <param name="method">The request method.</param>
+            <param name="contentType">The request contentType header</param>
+            <param name="userAgent">The request userAgent.</param>
+            <param name="cookie">Cookie to use in the request.</param>
+            <param name="parameters">Query parameters for the request.</param>
+            <param name="ssContent">Actual text content downloaded from URL</param>
+            <param name="ssContentEncoding">The Content enconding.</param>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Email.EmailHelper.HttpBinaryGet(System.String,System.String,System.String@,System.Byte[]@)">
+            <summary>
+            Downloads Binary content from the specified URL
+            </summary>
+            <param name="ssUrl">URL to get the content from</param>
+            <param name="userAgent">The request userAgent.</param>
+            <param name="ssContentType">MIME type of downloaded content</param>
+            <param name="ssContent">Actual binary content downloaded from URL</param>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Email.EmailHelper.HtmlToText(System.String)">
+            <summary>
+            Removes tags from an HTML string, producing a clean text version of the input
+            </summary>
+            <param name="html">The HTML text to be converted</param>
+            <returns>The resulting text</returns>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Email.EmailHelper.HTMLDecode(System.Text.RegularExpressions.Match)">
+            <summary>
+            Delegate that decodes HTML when matches are found by HtmlToText
+            </summary>
+            <param name="match">Match found by the regexps</param>
+            <returns>Decoded text</returns>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Email.EmailProcessor.CreateEmail(System.Boolean,System.String,System.String,System.Collections.Generic.List{System.String},System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean,System.String,System.Boolean,System.String,System.String,System.String,System.String@,System.String@,System.String@)">
+            <summary>
+            Initializes the production of an email message, creating its headers and main body. Note that this
+            action does not immediately send the message, as you may want to add futher parts (attachments) to
+            it (using <see cref="M:OutSystems.HubEdition.RuntimePlatform.Email.EmailProcessor.AddPart(OutSystems.HubEdition.RuntimePlatform.Email.HeaderFlags,System.String,System.String,System.String,System.String,System.String,System.Byte[],System.String,System.String@)"/>). To finalize message and send it you should then call RichMailSend
+            </summary>
+            <remarks>
+            Older emails clients (such as some versions of Lotus and Outlook 2000) do not correctly support the MIME encoding used to send HTML emails. To enable HTML emails to be delivered correctly to these clients you can add "lotus/compatible" (without the quotes) to the ContentType. This will change how the whole email is created and allows those clients to shows the message properly at the expense of more recent email clients (such as Yahoo! Mail) that will not display the message correctly.
+            </remarks>
+            <param name="processAddresses">Pre-process the email addresses?</param>
+            <param name="ssFrom">Email address of the sender</param>
+            <param name="ssTo">Email addresses to send the email to (comma separated)</param>
+            <param name="headers">Email header information</param>
+            <param name="ssCc">Email addresses to carbon-copy the email to (comma separated)</param>
+            <param name="ssBcc">Email addresses to blind carbon-copy the email to (comma separated)</param>
+            <param name="ssContentType">MIME type of the message.</param>
+            <param name="ssCharset">Character used in the message text</param>
+            <param name="ssSubject">Subject of the message</param>
+            <param name="ssBody">Text content of the message</param>
+            <param name="ssBodyIsHtml">TRUE if content of the message is HTML rather than plain text</param>
+            <param name="ssUrl">Base URL to use in case the Body is HTML. This allows any relative paths that may exist in the Body to be expanded to full blown URL's</param>
+            <param name="ssIncludeImages">If TRUE, any images referenced via an URL in the Body are attached to the message</param>
+            <param name="ssInReplyTo">Alternate reply-to email address</param>
+            <param name="userAgent">User agent to use to request the email messages.</param>
+            <param name="realHostname">The hostname to use when building links in the email body.</param>
+            <param name="ssBoundary">System marker that should be passed in to any further parts that are added to this message (see <see cref="M:OutSystems.HubEdition.RuntimePlatform.Email.EmailProcessor.AddPart(OutSystems.HubEdition.RuntimePlatform.Email.HeaderFlags,System.String,System.String,System.String,System.String,System.String,System.Byte[],System.String,System.String@)"/>).</param>
+            <param name="ssMail">The full message text produced by the call</param>
+            <param name="emailId">The created email id.</param>
+        </member>
+        <member name="P:OutSystems.HubEdition.RuntimePlatform.Email.EmailProcessor.MailUA">
+            <summary>
+            String for RuntimePlatform to use as UserAgent on HTTP Requests
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Email.EmailEncoding.EncodeAsQuotedPrintable(System.Text.Encoding,System.String,OutSystems.HubEdition.RuntimePlatform.Email.EncodeFlags)">
+            <summary>
+            Encode the body as in quoted-printable format.
+            Adapted from PJ Naughter's quoted-printable encoding code.
+            For more information see RFC 2045.
+            </summary>
+            <returns>The encoded body.</returns>
+        </member>
+        <member name="T:OutSystems.HubEdition.RuntimePlatform.EmbeddedResourceManager">
+            <summary>
+            This resource manager is used to look for language resources in the assembly manifest
+            (that is, as embedded resources).
+            This is in contrast with the default ResourceManager, which expects language resources
+            to be placed in satellite assemblies.
+            </summary>
+        </member>
+        <member name="T:OutSystems.HubEdition.RuntimePlatform.OSJSONResponse">
+            <summary>
+            This class holds and serialize, in JSON format, the AJAX response with the snippets to replace in the page
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.OSJSONResponse.AddToJs(System.String)">
+            <summary>
+            Adds a javascript snippet to the response
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.OSJSONResponse.InsertToJs(System.Int32,System.String)">
+            <summary>
+            Inserts a javascript snippet to the response at a given index
+            </summary>
+            <param name="index"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.OSJSONResponse.ClearJs">
+            <summary>
+            Clears all javscript snippets in this response
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.OSJSONResponse.AddToBlockJs(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Adds a filename to the block js filenames to include in the response
+            </summary>
+            <param name="jsList">js filename list</param>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.OSJSONResponse.ToString">
+            <summary>
+            Serialize to a string in JSON format the snippets to replace in the page
+            </summary>
+        </member>
+        <member name="P:OutSystems.HubEdition.RuntimePlatform.OSJSONResponse.Outer">
+            <summary>
+            Returns the "outers" snippets to replace in the page
+            </summary>
+        </member>
+        <member name="P:OutSystems.HubEdition.RuntimePlatform.OSJSONResponse.List">
+            <summary>
+            Returns the "list" rows to add insert rows in tables
+            </summary>
+        </member>
+        <member name="P:OutSystems.HubEdition.RuntimePlatform.OSJSONResponse.Js">
+            <summary>
+            Returns the "javascript" snippets to add to the page
+            </summary>
+        </member>
+        <member name="P:OutSystems.HubEdition.RuntimePlatform.OSJSONResponse.Hidden">
+            <summary>
+            Returns the "hidden" snippets to replace in the page
+            </summary>
+        </member>
+        <member name="P:OutSystems.HubEdition.RuntimePlatform.OSJSONResponse.OtherValues">
+            <summary>
+            /// Returns a Dictionary of  snippets to replace in the page
+            This JSON snippets are at the same level of the outers, inners and hidden
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Processes.IProcess.GetProcessActivityInstance(System.Int32,System.Int32,OutSystems.ObjectKeys.ObjectKey,System.Boolean,OutSystems.HubEdition.RuntimePlatform.Processes.IProcessActivity@)">
+            <summary>
+            Used to get a generic activity instance using a intance of a process definition
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Processes.BPMRuntime.CloseProcessInstance(OutSystems.HubEdition.RuntimePlatform.HeContext,OutSystems.HubEdition.RuntimePlatform.Processes.IProcess,System.Int32,System.Boolean)">
+            <summary>
+            Closes a process, all its activities and sets the parent activity (if any) to execute
+            </summary>
+            <param name="heContext"></param>
+            <param name="processDefiniton">Instance of the process to close, can be a dummy instance</param>
+            <param name="processId">Id of the process, cannot be dummy</param>
+            <param name="manualTerminate"></param>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Processes.BPMRuntime.TerminateProcessInstance(OutSystems.HubEdition.RuntimePlatform.HeContext,OutSystems.HubEdition.RuntimePlatform.Processes.IProcess,System.Int32,System.Boolean)">
+            <summary>
+            Closes a process, all its activities and sets the parent activity (if any) to execute
+            </summary>
+            <param name="heContext"></param>
+            <param name="processDefiniton">Instance of the process to close, can be a dummy instance</param>
+            <param name="processId">Id of the process, cannot be dummy</param>
+            <param name="recursive"></param>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Processes.BPMRuntime.SetActivityStatus(OutSystems.HubEdition.RuntimePlatform.HeContext,System.Int32,OutSystems.HubEdition.RuntimePlatform.Processes.ActivityStatus)">
+            <summary>
+            Changes the status of an activity and commits the transaction.
+            Should not be used inside the BPMRuntime
+            </summary>
+            <param name="heContext"></param>
+            <param name="activityId"></param>
+            <param name="status"></param>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Processes.IProcessActivity.GetPrecedentActivity``1(OutSystems.ObjectKeys.ObjectKey)">
+            <summary>
+            Method to get the last activity instance in current activity flow
+            Note: the activity must belong to the same eSpace and Process
+            </summary>
+            <param name="targetSSKey"></param>
+            <returns>The last activity instance in the current flow</returns>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Processes.IProcessActivity.StartOnOpen(OutSystems.HubEdition.RuntimePlatform.HeContext,System.String,System.Boolean,System.String,System.Boolean,System.String@,System.String@)">
+            <summary>
+            Action executed before an activity can be open
+            </summary>
+            <param name="heContext"></param>
+            <param name="sessionId"></param>
+            <param name="requestIsSecure"></param>
+            <param name="hostname"></param>
+            <param name="onlyGetUrl"></param>
+            <param name="failureMessage"></param>
+            <param name="handlingUrl"></param>
+            <returns>success or failure</returns>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Processes.IProcessActivity.StartActivityReset(OutSystems.HubEdition.RuntimePlatform.HeContext,System.Int32,System.Boolean,System.String@)">
+            <summary>
+            Action executed to reset the openning and user assignment of an activity
+            </summary>
+            <param name="heContext"></param>
+            <param name="activityId"></param>
+            <param name="resetActivityUser"></param>
+            <param name="failureMessage"></param>
+            <returns>success or failure</returns>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Processes.IProcessActivity.StartActivitySchedule(OutSystems.HubEdition.RuntimePlatform.HeContext,System.Int32,System.DateTime,System.String@)">
+            <summary>
+            Action executed to reset the openning and user assignment of an activity
+            </summary>
+            <param name="heContext"></param>
+            <param name="activityId"></param>
+            <param name="startDate"></param>
+            <param name="failureMessage"></param>
+            <returns>success or failure</returns>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Processes.IProcessActivity.StartOnClose(OutSystems.HubEdition.RuntimePlatform.HeContext,System.Boolean,System.Boolean,System.Boolean,System.Collections.Generic.List{OutSystems.RuntimeCommon.Pair{System.String,System.Object}},System.String@,System.Collections.Generic.List{OutSystems.RuntimeCommon.Pair{System.Int32,OutSystems.HubEdition.RuntimePlatform.Processes.ActivityKind}}@)">
+            <summary>
+            Action executed before an activity can be closed
+            </summary>
+            <param name="heContext"></param>
+            <param name="advanceProcess"></param>
+            <param name="skip"></param>
+            <param name="skipAll"></param>
+            <param name="inputs"></param>
+            <param name="failureMessage"></param>
+            <param name="nextActivityIds"></param>
+            <returns>success or failure</returns>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Processes.IProcessActivity.StartOnEvent(OutSystems.HubEdition.RuntimePlatform.HeContext,System.String,System.Boolean)">
+            <summary>
+            Method to execute when and event is triggered
+            </summary>
+            <param name="heContext"></param>
+            <param name="dataId"></param>
+            <param name="advanceProcess"></param>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Processes.IProcessActivity.StartSetEventFilters(OutSystems.HubEdition.RuntimePlatform.HeContext)">
+            <summary>
+            Method to set prepare the event filters associated with the activity
+            If the filters are already set, then nothing will be changed.
+            This is necessary to recover lost filters for activities that are already waiting
+            </summary>
+            <param name="heContext"></param>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Processes.IProcessActivity.StartRemoveEventFilters(OutSystems.HubEdition.RuntimePlatform.HeContext)">
+            <summary>
+            Method to remove the event filters associated with the activity
+            If there are no filters set, then nothing will be changed.
+            This is necessary to remove filters for activities that are no longer waiting
+            </summary>
+            <param name="heContext"></param>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Processes.IProcessActivity.StartWork(OutSystems.HubEdition.RuntimePlatform.HeContext,System.Boolean,OutSystems.HubEdition.RuntimePlatform.Processes.ActivityStatus,System.DateTime)">
+            <summary>
+            Method to execute the activity
+            </summary>
+            <param name="heContext"></param>
+            <param name="isUnattended"></param>
+            <param name="forInitialStatus"></param>
+            <param name="previousNextRun"></param>
+            <returns>The next activity ids</returns>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Processes.ProcessBase.AbstractProcessActivityBase.StartOnOpen(OutSystems.HubEdition.RuntimePlatform.HeContext,System.String,System.Boolean,System.String,System.Boolean,System.String@,System.String@)">
+            <summary>
+            Action executed before an activity can be open
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Processes.ProcessBase.AbstractProcessActivityBase.StartActivityReset(OutSystems.HubEdition.RuntimePlatform.HeContext,System.Int32,System.Boolean,System.String@)">
+            <summary>
+            Action executed to release a human activity before an activity can be closed
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Processes.ProcessBase.AbstractProcessActivityBase.StartActivitySchedule(OutSystems.HubEdition.RuntimePlatform.HeContext,System.Int32,System.DateTime,System.String@)">
+            <summary>
+            Action executed to schedule an human activity to a later date
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Processes.ProcessBase.AbstractProcessActivityBase.StartOnClose(OutSystems.HubEdition.RuntimePlatform.HeContext,System.Boolean,System.Boolean,System.Boolean,System.Collections.Generic.List{OutSystems.RuntimeCommon.Pair{System.String,System.Object}},System.String@,System.Collections.Generic.List{OutSystems.RuntimeCommon.Pair{System.Int32,OutSystems.HubEdition.RuntimePlatform.Processes.ActivityKind}}@)">
+            <summary>
+            Action executed before an activity can be closed
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Processes.ProcessBase.AbstractProcessActivityBase.SetEventFilters(OutSystems.HubEdition.RuntimePlatform.HeContext)">
+            <summary>
+            Method to set the event filters from a listening activity
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Processes.ProcessBase.AbstractProcessActivityBase.RemoveEventFilters(OutSystems.HubEdition.RuntimePlatform.HeContext)">
+            <summary>
+            Method to remove the event filters from a listening activity
+            Can only be used internally or by the BPMRuntime
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Processes.ProcessBase.AbstractProcessActivityBase.OnClose(OutSystems.HubEdition.RuntimePlatform.HeContext,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Completes the close of an activity.
+            It is also responsible for the activation of next activities
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Processes.ProcessBase.AbstractProcessActivityBase.StartWork(OutSystems.HubEdition.RuntimePlatform.HeContext,System.Boolean,OutSystems.HubEdition.RuntimePlatform.Processes.ActivityStatus,System.DateTime)">
+            <summary>
+            Start executing this activity
+            </summary>
+            <param name="heContext"></param>
+            <param name="isUnattended"></param>
+            <param name="forInitialStatus"></param>
+            <param name="previousNextRun"></param>
+            <returns>The next activity ids </returns>
+        </member>
+        <member name="P:OutSystems.HubEdition.RuntimePlatform.Processes.ProcessBase.AbstractProcessActivityBase.IsDummy">
+            <summary>
+            Dummys are precendent activities that did execute in the current flow.
+            Mostly they are caused by changes in the process with running instances
+            </summary>
+            <returns>Returns true if the activity is dummy, false otherwise</returns>
+        </member>
+        <member name="P:OutSystems.HubEdition.RuntimePlatform.Processes.ProcessBase.AbstractProcessActivityBase.IsRunning">
+            <summary>
+            An activity is set as running if is creeated to be executed,
+            either on the ActivitiesHandler or after a precedent activity finishes
+            </summary>
+            <returns>Returns true if the activity is running, false otherwise</returns>
+        </member>
+        <member name="T:OutSystems.HubEdition.RuntimePlatform.Processes.ProcessBase.GetVariablesDelegate">
+            <summary>
+            This delegate is used to retrieve outputs from the database
+            </summary>
+            <param name="tran"></param>
+            <param name="SSKey"></param>
+            <param name="id"></param>
+            <returns>A reader with the attributes "SS_Key", "Value" and "Data_Type"</returns>
+        </member>
+        <member name="T:OutSystems.HubEdition.RuntimePlatform.Processes.ActivityHandler">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Processes.ActivityHandler.#ctor(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Processes.ActivityHandler.EndExecuteActivityAction(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Processes.ActivityHandler.ExecuteActivityActionv2(System.String,System.Int32,System.Int32,System.Int32,OutSystems.HubEdition.RuntimePlatform.Processes.ActivityStatus,System.DateTime)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Processes.ActivityHandler.BeginExecuteActivityActionv2(System.String,System.Int32,System.Int32,System.Int32,OutSystems.HubEdition.RuntimePlatform.Processes.ActivityStatus,System.DateTime,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Processes.ActivityHandler.EndExecuteActivityActionv2(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Processes.ActivityHandler.ExecuteOnEvent(System.String,System.Int32,System.Int32,System.Int32,System.String,System.Boolean)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Processes.ActivityHandler.BeginExecuteOnEvent(System.String,System.Int32,System.Int32,System.Int32,System.String,System.Boolean,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Processes.ActivityHandler.EndExecuteOnEvent(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Processes.ActivityHandler.ExecuteProcessDefEvent(System.String,System.Int32,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Processes.ActivityHandler.BeginExecuteProcessDefEvent(System.String,System.Int32,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Processes.ActivityHandler.EndExecuteProcessDefEvent(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Processes.ActivityHandler.ExecuteSetEventFilters(System.String,System.Int32,System.Int32,System.Int32)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Processes.ActivityHandler.BeginExecuteSetEventFilters(System.String,System.Int32,System.Int32,System.Int32,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Processes.ActivityHandler.EndExecuteSetEventFilters(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Processes.ActivityHandler.ExecuteRemoveEventFilters(System.String,System.Int32,System.Int32,System.Int32)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Processes.ActivityHandler.BeginExecuteRemoveEventFilters(System.String,System.Int32,System.Int32,System.Int32,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Processes.ActivityHandler.EndExecuteRemoveEventFilters(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Processes.ActivityHandler.ExecuteOnOpen(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.String,System.String,System.Boolean,System.String,System.Boolean,System.String@,System.String@)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Processes.ActivityHandler.BeginExecuteOnOpen(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.String,System.String,System.Boolean,System.String,System.Boolean,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Processes.ActivityHandler.EndExecuteOnOpen(System.IAsyncResult,System.String@,System.String@)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Processes.ActivityHandler.ExecuteActivityReset(System.String,System.Int32,System.Int32,System.Boolean,System.Int32,System.Int32,System.String,System.String@)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Processes.ActivityHandler.BeginExecuteActivityReset(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Processes.ActivityHandler.EndExecuteActivityReset(System.IAsyncResult,System.String@)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Processes.ActivityHandler.ExecuteOnClose(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.String,System.Boolean,System.Boolean,System.Boolean,System.Collections.Generic.List{OutSystems.RuntimeCommon.Pair{System.String,System.Object}},System.String@,System.Collections.Generic.List{OutSystems.RuntimeCommon.Pair{System.Int32,OutSystems.HubEdition.RuntimePlatform.Processes.ActivityKind}}@)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Processes.ActivityHandler.BeginExecuteOnClose(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.String,System.Boolean,System.Boolean,System.Boolean,System.Collections.Generic.Dictionary{System.String,System.Object},System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Processes.ActivityHandler.EndExecuteOnClose(System.IAsyncResult,System.String@,System.Collections.Generic.List{OutSystems.RuntimeCommon.Pair{System.Int32,OutSystems.HubEdition.RuntimePlatform.Processes.ActivityKind}}@)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Processes.ActivityHandler.ExecuteActivitySchedule(System.String,System.Int32,System.Int32,System.DateTime,System.Int32,System.Int32,System.String,System.String@)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Processes.ActivityHandler.BeginExecuteActivitySchedule(System.String,System.Int32,System.Int32,System.DateTime,System.Int32,System.Int32,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Processes.ActivityHandler.EndExecuteActivitySchedule(System.IAsyncResult,System.String@)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Processes.ActivityHandler.ExecuteProcessLaunch(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Collections.Generic.List{OutSystems.RuntimeCommon.Pair{System.String,System.Object}},System.Collections.Generic.List{OutSystems.RuntimeCommon.Pair{System.Int32,OutSystems.HubEdition.RuntimePlatform.Processes.ActivityKind}}@,System.String@)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Processes.ActivityHandler.BeginExecuteProcessTerminate(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Collections.Generic.List{OutSystems.RuntimeCommon.Pair{System.String,System.Object}},System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Processes.ActivityHandler.EndExecuteProcessTerminate(System.IAsyncResult,System.Int32@,System.String@)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Processes.ActivityHandler.ExecuteProcessTerminate(System.String,System.Int32,System.Int32,System.Int32,System.String@)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Processes.ActivityHandler.BeginExecuteProcessTerminate(System.String,System.Int32,System.Int32,System.Int32,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Processes.ActivityHandler.EndExecuteProcessTerminate(System.IAsyncResult,System.String@)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Processes.ActivityHandler.ExecuteSetProcessSuspension(System.String,System.Int32,System.Boolean,System.Int32,System.Int32,System.String@)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Processes.ActivityHandler.BeginExecuteSetProcessSuspension(System.String,System.Int32,System.Boolean,System.Int32,System.Int32,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Processes.ActivityHandler.EndExecuteSetProcessSuspension(System.IAsyncResult,System.String@)">
+            <remarks/>
+        </member>
+        <member name="T:OutSystems.HubEdition.RuntimePlatform.Processes.ActivityKind">
+            <summary>
+            Represents the Activity Kind Identifiers in the database
+            </summary>
+        </member>
+        <member name="T:OutSystems.HubEdition.RuntimePlatform.Processes.ActivityStatus">
+            <summary>
+            Represents the Activity Status Identifiers in the database
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.HttpCompressionModule.FixDeflateStreamImplementation">
+            <summary>
+            This is necessary to because the ZLibNative implementation does not allow partial flush operations
+            </summary>
+        </member>
+        <member name="T:OutSystems.HubEdition.RuntimePlatform.JSONSharp.Collections.JSONArrayCollection">
+            <summary>
+            JSONArrayCollection is an ordered collection of values. An array begins with 
+            "[" (left bracket) and ends with "]" (right bracket). Array elements are 
+            separated by "," (comma).
+            </summary>
+        </member>
+        <member name="T:OutSystems.HubEdition.RuntimePlatform.JSONSharp.JSONValueCollection">
+            <summary>
+            JSONValueCollection represents any collection in JSONSharp.  It is used to 
+            represent arrays of values to be contained within a JSON-compliant string of characters.
+            
+            A JSONValueCollection is itself a JSONValue object.
+            </summary>
+        </member>
+        <member name="T:OutSystems.HubEdition.RuntimePlatform.JSONSharp.JSONValue">
+            <summary>
+            JSONValue represents the core object in JSONSharp.  It is used to represent values
+            to be contained within a JSON-compliant string of characters.
+            
+            A JSON value can be a string in double quotes, a number, true or false, null, an 
+            object or an array. These structures can be nested.
+            </summary>
+        </member>
+        <member name="F:OutSystems.HubEdition.RuntimePlatform.JSONSharp.JSONValue.HORIZONTAL_TAB">
+            <summary>
+            Named element to represent a horizontal tab character. Used for PrettyPrint().
+            </summary>
+        </member>
+        <member name="F:OutSystems.HubEdition.RuntimePlatform.JSONSharp.JSONValue.CURRENT_INDENT">
+            <summary>
+            Static counter used for PrettyPrint().
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.JSONSharp.JSONValue.ToStringBuilder(System.Text.StringBuilder)">
+            <summary>
+            Any implementation must override the base ToStringBuilder() method, used for
+            producing the contained object data in JSON-compliant form.
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.JSONSharp.JSONValue.ToString">
+            <summary>
+            Any implementation must override the base ToStringBuilder() method, used for
+            producing the contained object data in JSON-compliant form.
+            </summary>
+            <returns>The value as a string, formatted in compliance with RFC 4627.</returns>
+        </member>
+        <member name="F:OutSystems.HubEdition.RuntimePlatform.JSONSharp.JSONValueCollection.JSONVALUE_SEPARATOR">
+            <summary>
+            Named element for the separation character for this JSONValue object.
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.JSONSharp.JSONValueCollection.ToStringBuilder(System.Text.StringBuilder)">
+            <summary>
+            Any implementation must override the base ToString() method, used for
+            producing the contained object data in JSON-compliant form.
+            </summary>
+            <returns>The value as a string, formatted in compliance with RFC 4627.</returns>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.JSONSharp.JSONValueCollection.CollectionToString(System.Text.StringBuilder)">
+            <summary>
+            Any implementation must override the base ToString() method, used for
+            producing the contained object data in JSON-compliant form.
+            </summary>
+            <returns>The value as a string, formatted in compliance with RFC 4627.</returns>
+        </member>
+        <member name="P:OutSystems.HubEdition.RuntimePlatform.JSONSharp.JSONValueCollection.BeginMarker">
+            <summary>
+            Any implementation must override the BeginMarker property, used for
+            denoting the lead wrapping character for the collection type.
+            </summary>
+        </member>
+        <member name="P:OutSystems.HubEdition.RuntimePlatform.JSONSharp.JSONValueCollection.EndMarker">
+            <summary>
+            Any implementation must override the EndMarker property, used for
+            denoting the trailing wrapping character for the collection type.
+            </summary>
+        </member>
+        <member name="F:OutSystems.HubEdition.RuntimePlatform.JSONSharp.Collections.JSONArrayCollection._values">
+            <summary>
+            Internal generic list of JSONValue objects that comprise the elements
+            of the JSONArrayCollection.
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.JSONSharp.Collections.JSONArrayCollection.#ctor(System.Collections.Generic.List{OutSystems.HubEdition.RuntimePlatform.JSONSharp.JSONValue})">
+            <summary>
+            Public constructor that accepts a generic list of JSONValue objects.
+            </summary>
+            <param name="values">Generic list of JSONValue objects.</param>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.JSONSharp.Collections.JSONArrayCollection.#ctor">
+            <summary>
+            Empty public constructor. Use this method in conjunction with
+            the Add method to populate the internal array of elements.
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.JSONSharp.Collections.JSONArrayCollection.Add(OutSystems.HubEdition.RuntimePlatform.JSONSharp.JSONValue)">
+            <summary>
+            Adds a JSONValue to the internal object array.
+            </summary>
+            <param name="value">JSONValue to add to the internal array</param>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.JSONSharp.Collections.JSONArrayCollection.Insert(System.Int32,OutSystems.HubEdition.RuntimePlatform.JSONSharp.JSONValue)">
+            <summary>
+            Inserts a JSONValue to the internal object array.
+            </summary>
+            <param name="index">zero-based index</param>
+            <param name="value">JSONValue to add to the internal array</param>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.JSONSharp.Collections.JSONArrayCollection.CollectionToString(System.Text.StringBuilder)">
+            <summary>
+            Required override of the CollectionToString() method.
+            </summary>
+            <returns>the entire collection as a string in JSON-compliant format</returns>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.JSONSharp.Collections.JSONArrayCollection.Clear">
+            <summary>
+            Clears all the elements in the array
+            </summary>
+        </member>
+        <member name="P:OutSystems.HubEdition.RuntimePlatform.JSONSharp.Collections.JSONArrayCollection.BeginMarker">
+            <summary>
+            Required override of the BeginMarker property
+            </summary>
+        </member>
+        <member name="P:OutSystems.HubEdition.RuntimePlatform.JSONSharp.Collections.JSONArrayCollection.EndMarker">
+            <summary>
+            Required override of the EndMarker property
+            </summary>
+        </member>
+        <member name="P:OutSystems.HubEdition.RuntimePlatform.JSONSharp.Collections.JSONArrayCollection.Count">
+            <summary>
+            Returns the number of elements in the array
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:OutSystems.HubEdition.RuntimePlatform.JSONSharp.Values.JSONBoolValue">
+            <summary>
+            JSONBoolValue represents a boolean value in JSONSharp.
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.JSONSharp.Values.JSONBoolValue.#ctor(System.Boolean)">
+            <summary>
+            Simple public instance constructor that accepts a boolean.
+            </summary>
+            <param name="value">boolean value for this instance</param>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.JSONSharp.Values.JSONBoolValue.ToStringBuilder(System.Text.StringBuilder)">
+            <summary>
+            Required override of the ToStringBuilder() method.
+            </summary>
+            <returns>boolean value for this instance, as text and lower-cased (either "true" or "false", without quotation marks)</returns>
+        </member>
+        <member name="T:OutSystems.HubEdition.RuntimePlatform.JSONSharp.Values.JSONNumberValue">
+            <summary>
+            JSONNumberValue is very much like a C# number, except that octal and hexadecimal formats 
+            are not used.
+            </summary>
+        </member>
+        <member name="F:OutSystems.HubEdition.RuntimePlatform.JSONSharp.Values.JSONNumberValue.JavaScriptNumberFormatInfo">
+            <summary>
+            Number formatting object for handling globalization differences with decimal point separators
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.JSONSharp.Values.JSONNumberValue.#ctor(System.Int32)">
+            <summary>
+            Public constructor that accepts a value of type int
+            </summary>
+            <param name="value">int (System.Int32) value</param>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.JSONSharp.Values.JSONNumberValue.#ctor(System.Double)">
+            <summary>
+            Public constructor that accepts a value of type double
+            </summary>
+            <param name="value">double (System.Double) value</param>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.JSONSharp.Values.JSONNumberValue.#ctor(System.Decimal)">
+            <summary>
+            Public constructor that accepts a value of type decimal
+            </summary>
+            <param name="value">decimal (System.Decimal) value</param>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.JSONSharp.Values.JSONNumberValue.#ctor(System.Single)">
+            <summary>
+            Public constructor that accepts a value of type single
+            </summary>
+            <param name="value">single (System.Single) value</param>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.JSONSharp.Values.JSONNumberValue.#ctor(System.Byte)">
+            <summary>
+            Public constructor that accepts a value of type byte
+            </summary>
+            <param name="value">byte (System.Byte) value</param>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.JSONSharp.Values.JSONNumberValue.ToStringBuilder(System.Text.StringBuilder)">
+            <summary>
+            Required override of ToStringBuilder() method.
+            </summary>
+            <returns>contained numeric value, rendered as a string</returns>
+        </member>
+        <member name="T:OutSystems.HubEdition.RuntimePlatform.JSONSharp.Collections.JSONObjectCollection">
+            <summary>
+            JSONObjectCollection is an unordered set of name/value pairs. An object begins 
+            with "{" (left brace) and ends with "}" (right brace). Each name is followed 
+            by ":" (colon) and the name/value pairs are separated by "," (comma).
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.JSONSharp.Collections.JSONObjectCollection.#ctor(System.Collections.Generic.Dictionary{OutSystems.HubEdition.RuntimePlatform.JSONSharp.Values.JSONStringValue,OutSystems.HubEdition.RuntimePlatform.JSONSharp.JSONValue})">
+            <summary>
+            Public constructor that accepts a Dictionary of name/value pairs.
+            </summary>
+            <param name="namevaluepairs">Dictionary collection of name/value pairs (JSONStringValue=name,JSONValue=pair)</param>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.JSONSharp.Collections.JSONObjectCollection.#ctor">
+            <summary>
+            Empty public constructor. Use this method in conjunction with
+            the Add method to populate the internal dictionary of name/value pairs.
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.JSONSharp.Collections.JSONObjectCollection.Add(OutSystems.HubEdition.RuntimePlatform.JSONSharp.Values.JSONStringValue,OutSystems.HubEdition.RuntimePlatform.JSONSharp.JSONValue)">
+            <summary>
+            Adds a JSONStringValue as the "name" and a JSONValue as the "value" to the 
+            internal Dictionary.  Values are checked to ensure no duplication occurs 
+            in the internal Dictionary.
+            </summary>
+            <param name="name">JSONStringValue "name" to add to the internal dictionary</param>
+            <param name="value">JSONValue "value" to add to the internal dictionary</param>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.JSONSharp.Collections.JSONObjectCollection.CollectionToString(System.Text.StringBuilder)">
+            <summary>
+            Required override of the CollectionToString() method.
+            </summary>
+            <returns>the entire collection as a string in JSON-compliant format</returns>
+        </member>
+        <member name="P:OutSystems.HubEdition.RuntimePlatform.JSONSharp.Collections.JSONObjectCollection.BeginMarker">
+            <summary>
+            Required override of the BeginMarker property
+            </summary>
+        </member>
+        <member name="P:OutSystems.HubEdition.RuntimePlatform.JSONSharp.Collections.JSONObjectCollection.EndMarker">
+            <summary>
+            Required override of the EndMarker property
+            </summary>
+        </member>
+        <member name="T:OutSystems.HubEdition.RuntimePlatform.JSONSharp.Values.JSONStringValue">
+            <summary>
+            JSONStringValue is a collection of zero or more Unicode characters, wrapped in double quotes, 
+            using backslash escapes. A character is represented as a single character string. A string 
+            is very much like a C# string.
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.JSONSharp.Values.JSONStringValue.#ctor(System.String)">
+            <summary>
+            Public constructor that accepts a value of type string
+            </summary>
+            <param name="value">string value</param>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.JSONSharp.Values.JSONStringValue.#ctor(System.String,System.Boolean)">
+            <summary>
+            Public constructor that accepts a value of type string
+            </summary>
+            <param name="value">string value</param>
+            <param name="escapeSolidus">whether "/" shall be escaped</param>
+        </member>
+        <member name="T:OutSystems.HubEdition.RuntimePlatform.Processes.ProcessStatus">
+            <summary>
+            Represents the Process Status Identifiers in the database
+            </summary>
+        </member>
+        <member name="T:OutSystems.HubEdition.RuntimePlatform.Processes.VariableKind">
+            <summary>
+            Represents a Process Variable Kind
+            </summary>
+        </member>
+        <member name="T:OutSystems.HubEdition.RuntimePlatform.BuiltInFunction">
+            <summary>
+            Contains the definitions for all the builtin functions
+            </summary>	
+            <remarks>
+            When a function is added, it is necessary to include it in the compiler.
+            See the "FillFunctionInfo" function in the "Language" class.
+            
+            NOTE : TRY/CATCH added to all functions even if we think/know they 
+            throw no exception (just in case). Exception: fn returning the argument received.
+            </remarks>
+        </member>
+        <member name="T:OutSystems.HubEdition.RuntimePlatform.SessionState.SqlSessionStateStore">
+            <summary>
+            Provides session state via SQL Server or Oracle
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.SessionConfiguration.GetSessionConfiguration">
+            <summary>
+            Gets the state DB connection string. This method also takes care of creating
+            the extra table needed by the session management module, and will fail with
+            an exception if it can't do that or if the session DB has not been initialized yet.
+            </summary>
+            <returns>The state DB connection string</returns>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.StaticEntityRuntime.StaticRecordMetadata.Read(System.Data.IDataReader)">
+            <summary>
+            Read a record from database
+            </summary>
+            <param name="r"> Data base reader</param>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.SessionDefaults.AddSessionDefault(System.String,System.Object)">
+            <summary>
+            DEPRECATED: AddSessionDefault() kept for backwards compatibility ONLY.
+             Use SessionDefaultFunctions delegate instead.
+            </summary>
+        </member>
+        <member name="T:OutSystems.HubEdition.RuntimePlatform.HeContext">
+            <summary>
+            Platform Runtime Context with info to be used in current request processing.
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.HeContext.DisposeObjects">
+            <summary>
+            Will dispose pending objects that have been added for later disposable
+            </summary>
+        </member>
+        <member name="T:OutSystems.HubEdition.RuntimePlatform.SessionHashtable">
+            <summary>
+            The SessionHashtable is a special hashtable that delays object deserialization
+            until the object is actually accessed. This makes it possible to share the
+            session between eSpaces without having to share their dlls also.
+            </summary>
+        </member>
+        <member name="T:OutSystems.HubEdition.RuntimePlatform.FormatInfo">
+            <summary>
+            When changing this class, also change OutSystems.RuntimeCommon.FormatInfoLogic
+            This one exists only for backward compatibility
+            </summary>
+        </member>
+        <member name="T:OutSystems.HubEdition.RuntimePlatform.DBHelper">
+            <summary>
+            Summary description for DBHelper.
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.DBTransactionManager.CreateDBTransactionManager(System.Int32)">
+            <summary>
+            Initializes the connection manager based on the configuration.
+            The number of connection retries given is ignored.
+            </summary>
+        </member>
+        <member name="T:OutSystems.HubEdition.RuntimePlatform.Debugger">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:OutSystems.HubEdition.RuntimePlatform.Debugger.NO_ACTIVE_THREADS_MONOTORING">
+            <summary>
+            This variable is used to monitor if there are active threads. It is pulsed when there are no threads active.
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Debugger.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Debugger.Dispose(System.Boolean)">
+            Clean up any resources being used.
+        </member>
+        <member name="T:OutSystems.HubEdition.RuntimePlatform.CallerType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:OutSystems.HubEdition.RuntimePlatform.EventQueue">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:OutSystems.HubEdition.RuntimePlatform.DebuggerEvent">
+            <summary>
+            Abstract class for debug events. These are generated by the server and sent
+            to all listening Service Studios.
+            All events include the following data:
+            
+            - eventId: this is a serial number that is used to keep track of which events
+              Service Studio has already received, so that we can gracefuly recover from
+              connection errors;
+              
+            - threadId: the thread that generated the event. This is used by Service Studio
+              to identify the target of continue/step commands
+            </summary>
+        </member>
+        <member name="T:OutSystems.HubEdition.RuntimePlatform.AtBreakpointEvent">
+            <summary>
+            This event is generated whenever a breakpoint is reached. This event has
+            the following data:
+            
+            - breakpointId: id of the breakpointable object where the thread has been
+              suspended.
+            - stack: thread's stack at the moment it was suspended. The stack includes
+              only breakpoint ids, not the local state (which must be obtained via
+              the debugger's Evaluate method)
+            </summary>
+        </member>
+        <member name="T:OutSystems.HubEdition.RuntimePlatform.ExceptionThrownEvent">
+            <summary>
+            This event is generated when an exception is thrown
+            </summary>
+        </member>
+        <member name="T:OutSystems.HubEdition.RuntimePlatform.ConcurrentAtBreakpointEvent">
+            <summary>
+            When a request gets suspended in a debug session, this event is sent to all of the
+            other debug sessions so that the users are aware of concurrent debug activity.
+            </summary>
+        </member>
+        <member name="T:OutSystems.HubEdition.RuntimePlatform.ContinueEvent">
+            <summary>
+            This event is generated whenever a thread exits from its suspended state.
+            It is used by Service Studio to update the thread's state and debugger
+            buttons status.
+            </summary>
+        </member>
+        <member name="T:OutSystems.HubEdition.RuntimePlatform.BeforeSuspendEvent">
+            <summary>
+            This event is generated whenever a thread receives a request to be suspended
+            but before it reaches a breakpoint.
+            </summary>
+        </member>
+        <member name="T:OutSystems.HubEdition.RuntimePlatform.ThreadEndEvent">
+            <summary>
+            This is event is generated when a thread ends. It is used by Service Studio
+            to remove the thread from the threads list.
+            </summary>
+        </member>
+        <member name="T:OutSystems.HubEdition.RuntimePlatform.ThreadHandledByAnotherUserEvent">
+            <summary>
+            This is event is generated when a thread is handled by an user and sent to all
+            other connected users. It is used by Service Studio to remove the thread from the threads list.
+            </summary>
+        </member>
+        <member name="T:OutSystems.HubEdition.RuntimePlatform.LoggedInUsersChangedEvent">
+            <summary>
+            This event is generated whenever the list of logged in users changes. It is used by Service Studio
+            to update the list of concurrent debug sessions
+            </summary>
+        </member>
+        <member name="T:OutSystems.HubEdition.RuntimePlatform.StopDebugSessionEvent">
+            <summary>
+            This event is not specific to a given thread. It is used to signal that 
+            the debug session has been stopped by Service Studio. It is used to notify
+            all attached Service Studios that they must update their UI in order to
+            show that the session is closed.
+            </summary>
+        </member>
+        <member name="T:OutSystems.HubEdition.RuntimePlatform.ApplicationIsBeingRedeployedEvent">
+            <summary>
+            This event is sent when the debug session is being stopped by the server
+            because the app is being redeployed. SS will then try to reconnect.
+            </summary>
+        </member>
+        <member name="T:OutSystems.HubEdition.RuntimePlatform.DebugSessionStartedEvent">
+            <summary>
+            This event is sent when the debug session is has been successfully started.
+            </summary>
+        </member>
+        <member name="T:OutSystems.HubEdition.RuntimePlatform.ThreadData">
+            <summary>
+            This class is used to collect data about a suspended thread. It provides
+            methods to command the thread and also to obtain data about it.
+            </summary>
+        </member>
+        <member name="T:OutSystems.HubEdition.RuntimePlatform.ThreadData.LongLivedRequestData">
+            <summary>
+            This class is used to store info on a request that must be available for
+            long-lived requests. E.g., when debugging a process we're actually running
+            in different requests over time, but we want it to work as if it was a single
+            request, namely wrt the StepOver/Out/etc behavior.
+            
+            Note that the data here is not specific to long-lived requests - for regular
+            requests we also need this data, but the difference is that we won't store
+            it to reuse for later requests
+            </summary>
+        </member>
+        <member name="T:OutSystems.HubEdition.RuntimePlatform.StackManager">
+            <summary>
+            This class is used to keep track of the call stack of a given thread.
+            </summary>
+        </member>
+        <member name="T:OutSystems.HubEdition.RuntimePlatform.LocalState">
+            <summary>
+            This class contains information about a given element in the thread's call
+            stack. This info includes:
+            
+            - eSpaceName: the name of the eSpace we're in. This is useful when debugging 
+              Producer/Consumer eSpaces, since different elements in the stack may correspond
+              to different eSpaces. It is used by Service Studio to provide feedback on
+              the breakpoints that are not in the currently open eSpace.
+              
+            - functionId: id of the function we're in. This is a BreakpointId.
+            
+            - functionName: name of the function. See comment on eSpaceName.
+            
+            - breakpointId: id of the breakpointable object where the thread is suspended
+            
+            - vars: value of the local variables by the time the thread was suspended. This
+              enables us to evaluate expressions.
+            </summary>
+        </member>
+        <member name="T:OutSystems.HubEdition.RuntimePlatform.DebugCommandType">
+            <summary>
+            Types of debug commands
+            </summary>
+        </member>
+        <member name="T:OutSystems.HubEdition.RuntimePlatform.DebugCommand">
+            <summary>
+            This class is used to represent commands sent to suspended threads.
+            </summary>
+        </member>
+        <member name="T:OutSystems.HubEdition.RuntimePlatform.DebuggerEvents">
+            <summary>
+            HttpHandler used to send debug events to Service Studio.
+            
+            For Java, this class must be mapped into a name finishing with Servlet, since in 
+            JBossWS servlet class names must end with "Servlet" otherwise they are considered 
+            as web services
+            http://www.jboss.com/index.html?module=bb&amp;op=viewtopic&amp;t=85503
+            </summary>
+        </member>
+        <member name="T:OutSystems.HubEdition.RuntimePlatform._Debugger">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform._Debugger.#ctor(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform._Debugger.GetIsRunning">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform._Debugger.BeginGetIsRunning(System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform._Debugger.EndGetIsRunning(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform._Debugger.StartDebugSession(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform._Debugger.BeginStartDebugSession(System.String,System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform._Debugger.EndStartDebugSession(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform._Debugger.StopDebugSession(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform._Debugger.BeginStopDebugSession(System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform._Debugger.EndStopDebugSession(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform._Debugger.OnBeforeDeploy(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform._Debugger.BeginOnBeforeDeploy(System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform._Debugger.EndOnBeforeDeploy(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform._Debugger.SetHandleExceptionMode(System.String,System.Boolean)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform._Debugger.BeginSetHandleExceptionMode(System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform._Debugger.EndSetHandleExceptionMode(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform._Debugger.AddBreakpoints(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform._Debugger.BeginAddBreakpoints(System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform._Debugger.EndAddBreakpoints(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform._Debugger.RemoveBreakpoint(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform._Debugger.BeginRemoveBreakpoint(System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform._Debugger.EndRemoveBreakpoint(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform._Debugger.ClearBreakpoints(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform._Debugger.BeginClearBreakpoints(System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform._Debugger.EndClearBreakpoints(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform._Debugger.SuspendAllThreads(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform._Debugger.BeginSuspendAllThreads(System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform._Debugger.EndSuspendAllThreads(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform._Debugger.ContinueThread(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform._Debugger.BeginContinueThread(System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform._Debugger.EndContinueThread(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform._Debugger.Stop(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform._Debugger.BeginStop(System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform._Debugger.EndStop(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform._Debugger.RunTo(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform._Debugger.BeginRunTo(System.String,System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform._Debugger.EndRunTo(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform._Debugger.StepInto(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform._Debugger.BeginStepInto(System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform._Debugger.EndStepInto(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform._Debugger.StepOver(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform._Debugger.BeginStepOver(System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform._Debugger.EndStepOver(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform._Debugger.StepOut(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform._Debugger.BeginStepOut(System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform._Debugger.EndStepOut(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform._Debugger.GetDebugEvent(System.String,System.Int64)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform._Debugger.BeginGetDebugEvent(System.String,System.Int64,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform._Debugger.EndGetDebugEvent(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform._Debugger.Evaluate(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform._Debugger.BeginEvaluate(System.String,System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform._Debugger.EndEvaluate(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="T:OutSystems.HubEdition.RuntimePlatform.Utilities.DotNetEnvironment">
+            <summary>
+            Summary description for Environment.
+            </summary>
+        </member>
+        <member name="T:OutSystems.HubEdition.RuntimePlatform.HEUrlBuilder">
+            <summary>
+            Summary description for HEUrlBuilder.
+            </summary>
+        </member>
+        <member name="T:OutSystems.HubEdition.RuntimePlatform.IBookmarkableURL">
+            <summary>
+            Summary description for IBookmarkableURL.
+            </summary>
+        </member>
+        <member name="T:OutSystems.HubEdition.RuntimePlatform.INegotiateTabIndexes">
+            <summary>
+            Summary description for INegotiateTabIndexes.
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.SitePropertiesInfoReadOnly.getSafe(System.String)">
+            <summary>
+            This function returns the value for the specified Site Property. If it doesn't exist, it will return 'null'
+            </summary>
+            <param name="name">Site Property Name</param>
+            <returns>The value for the Site Property with the given name, or 'null' if it doens't exist.</returns>
+        </member>
+        <member name="P:OutSystems.HubEdition.RuntimePlatform.SitePropertiesInfoReadOnly.Item(System.String)">
+            <summary>
+             This property returns the value for the specified Site Property. If it doesn't exist, an exception is thrown
+              If you want to check and handle 'null' yourself, call getSafe() instead!
+            </summary>
+            <param name="name">Site Property Name</param>
+        </member>
+        <member name="T:OutSystems.HubEdition.RuntimePlatform.TenantInfo">
+            <summary>
+            Contains all the information about the tenant.
+            </summary>
+        </member>
+        <member name="T:OutSystems.HubEdition.RuntimePlatform.AjaxEventContextInfo">
+            <summary>
+            This class is used to store information about the Ajax event triggered by the client
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.AjaxEventContextInfo.#ctor">
+            <summary>
+            Builds an empty AjaxEventContextInfo
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.AjaxEventContextInfo.#ctor(System.String)">
+            <summary>
+            Builds the AjaxEventContentInfo based on the ajax request value
+            </summary>
+            <param name="ajaxRequestArgs"></param>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.AjaxEventContextInfo.GetAjaxEventContextInfo(System.Web.HttpContext)">
+            <summary>
+            Gets the Ajax event context info of a given context
+            </summary>
+            <param name="context"></param>
+            <returns>A new instance of an AjaxEventContextInfo.</returns>
+        </member>
+        <member name="P:OutSystems.HubEdition.RuntimePlatform.AjaxEventContextInfo.DocumentWidth">
+            <summary>
+            The document element width property
+            </summary>
+        </member>
+        <member name="P:OutSystems.HubEdition.RuntimePlatform.AjaxEventContextInfo.DocumentHeight">
+            <summary>
+            The document element heigth property
+            </summary>
+        </member>
+        <member name="P:OutSystems.HubEdition.RuntimePlatform.AjaxEventContextInfo.ElementId">
+            <summary>
+            The id of the element that triggered the event
+            </summary>
+        </member>
+        <member name="P:OutSystems.HubEdition.RuntimePlatform.AjaxEventContextInfo.ElementOffsetTop">
+            <summary>
+            The absolute vertical position of the element that triggered the event
+            </summary>
+        </member>
+        <member name="P:OutSystems.HubEdition.RuntimePlatform.AjaxEventContextInfo.ElementOffsetLeft">
+            <summary>
+            The absolute horizontal position of the element that triggered the event
+            </summary>
+        </member>
+        <member name="P:OutSystems.HubEdition.RuntimePlatform.AjaxEventContextInfo.ScrollOffsetTop">
+            <summary>
+            The vertical viewport position
+            </summary>
+        </member>
+        <member name="P:OutSystems.HubEdition.RuntimePlatform.AjaxEventContextInfo.ScrollOffsetLeft">
+            <summary>
+            The horizontal viewport position
+            </summary>
+        </member>
+        <member name="P:OutSystems.HubEdition.RuntimePlatform.AjaxEventContextInfo.MouseX">
+            <summary>
+            The absolute horizontal mouse position
+            </summary>
+        </member>
+        <member name="P:OutSystems.HubEdition.RuntimePlatform.AjaxEventContextInfo.MouseY">
+            <summary>
+            The absolute vertical mouse position 
+            </summary>
+        </member>
+        <member name="P:OutSystems.HubEdition.RuntimePlatform.AjaxEventContextInfo.NotifyMessage">
+            <summary>
+            The text message used while invoking the notify method.
+            </summary>
+        </member>
+        <member name="T:OutSystems.HubEdition.RuntimePlatform.AppInfo">
+            <summary>
+            Class that is is used to store the information about the application.
+            THIS CLASS IS USED EXTERNALLY. WE CANNOT BREAK THIS INTERFACE.
+            </summary>
+        </member>
+        <member name="F:OutSystems.HubEdition.ThreadStatus.Name">
+            <summary>
+            Thread name
+            </summary>
+        </member>
+        <member name="F:OutSystems.HubEdition.ThreadStatus.Status">
+            <summary>
+            Status name
+            </summary>
+        </member>
+        <member name="F:OutSystems.HubEdition.ThreadStatus.SecondsInStatus">
+            <summary>
+            How long the thread is in this status
+            </summary>
+        </member>
+        <member name="F:OutSystems.HubEdition.ThreadStatus.MaximumExpectedSeconds">
+            <summary>
+            How much time is it supposed to be in this status:
+             "0" means it is not supposed to be in this status (it is an error situation)
+             "-1" means the time in this status is not limited. 
+            </summary>
+        </member>
+        <member name="F:OutSystems.HubEdition.ThreadStatus.Detail">
+            <summary>
+            Other details to appear in the monitoring user interface
+            </summary>
+        </member>
+        <member name="T:OutSystems.HubEdition.IPingService">
+            <summary>
+            NOTE: Don't use ref or out parameters here because the Java Remoting doesn't support them...
+            </summary>
+        </member>
+        <member name="T:OutSystems.HubEdition.RuntimePlatform.Db.IRecord">
+            <summary>
+            Represents a record from the database.
+            </summary>
+        </member>
+        <member name="T:OutSystems.HubEdition.RuntimePlatform.Web.JavaScriptManager">
+            <summary>
+            Summary description for JavaScriptManager.
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Web.JavaScriptManager.createElementsArraysScript">
+            <summary>
+            Method to create the script that creates the elements arrays
+            </summary>
+            <returns>A string with the script.</returns>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Web.JavaScriptManager.createParentEditRecordValidatorsScript">
+            <summary>
+            Method to create the script that associates the validators (button and links) to the elements arrays
+            </summary>
+            <returns>A string with the script.</returns>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Web.JavaScriptManager.GetButtonElementsToValidateJavascript(System.String,System.String)">
+            <summary>
+            Gets the javascript to refresh the button's elementsToValidate array
+            (This is used in Ajax Refreshes for buttons that have a ParentEditRecord set)
+            </summary>
+            <param name="buttonClientId"></param>
+            <param name="parentEditRecordName"></param>
+            <returns>A string with the javascript.</returns>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Web.JavaScriptManager.GetRelativeJavaScriptPrefix">
+            <summary>
+            Get relative path to be used in the javascript location
+            </summary>
+            <returns>Javascript relative path</returns>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Web.JavaScriptManager.CheckRelativeJavaScriptPrefix(System.String)">
+            <summary>
+            Checks request relative path, to be used in the javascript location
+            </summary>
+            <param name="applicationPath">base application path </param>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Web.JavaScriptManager.SetOnChangeTimerDelay(System.Int32)">
+            <summary>
+            Sets the OnChange timer delay for the inputs in the current page
+            </summary>
+            <param name="ms"></param>
+        </member>
+        <member name="P:OutSystems.HubEdition.RuntimePlatform.Web.JavaScriptManager.parentEditRecordValidatorsScript">
+            <summary>
+            Method used to get the Parent Edit Record Validators script, based on the previous calls to
+            addIdToParentEditRecord and addValidatorToParentEditRecord
+            </summary>
+        </member>
+        <member name="T:OutSystems.HubEdition.RuntimePlatform.Db.OSList`1">
+            <summary>
+            Abstract class that implements basic list behavior and 
+            from which all other lists must derive.
+            </summary>
+        </member>
+        <member name="F:OutSystems.HubEdition.RuntimePlatform.Db.OSList`1._data">
+            <summary>
+            Contains the records when operating as an 
+            in-memory list. Always points to an arraylist in case of an in 
+            memory list.
+            </summary>
+            <remarks>
+            Set to null when not being used.
+            </remarks>
+        </member>
+        <member name="F:OutSystems.HubEdition.RuntimePlatform.Db.OSList`1._reader">
+            <summary>
+            The IDataReader used by the list when reading data
+            from the database.
+            </summary>
+            <remarks>
+            Set to null when not being used.
+            </remarks>
+        </member>
+        <member name="F:OutSystems.HubEdition.RuntimePlatform.Db.OSList`1._maxRecords">
+            <summary>
+            Maximum number of records in the record list.
+            </summary>
+            <remarks>
+            If set to 0, means infinity (read all records).
+            </remarks>
+        </member>
+        <member name="F:OutSystems.HubEdition.RuntimePlatform.Db.OSList`1._currentRowNumber">
+            <summary>
+            Zero based number of the row.
+            </summary>
+            <remarks>
+            If set to -1 then we are not positioned. 
+            Otherwise it is the zero based number of the row.
+            </remarks>
+        </member>
+        <member name="F:OutSystems.HubEdition.RuntimePlatform.Db.OSList`1._bof">
+            <summary>
+            Specifies if we are currently at the beggining of the 
+            list.
+            </summary>
+        </member>
+        <member name="F:OutSystems.HubEdition.RuntimePlatform.Db.OSList`1._eof">
+            <summary>
+            Specifies if we are currently at the end of the 
+            list.
+            </summary>
+        </member>
+        <member name="F:OutSystems.HubEdition.RuntimePlatform.Db.OSList`1._empty">
+            <summary>
+            Specifies if the record list is empty
+            </summary>
+        </member>
+        <member name="F:OutSystems.HubEdition.RuntimePlatform.Db.OSList`1._firstRead">
+            <summary>
+            Specifies if this is the first time the list is read.
+            </summary>
+        </member>
+        <member name="F:OutSystems.HubEdition.RuntimePlatform.Db.OSList`1._iterating">
+            <summary>
+            Specifies if the list is being iterated or not.
+            </summary>
+        </member>
+        <member name="F:OutSystems.HubEdition.RuntimePlatform.Db.OSList`1._optimizedFields">
+            <summary>
+            Contains the list of fields that were not retrieved from the database
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Db.OSList`1.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Create the object from serialized data.
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Db.OSList`1.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Saves the object data for serialization.
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Db.OSList`1.CloseDataReader">
+            <summary>
+            Close the datareader and, maybe, disposes conn object.
+            </summary>
+            <remarks>
+            Set disposeObject to true, unless this method is being called by 
+            the "disposer" (eg: DbConnManager.CloseConn())
+            </remarks>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Db.OSList`1.InternalRecursiveSave">
+            <summary>
+            Saves the current record to the list buffer.
+            </summary>
+            <remarks>
+            This should be called to save the current record before
+            operating on the record list (advancing, serializing, etc).
+            </remarks>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Db.OSList`1.Read">
+            <summary>
+            Reads the current record from the source.
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Db.OSList`1.Reset">
+            <summary>
+            Resets the list to its initial position.
+            </summary>
+            <remarks>Cannot be used more than once when using a 
+            database list.
+            </remarks>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Db.OSList`1.Advance">
+            <summary>
+            Advances the current record to the next record in the list.
+            </summary>
+            <remarks>
+            <para>After an enumerator is created or after a call to 
+            Reset, an enumerator is positioned before the first element
+            of the collection, and the first call to MoveNext moves the
+            enumerator over the first element of the collection.</para>
+            <para>After the end of the collection is passed, subsequent
+            calls to MoveNext return false until Reset is called.</para>
+            </remarks>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Db.OSList`1.Advance(System.Int32)">
+            <summary>
+            Advances <paramref>count</paramref> records in the list.
+            </summary>
+            <param name="count">Number of records to skip.</param>
+            <remarks>
+            <para>After an enumerator is created or after a call to 
+            Reset, an enumerator is positioned before the first element
+            of the collection, and the first call to MoveNext moves the
+            enumerator over the first element of the collection.</para>
+            <para>After the end of the collection is passed, subsequent
+            calls to MoveNext return false until Reset is called.</para>
+            </remarks>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Db.OSList`1.RecursiveReset">
+            <summary>
+            For internal use only.
+            </summary>
+            <remarks>
+            <para>This function is for internal use only.</para>
+            <para>Performs a reset on the list and progates the
+            reset to the record.</para>
+            </remarks>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Db.OSList`1.SetPosition(System.Int32)">
+            <summary>
+            For internal use only.
+            </summary>
+            <remarks>
+            <para>This function is for internal use only.</para>
+            <para>Sets the position of the list thus moving CurrentRec to the new position</para>
+            </remarks>
+        </member>
+        <member name="F:OutSystems.HubEdition.RuntimePlatform.Db.OSList`1.CurrentRec">
+            <summary>
+            Current Record variable
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Db.OSList`1.Duplicate">
+            <summary>
+            Duplicates the record List
+            </summary>
+            <returns>The duplicated record list</returns>
+        </member>
+        <member name="P:OutSystems.HubEdition.RuntimePlatform.Db.OSList`1.Data">
+            <summary>
+            Contains the records when operating as an 
+            in-memory list.
+            </summary>
+        </member>
+        <member name="P:OutSystems.HubEdition.RuntimePlatform.Db.OSList`1.Reader">
+            <summary>
+            Property that only sets internal field _reader
+            </summary>
+        </member>
+        <member name="P:OutSystems.HubEdition.RuntimePlatform.Db.OSList`1.CurrentRowNumber">
+            <summary>
+            Zero based number of the row.
+            </summary>
+            <remarks>
+            If set to -1 then we are before the the first record. 
+            Otherwise it is the zero based number of the row.
+            </remarks>
+        </member>
+        <member name="P:OutSystems.HubEdition.RuntimePlatform.Db.OSList`1.Length">
+            <summary>
+            The number of records stored in the list.
+            </summary>
+            <remarks>
+            Database lists always return -1 while in-memory
+            records return the current number of records stored.
+            </remarks>
+        </member>
+        <member name="P:OutSystems.HubEdition.RuntimePlatform.Db.OSList`1.Bof">
+            <summary>
+            Specifies if we are currently at the beggining of the 
+            list.
+            </summary>
+            <remarks>
+            Set to true the list has reached BOF, otherwise BOF has not
+            been reached.
+            </remarks>
+        </member>
+        <member name="P:OutSystems.HubEdition.RuntimePlatform.Db.OSList`1.Eof">
+            <summary>
+            Specifies if we are currently at the end of the 
+            list.
+            </summary>
+            <remarks>
+            Set to true the list has reached EOF, otherwise EOF has not
+            been reached.
+            </remarks>
+        </member>
+        <member name="P:OutSystems.HubEdition.RuntimePlatform.Db.OSList`1.Empty">
+            <summary>
+            Specifies if the record list is empty
+            </summary>
+            <remarks>
+            Set to true if the list is empty, otherwise the list is not empty.
+            </remarks>
+        </member>
+        <member name="P:OutSystems.HubEdition.RuntimePlatform.Db.OSList`1.Item(System.Int32)">
+            <summary>
+            Gets the object of a given index
+            </summary>
+            <param name="index"> Intex of item to get</param>
+            <returns>The object of required index</returns>
+        </member>
+        <member name="T:OutSystems.HubEdition.RuntimePlatform.Db.GenericRecordList`1">
+            <summary>
+            Class that implements basic recordlist behavior and 
+            from which all other recordlists must derive.
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Db.GenericRecordList`1.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Create the object from serialized data.
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Db.GenericRecordList`1.RecursiveReset">
+            <summary>
+            Performs a recursive reset
+            </summary>
+        </member>
+        <member name="T:OutSystems.HubEdition.RuntimePlatform.Db.BasicTypeList`1">
+            <summary>
+            Class for lists of basic type.
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Db.BasicTypeList`1.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Create the object from serialized data.
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Db.BasicTypeList`1.RecursiveReset">
+            <summary>
+            Performs a recursive reset
+            </summary>
+        </member>
+        <member name="T:OutSystems.HubEdition.RuntimePlatform.RunningInfo">
+            <summary>
+            Summary description for RunningInfo.
+            </summary>
+        </member>
+        <member name="T:OutSystems.HubEdition.RuntimePlatform.IntegratedDebugger">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.IntegratedDebugger.#ctor(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.IntegratedDebugger.CheckPermission(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.IntegratedDebugger.BeginCheckPermission(System.String,System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.IntegratedDebugger.EndCheckPermission(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="F:OutSystems.HubEdition.RuntimePlatform.Settings.nodeSettings">
+            <summary>
+            Collection of settings that are specific to a node (in a farm environment)
+            </summary>
+        </member>
+        <member name="F:OutSystems.HubEdition.RuntimePlatform.Settings.globalSettings">
+            <summary>
+            Collection of settings that are written in machine.config
+            to be used by settings required for accessing the database.
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Settings.Set(System.String,System.String)">
+            <summary>
+            This method only sets the parameter temporarily.
+            If you want to set the configuration in a persistent fashion, use the <b>SetPersistent</b> method.
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Settings.SetPersistent(System.String,System.String)">
+            <summary>
+            This method sets a persistent value for the configuration parameter.
+            </summary>
+            <param name="key">Parameter name</param>
+            <param name="value">Parameter value</param>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Settings.GetBool(System.String)">
+            <summary>
+            Throws an exception if key does not exists in the config.
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Settings.GetBool(System.String,OutSystems.Internal.Db.Transaction)">
+            <summary>
+            Throws an exception if key does not exists in the config.
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Settings.GetBool(System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Return nullValue if key does not exists in the config.
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Settings.GetBool(System.String,System.Boolean,System.Boolean,OutSystems.Internal.Db.Transaction)">
+            <summary>
+            Return nullValue if key does not exists in the config.
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Settings.GetInt(System.String)">
+            <summary>
+            Returns the int value for a setting.
+            Throws an exception if key does not exists in the config.
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Settings.GetInt(System.String,OutSystems.Internal.Db.Transaction)">
+            <summary>
+            Returns the int value for a setting.
+            Throws an exception if key does not exists in the config.
+            Uses the Transaction passed by argument.
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Settings.GetDecimal(System.String)">
+            <summary>
+            Returns the decimal value for a setting.
+            Throws an exception if key does not exists in the config.
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Settings.GetInt(System.String,System.Int32,System.Boolean)">
+            <summary>
+            Return nullValue if key does not exists in the config.
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Settings.GetUnitTestSetting(System.String)">
+            <summary>
+            Gets a unit test setting from the local config. These settings are not indexed by instance name.
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Settings.GetGlobalSetting(System.String)">
+            <summary>
+            Gets a global setting from the machine.config, indexing by instance name that should be in the local .config.
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Settings.GetGlobalSettingByPrefix(System.String)">
+            <summary>
+            Gets a global setting from the machine.config, indexing by instance name that should be in the local .config.
+            </summary>
+        </member>
+        <member name="P:OutSystems.HubEdition.RuntimePlatform.Settings.VolatileSettings">
+            <summary>
+            Settings that are volatile aren't cached and therefore are always
+            retrieved from the configuration files or database.
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Settings.Configs.GetFullGlobalKey(System.String,System.String)">
+            <summary>
+            Global settings are indexed by instance name in machine.config. Use this to obtain their full key name.
+            
+            This must be in sync with GotDotNet.ApplicationBlocks.SMSSettings.Configs.GetFullGlobalKey
+            </summary>
+        </member>
+        <member name="T:OutSystems.HubEdition.RuntimePlatform.Sms.SmsEncoder">
+            <summary>
+            Summary description for SmsEncoder.
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Sms.Latin1ToGSM.GetCorrectMessageSize(System.Byte[],System.Int32)">
+            <summary>
+            This method calculates the maximum size a message may have in order
+            to not exceed maxlen when it is encoded in GSM.
+            </summary>
+            <param name="message">The message that will be encoded</param>
+            <param name="maxlen">The maximum size of the message once encoded</param>
+            <returns>Returns the maximum size of the message that will not exceed 
+            maxlen when the message is encoded in GSM. If message is null, GetCorrectMessageSize returns 0.
+            </returns>
+        </member>
+        <member name="T:OutSystems.HubEdition.RuntimePlatform.ISsTimer">
+            <summary>
+            This interface defines a Timer signature
+            </summary>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.Web.EmailScreenUtils.SafeGetEmailHost(OutSystems.HubEdition.RuntimePlatform.Web.IEmailScreen)">
+            <summary>
+            Get the hostname that will be rendered on links in the email
+            </summary>
+            <param name="screen"></param>
+            <returns>The hostname or null if not specified or screen is null</returns>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.XCopyFileInfo.CopyFiles(System.String)">
+            <summary>
+            The CopyFiles methods should not be used by the deploy and compiler services... 
+            Use PoolFile.CopyFiles instead because it knowns how to work with links...
+            </summary>
+            <param name="dstPath"></param>
+        </member>
+        <member name="M:OutSystems.HubEdition.RuntimePlatform.XCopyFileInfo.FileCopy(System.String,System.String)">
+            <summary>
+            This method should not be used directly by the deploy and compiler services
+            Use PoolUtils.CopyFiles to copy files because it knowns how to work with links
+            </summary>
+            <param name="fromFile"></param>
+            <param name="toFile"></param>
+        </member>
+    </members>
+</doc>

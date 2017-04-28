@@ -1,0 +1,5 @@
+﻿<%@ Control Language="c#" AutoEventWireup="false" Codebehind="Blocks\CornwallCollegeFunct\Common_WB\MLW_PSR_Competencies_Progression_Chart.ascx.cs" Inherits="ssCornwallCollegeFunct.Flows.FlowCommon_WB.WBlkMLW_PSR_Competencies_Progression_Chart,CornwallCollegeFunct" TargetSchema="http://schemas.microsoft.com/intellisense/ie5"%>
+<%@ Register TagPrefix="osweb" Namespace="OutSystems.HubEdition.WebWidgets" Assembly="OutSystems.HubEdition.WebWidgets" %>
+<%@ Assembly Name="OutSystems.WidgetsRuntimeAPI" %>
+<%@ Import namespace="ssCornwallCollegeFunct" %>
+<%@ Register TagPrefix="Charts_widgets" TagName="KLG95hxUWEUi8ar_7nKIHxg" Src="..\..\CornwallCollegeFunct\Charts\LineChart.ascx" %><%# PageStartHook() %><Charts_widgets:KLG95hxUWEUi8ar_7nKIHxg runat="server" id="Charts_wtChartWrapper" OnEvaluateParameters="Charts_webBlckChartWrapper_onDataBinding" InstanceID="ChartWrapper"></Charts_widgets:KLG95hxUWEUi8ar_7nKIHxg><%# PageEndHook() %>

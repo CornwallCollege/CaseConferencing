@@ -1,0 +1,16 @@
+C:\temp\CaseConferencing_v112_Source\RuntimePlatform\bin\Debug\RuntimePlatform.csprojResolveAssemblyReference.cache
+C:\temp\CaseConferencing_v112_Source\RuntimePlatform\bin\Debug\OutSystems.HubEdition.RuntimePlatform.Debugger.resources
+C:\temp\CaseConferencing_v112_Source\RuntimePlatform\bin\Debug\RuntimePlatform.csproj.GenerateResource.Cache
+C:\temp\CaseConferencing_v112_Source\RuntimePlatform\bin\Debug\OutSystems.HubEdition.RuntimePlatform.dll
+C:\temp\CaseConferencing_v112_Source\RuntimePlatform\bin\Debug\OutSystems.HubEdition.RuntimePlatform.XML
+C:\temp\CaseConferencing_v112_Source\RuntimePlatform\bin\Debug\OutSystems.HubEdition.RuntimePlatform.pdb
+C:\temp\CaseConferencing_v112_Source\RuntimePlatform\bin\Debug\GemBox.Spreadsheet.dll
+C:\temp\CaseConferencing_v112_Source\RuntimePlatform\bin\Debug\ICSharpCode.SharpZipLib.dll
+C:\temp\CaseConferencing_v112_Source\RuntimePlatform\bin\Debug\OutSystems.HubEdition.DatabaseAbstractionLayer.dll
+C:\temp\CaseConferencing_v112_Source\RuntimePlatform\bin\Debug\OutSystems.HubEdition.SMS.dll
+C:\temp\CaseConferencing_v112_Source\RuntimePlatform\bin\Debug\OutSystems.RuntimeCommon.dll
+C:\temp\CaseConferencing_v112_Source\RuntimePlatform\bin\Debug\OutSystems.RuntimeCommon.pdb
+C:\temp\CaseConferencing_v112_Source\RuntimePlatform\bin\Debug\OutSystems.HubEdition.DatabaseAbstractionLayer.pdb
+C:\temp\CaseConferencing_v112_Source\RuntimePlatform\bin\Debug\OutSystems.HubEdition.DatabaseAbstractionLayer.xml
+C:\temp\CaseConferencing_v112_Source\RuntimePlatform\bin\Debug\OutSystems.HubEdition.SMS.pdb
+C:\temp\CaseConferencing_v112_Source\RuntimePlatform\bin\Debug\GemBox.Spreadsheet.xml

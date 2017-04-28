@@ -1,0 +1,201 @@
+﻿/* Tile **************************/
+.Tile {
+    display: table;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+.firefox .Tile {
+    display: -moz-deck;
+}
+
+.Tile .Row {
+    display: table-row;
+}
+
+a .Tile {
+    text-decoration: none;
+}
+
+.Tile.Small {
+    line-height: 20px;
+    min-height: 60px;
+    width: 100%; /* Firefox needs this */   
+    
+    /* Firefox */    
+    display: -moz-box;
+    -moz-box-pack: center;
+    -moz-box-align: center;
+}
+
+.Tile.Medium {
+    min-height: 180px;
+    width: 100%; /* Firefox needs this */       
+    
+    /* Firefox */
+    display: -moz-box;
+    -moz-box-align: center;   
+}
+
+.Tile.Large {
+    min-height: 280px;
+    width: 100%; /* Firefox needs this */     
+    
+    /* Firefox */
+    display: -moz-box;
+    -moz-box-pack: center;
+    -moz-box-align: center;   
+}
+
+.ie .Tile.Large .TileNumber_number {
+    height: 50%;
+    vertical-align: bottom;
+}
+
+.ie .Tile.Large .TileNumber_text {
+    height: 50%;
+    vertical-align: top;
+}
+
+/* Tile: InfoTooltip **************************/
+.Tile .InfoTooltip {
+    margin: 0;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+
+/* Tile: InfoTooltip IF Small **************************/
+.Tile.Small .InfoTooltip {
+    font-size: 10px;
+    right: 2px;
+    top: 2px;
+}
+
+/* Tile: TileIcon **************************/
+.Tile.TileIcon {
+    padding: 10px 0 10px;
+}
+
+.TileIcon_icon {
+    display: table-cell;
+    font-size: 48px;
+    vertical-align: middle;
+}
+
+.TileIcon_text {
+    display: table-cell;
+    font-size: 16px;
+    vertical-align: middle;
+}
+
+/* TileIcon IF Small **************************/
+.Tile.Small .TileIcon_icon {
+    font-size: 30px;
+}
+
+.Tile.Small .TileIcon_text {
+    font-size: 16px;
+}
+
+/* TileIcon IF Medium **************************/
+.Tile.Medium .TileIcon_icon {
+    font-size: 60px;
+}
+
+.Tile.Medium .TileIcon_text {
+    font-size: 22px;
+}
+
+/* TileIcon IF Large **************************/
+.Tile.Large .TileIcon_icon {
+    font-size: 70px;
+}
+
+.Tile.Large .TileIcon_text {
+    font-size: 28px;
+}
+
+/* Tile: TileIconText **************************/
+.TileIconText_icon {
+    display: table-cell;
+    font-size: 60px;
+    vertical-align: middle;
+    width: 120px;
+}
+
+.TileIconText_right {
+    display: table-cell;
+    font-size: 16px;
+    padding-right: 20px;
+    vertical-align: middle;
+}
+
+/* Tile: TileIconText_icon IF Small **************************/
+.Tile.Small .TileIconText_icon {
+    font-size: 36px;
+}
+
+.Tile.Small .TileIconText_right {
+    font-size: 16px;
+}
+
+/* Tile: TileIconText_icon IF Medium **************************/
+.Tile.Medium .TileIconText_icon {
+    font-size: 72px;
+}
+
+.Tile.Medium .TileIconText_right {
+    font-size: 22px;
+}
+
+/* Tile: TileIconText_icon IF Large **************************/
+.Tile.Large .TileIconText_icon {
+    font-size: 88px;
+}
+
+.Tile.Large .TileIconText_right {
+    font-size: 28px;
+}
+
+/* Tile: TileNumber **************************/
+.TileNumber_number {
+    display: table-cell;
+    font-size: 45px;
+    font-weight: 700;
+    vertical-align: bottom;
+}
+
+.TileNumber_text {
+    display: table-cell;
+    vertical-align: top;
+}
+
+/* Tile: TileNumber IF Small **************************/
+.Small .TileNumber_number {
+    font-size: 18px;
+}
+
+.Tile.Small .TileNumber_text {
+    font-size: 14px;
+}
+
+/* Tile: TileNumber IF Medium **************************/
+.Tile.Medium .TileNumber_number {
+    font-size: 48px;
+}
+
+.Tile.Medium .TileNumber_text {
+    font-size: 20px;
+}
+
+/* Tile: TileNumber IF Large **************************/
+.Tile.Large .TileNumber_number {
+    font-size: 62px;
+}
+
+.Tile.Large .TileNumber_text {
+    font-size: 20px;
+}

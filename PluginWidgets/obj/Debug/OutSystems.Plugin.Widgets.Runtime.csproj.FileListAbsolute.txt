@@ -1,0 +1,5 @@
+C:\temp\CaseConferencing_v112_Source\PluginWidgets\bin\Debug\OutSystems.Plugin.Widgets.Runtime.dll
+C:\temp\CaseConferencing_v112_Source\PluginWidgets\bin\Debug\OutSystems.Plugin.Widgets.Runtime.pdb
+C:\temp\CaseConferencing_v112_Source\PluginWidgets\obj\Debug\OutSystems.Plugin.Widgets.Runtime.csprojResolveAssemblyReference.cache
+C:\temp\CaseConferencing_v112_Source\PluginWidgets\obj\Debug\OutSystems.Plugin.Widgets.Runtime.dll
+C:\temp\CaseConferencing_v112_Source\PluginWidgets\obj\Debug\OutSystems.Plugin.Widgets.Runtime.pdb

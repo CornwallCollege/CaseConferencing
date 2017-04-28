@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0F14B756-1F80-421A-9837-79B64857331C}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyName>OutSystems.HubEdition.WebWidgets</AssemblyName>
+    <KeyContainerName>
+    </KeyContainerName>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>OutSystems.HubEdition.WebWidgets</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <IntermediateOutputPath>$(OutputPath)</IntermediateOutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <IntermediateOutputPath>$(OutputPath)</IntermediateOutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>pdbonly</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WidgetsRuntimeAPI\WidgetsRuntimeAPI.csproj">
+      <Project>{f686984c-5abe-4529-9ae1-4bbf1ea7f93e}</Project>
+      <Name>WidgetsRuntimeAPI</Name>
+    </ProjectReference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.85.5.452, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <SpecificVersion>True</SpecificVersion>
+      <HintPath>..\ICSharpCode.SharpZipLib\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Core" /><Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Web">
+      <Name>System.Web</Name>
+    </Reference>
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <ProjectReference Include="..\OutSystems.RuntimeCommon\OutSystems.RuntimeCommon.csproj">
+      <Project>{A99F44D3-9D76-4AA1-A833-BA2D283AD22E}</Project>
+      <Name>OutSystems.RuntimeCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RuntimePlatform\RuntimePlatform.csproj">
+      <Name>RuntimePlatform</Name>
+      <Project>{EFB0D1E3-076D-4F16-A595-B33BFC5B3F18}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\RuntimePlatform\SecureConfidentialInformationEncryption.cs">
+      <Link>SecureConfidentialInformationEncryption.cs</Link>
+    </Compile>
+    <Compile Include="..\RuntimePlatform\SharedKeys.cs">
+      <Link>SharedKeys.cs</Link>
+    </Compile>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BlocksJavascript.cs" />
+    <Compile Include="Body.cs" />
+    <Compile Include="Button.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CheckBox.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ControlVisibility.cs" />
+    <Compile Include="CustomWidget.JavascriptIncludeBehavior.cs" />
+    <Compile Include="CustomWidget.cs" />
+    <Compile Include="CustomWidget.RepeaterBehavior.cs" />
+    <Compile Include="IWidgetWithBehaviors.cs" />
+    <Compile Include="IWidgetWithParentEditRecordAndValidation.cs" />
+    <Compile Include="IWidgetWithValidProperty.cs" />
+    <Compile Include="IWebBlockRuntimeProperties.cs" />
+    <Compile Include="GridCssHelper.cs" />
+    <Compile Include="PlaceholderContainer.cs" />
+    <Compile Include="Form.cs" />
+    <Compile Include="OSTemplateColumn.cs" />
+    <Compile Include="IValidationMessages.cs" />
+    <Compile Include="OSDataGridDummyItem.cs" />
+    <Compile Include="If.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Container.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BindDelegatesEventArgs.cs" />
+    <Compile Include="RtWidgets\CustomWidgetRtWidget.cs" />
+    <Compile Include="RtWidgets\EditRecordRtWidget.cs" />
+    <Compile Include="RtWidgets\InputFilenameRtWidget.cs" />
+    <Compile Include="RtWidgets\ListBoxRtWidget.cs" />
+    <Compile Include="RtWidgets\ListRecordRtWidget.cs" />
+    <Compile Include="RtWidgets\RecordRtWidget.cs" />
+    <Compile Include="RtWidgets\RtWidget.cs" />
+    <Compile Include="RtWidgets\SelectRtWidget.cs" />
+    <Compile Include="RtWidgets\ShowRecordRtWidget.cs" />
+    <Compile Include="Td.cs" />
+    <Compile Include="BlockOutputCache.cs" />
+    <Compile Include="DynamicImageType.cs" />
+    <Compile Include="PageOutputCache.cs">
+    </Compile>
+    <Compile Include="DownloadNodeCache.cs">
+    </Compile>
+    <Compile Include="EditRecord.cs" />
+    <Compile Include="EmptyControl.cs" />
+    <Compile Include="HtmlTextWriterOverriderForHtmlControls.cs" />
+    <Compile Include="HtmlTextWriterOverriderForWebControls.cs" />
+    <Compile Include="OSDataGridTableHeaderCell.cs" />
+    <Compile Include="Tr.cs" />
+    <Compile Include="Th.cs" />
+    <Compile Include="DataGridCommandAjaxEventArgs.cs" />
+    <Compile Include="OSDataGridTable.cs" />
+    <Compile Include="OSDataGridItem.cs" />
+    <Compile Include="OSDataGridTableCell.cs" />
+    <Compile Include="IAjaxEvents.cs" />
+    <Compile Include="IAjaxHandler.cs" />
+    <Compile Include="IBreakPointControl.cs" />
+    <Compile Include="IfPlaceHolder.cs" />
+    <Compile Include="IListRefresh.cs" />
+    <Compile Include="InputFile.cs" />
+    <Compile Include="IRowRendering.cs" />
+    <Compile Include="ListBox.cs" />
+    <Compile Include="OSDataGrid.cs" />
+    <Compile Include="HtmlTextWriterWithAttributeFilter.cs" />
+    <Compile Include="OSPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OSPageViewState.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OSUserControl.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DropDownList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DynamicImage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HyperLink.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IParentEditRecordProp.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Iterator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IWidgetRuntimeProperties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LinkButton.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MessageResource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OSPageViewStateCompressed.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PlaceHolder.cs" />
+    <Compile Include="RadioButton.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Span.cs" />
+    <Compile Include="SR.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Table.cs" />
+    <Compile Include="TableCell.cs" />
+    <Compile Include="TextBox.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TextValidator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Utils.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ViewStateSpecializations.cs" />
+    <Compile Include="ViewStateSpecializations\ViewStateLessHtmlForm.cs" />
+    <Compile Include="ViewStateSpecializations\ViewStateLessHtmlTableRow.cs" />
+    <Compile Include="ViewStateSpecializations\ViewStateLessTableHeaderCell.cs" />
+    <Compile Include="ViewStateSpecializations\ViewStateLessControl.cs" />
+    <Compile Include="ViewStateSpecializations\ViewStateLessDataGridItem.cs" />
+    <Compile Include="ViewStateSpecializations\ViewStateLessHtmlContainerControl.cs" />
+    <Compile Include="ViewStateSpecializations\ViewStateLessHtmlGenericControl.cs" />
+    <Compile Include="ViewStateSpecializations\ViewStateLessHtmlInputFile.cs" />
+    <Compile Include="ViewStateSpecializations\ViewStateLessHtmlTable.cs" />
+    <Compile Include="ViewStateSpecializations\ViewStateLessHtmlTableCell.cs" />
+    <Compile Include="ViewStateSpecializations\ViewStateLessHyperLink.cs" />
+    <Compile Include="ViewStateSpecializations\ViewStateLessImage.cs" />
+    <Compile Include="ViewStateSpecializations\ViewStateLessPlaceHolder.cs" />
+    <Compile Include="ViewStateSpecializations\ViewStateLessTable.cs" />
+    <Compile Include="ViewStateSpecializations\ViewStateLessTableCell.cs" />
+    <Compile Include="ViewStateSpecializations\ViewStateLessWebControl.cs" />
+    <EmbeddedResource Include="Messages.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent></PreBuildEvent>
+    <PostBuildEvent></PostBuildEvent>
+  </PropertyGroup>
+</Project>

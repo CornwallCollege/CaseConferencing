@@ -1,0 +1,11 @@
+﻿
+.Popup_Wrapper {
+    position: absolute;
+    background-color: white;
+    z-index:11;
+    box-shadow: 2px 2px 6px #AAA;
+    border-radius: 0px 0px 10px 10px;
+    line-height: initial;
+    cursor: initial;
+
+}

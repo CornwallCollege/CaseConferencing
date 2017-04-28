@@ -1,0 +1,17 @@
+﻿<%@ Page Language="c#" Codebehind="AttachDocument.aspx.cs" AutoEventWireup="false" Inherits="ssCaseConferencing.Flows.FlowSafeguarding.ScrnAttachDocument" %><%@ Register TagPrefix="osweb" Namespace="OutSystems.HubEdition.WebWidgets" Assembly="OutSystems.HubEdition.WebWidgets" %><%@ Assembly Name="OutSystems.WidgetsRuntimeAPI" %><%@ Import namespace="ssCaseConferencing" %><%@ Import namespace="OutSystems.HubEdition.RuntimePlatform" %><%@ Register TagPrefix="widgets" TagName="KHtW7GNYBskijYiZHuvzUvw" Src="Blocks\CaseConferencing\Common\Popup_Editor_Layout.ascx" %><%@ Register TagPrefix="RichWidgets_widgets" TagName="KmbfKJ2gWQUq1Gwk_0SjV4w" Src="Blocks\CaseConferencing\RichWidgets\Icon.ascx" %>
+<%= CaseConferencing_Properties.DocType %>
+<html xmlns="http://www.w3.org/1999/xhtml" >
+  <head runat="server"><%= GetHeadTopJavaScript() %>
+	<title><%= HttpUtility.HtmlEncode (Title) %></title>
+    <meta http-equiv="Content-Type" content="<%= "text/html; charset=" + Response.ContentEncoding.WebName %>" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+<%= "\n" + GetStyleSheetIncludes() %><%= GetRequestInfoJavaScript() + GetJavaScriptIncludes() + GetHeadBottomJavaScript() %>
+  </head>
+  <osweb:Body runat="server"><%= GetBodyTopJavaScript() %>
+    <osweb:Form id="WebForm1" method="post"  enctype="multipart/form-data" action="<%# GetFormAction() %>" runat="server">
+<widgets:KHtW7GNYBskijYiZHuvzUvw runat="server" id="wt_WebBlockInstance4" OnEvaluateParameters="webBlck_WebBlockInstance4_onDataBinding" InstanceID="_WebBlockInstance4"><phTitle><RichWidgets_widgets:KmbfKJ2gWQUq1Gwk_0SjV4w runat="server" id="RichWidgets_wt_WebBlockInstance6" OnEvaluateParameters="RichWidgets_webBlck_WebBlockInstance6_onDataBinding" InstanceID="_WebBlockInstance6"></RichWidgets_widgets:KmbfKJ2gWQUq1Gwk_0SjV4w><osweb:PlaceHolder runat="server"><%# " Attach Document" %></osweb:PlaceHolder></phTitle><phContent><osweb:Container runat="server" id="wt_Container3" anonymous="true" onDataBinding="cnt_Container3_onDataBinding" GridCssClasses="OSInline" style="width: 300px"><osweb:Container runat="server" id="wt_Container8" anonymous="true" onDataBinding="cnt_Container8_onDataBinding"><osweb:InputFile runat="server" id="wtFileToUpload" GridCssClasses="ThemeGrid_Width4" name="wtFileToUpload" Visible="<%# inputFileFileToUpload_isVisible() %>" Disabled="<%# !inputFileFileToUpload_isEnabled() %>"/></osweb:Container><osweb:Container runat="server" id="wt_Container2" anonymous="true" onDataBinding="cnt_Container2_onDataBinding" GridCssClasses="ThemeGrid_Width4" style="margin-top: 10px" align="right"><osweb:Button runat="server" id="wt_Button9" cssClass="Button Is_Default" Visible="<%# btn_Button9_isVisible() %>" Enabled="<%# btn_Button9_isEnabled() %>" CausesValidation="false" text="<%# btn_Button9_getLabel() %>"/><osweb:Button runat="server" id="wt_Button1" cssClass="Button" GridCssClasses="ThemeGrid_MarginGutter" Visible="<%# btn_Button1_isVisible() %>" Enabled="<%# btn_Button1_isEnabled() %>" CausesValidation="false" text="<%# btn_Button1_getLabel() %>"/></osweb:Container></osweb:Container></phContent></widgets:KHtW7GNYBskijYiZHuvzUvw><osweb:DummySubmitLink runat="server" id="Dummy_Submit_Link"/>
+    <%= OutSystems.HubEdition.RuntimePlatform.AppInfo.GetAppInfo().GetWatermark() %><%= GetCallbackDebug()	
+%><%= GetVisitCode() %></osweb:Form><%= GetEndPageJavaScript() + GetBodyBottomJavaScript() %>
+  </osweb:Body>
+</html>

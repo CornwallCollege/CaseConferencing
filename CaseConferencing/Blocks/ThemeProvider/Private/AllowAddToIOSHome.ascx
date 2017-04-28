@@ -1,0 +1,5 @@
+﻿<%@ Control Language="c#" AutoEventWireup="false" Codebehind="Blocks\ThemeProvider\Private\AllowAddToIOSHome.ascx.cs" Inherits="ssThemeProvider.Flows.FlowPrivate.WBlkAllowAddToIOSHome,ThemeProvider" TargetSchema="http://schemas.microsoft.com/intellisense/ie5"%>
+<%@ Register TagPrefix="osweb" Namespace="OutSystems.HubEdition.WebWidgets" Assembly="OutSystems.HubEdition.WebWidgets" %>
+<%@ Assembly Name="OutSystems.WidgetsRuntimeAPI" %>
+<%@ Import namespace="ssThemeProvider" %>
+<%# PageStartHook() %><osweb:IfPlaceHolder runat="server"><osweb:If runat="server" visible="<%# if_wt1() %>"><osweb:Span runat="server" id="wt4" anonymous="true" class="Text_Note"><%# "&lt;AllowAddingToIPhoneHome&gt;" %></osweb:Span></osweb:If><osweb:If runat="server" visible="<%# !if_wt1() %>"></osweb:If></osweb:IfPlaceHolder><%# PageEndHook() %>

@@ -1,0 +1,36 @@
+﻿.ButtonSelect {
+
+    padding: 1px 6px;
+    color: white;
+    font-weight: 300;
+    border-radius: 3px;
+    background: -webkit-linear-gradient(180deg, #003D85, #154577); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(180deg, #003D85, #154577); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(180deg, #003D85, #154577); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(180deg, #003D85, #154577); /* Standard syntax (must be last) */    
+    border: 1px solid #395678;
+    cursor:pointer;
+    font-size:12px;
+    text-align: center;
+   
+}
+
+.ButtonSelect:Hover {
+
+    padding: 1px 6px;
+    color: white;
+    font-weight: 300;
+    border-radius: 3px;
+    background: -webkit-linear-gradient(180deg, #003D85, #2376CC); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(180deg, #003D85, #2376CC); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(180deg, #003D85, #2376CC); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(180deg, #003D85, #2376CC); /* Standard syntax (must be last) */    
+    border: 1px solid #395678;
+    cursor:pointer;
+    font-size:12px;
+    text-align: center;
+}
+
+.textarea, select, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"] {
+    font-size: 12px;
+}

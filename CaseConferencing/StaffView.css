@@ -1,0 +1,127 @@
+﻿
+.CaseConferencingHeader {
+    height: 90px;
+}
+
+.Popup_Wrapper {
+
+}
+
+.Tooltip .Popup_Wrapper {
+    border-radius: 10px;
+}
+
+ul.os-internal-ui-autocomplete {
+    z-index: 120 !important;
+    width: 500px;
+    white-space: nowrap;
+}
+
+ul.os-internal-ui-autocomplete > li > a {
+    width: 490px;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    font-size:12px;
+}
+
+select.ComboBoxPopUp {
+    padding:3px;
+    margin: 0;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    border-radius:3px;
+    -webkit-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    -moz-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    box-shadow: 0px 0px 0px #b1b1b1 inset;
+    background: #f8f8f8;
+    color:black;
+    border: solid 1px #F0F0F0;
+    outline:none;
+    display: inline-block;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+    cursor:pointer;
+}
+select {
+    margin:0px;
+    padding: 6px 0px 4px 0px;
+    color: white;
+    font-weight: 300;
+    border-radius: 3px;
+    background-color:  transparent;
+    border-width: 1px;
+    cursor:pointer;
+    font-size:12px;
+    outline:none;
+    display: inline-block;
+    box-shadow: none;
+}
+option:hover {
+    background-color: #165DB2;
+    color:#f8f8f8;
+}
+
+option {
+    -webkit-border-radius:25px; -moz-border-radius:25px; border-radius:25px;
+    color:black;
+    background-color:#f8f8f8;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    select {padding-right:25px}
+}
+
+/* Hack for IE - not show arrows */
+select::-ms-expand {
+    display: none;
+    background-image: none;
+}
+.DisciplinaryIcon{
+position: relative;
+padding-top: 4px;
+padding-left: 3px;
+}
+.USP:first-letter{
+    font-size: 14px;
+    font-weight: bold;
+}
+.ActiveEnrolmentsTitle{
+    padding-top: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 2px;
+    border-bottom-style: solid;
+    border-bottom-color: #84AA19;
+    color:#84AA19;
+    
+}
+.OtherEnrolmentsTitle{
+    padding-top: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 2px;
+    border-bottom-style: solid;
+    border-bottom-color: #C0C0C0;
+    color:#C0C0C0;
+}
+
+.IconStaffView
+{
+    width: 15px;
+    position: relative;
+    top: 1px;
+    cursor: context-menu;
+    cursor:pointer;
+}
+
+.HeaderFilterFavorite
+{
+    left:-29px;
+    position: absolute;
+    color:white;  
+    /*display: inline-block;  */
+    height: 100%;
+    width: 28px;
+    line-height: 40px;
+}

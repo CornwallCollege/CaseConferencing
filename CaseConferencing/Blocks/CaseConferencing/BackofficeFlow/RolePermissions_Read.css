@@ -1,0 +1,9 @@
+﻿.ListRecordsWrapper
+{
+    height: 102px;
+    overflow-y: scroll;
+    background: rgba(218, 218, 218, 0.32);
+    padding: 2px;
+    font-size: 12px;
+    border: 1px solid #898989;
+}

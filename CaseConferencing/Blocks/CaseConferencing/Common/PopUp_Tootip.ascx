@@ -1,0 +1,5 @@
+﻿<%@ Control Language="c#" AutoEventWireup="false" Codebehind="Blocks\CaseConferencing\Common\PopUp_Tootip.ascx.cs" Inherits="ssCaseConferencing.Flows.FlowCommon.WBlkPopUp_Tootip,CaseConferencing" TargetSchema="http://schemas.microsoft.com/intellisense/ie5"%>
+<%@ Register TagPrefix="osweb" Namespace="OutSystems.HubEdition.WebWidgets" Assembly="OutSystems.HubEdition.WebWidgets" %>
+<%@ Assembly Name="OutSystems.WidgetsRuntimeAPI" %>
+<%@ Import namespace="ssCaseConferencing" %>
+<%@ Register TagPrefix="widgets" TagName="K1TCjPag3Q064wEzBpWXkyg" Src="PopUp.ascx" %><%# PageStartHook() %><widgets:K1TCjPag3Q064wEzBpWXkyg runat="server" id="wtPopUpNote" OnEvaluateParameters="webBlckPopUpNote_onDataBinding" InstanceID="PopUpNote"><phPopupContent><osweb:Container runat="server" id="wtWrapperContent" onDataBinding="cntWrapperContent_onDataBinding" cssClass="PopupTab_Content"><osweb:PlaceHolder runat="server"><%# expression_InlineExpression1() %></osweb:PlaceHolder></osweb:Container></phPopupContent></widgets:K1TCjPag3Q064wEzBpWXkyg><%# PageEndHook() %>

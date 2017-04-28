@@ -1,0 +1,7 @@
+C:\temp\CaseConferencing_v112_Source\OutSystems.RuntimeCommon\bin\Debug\OutSystems.RuntimeCommon.dll
+C:\temp\CaseConferencing_v112_Source\OutSystems.RuntimeCommon\bin\Debug\OutSystems.RuntimeCommon.pdb
+C:\temp\CaseConferencing_v112_Source\OutSystems.RuntimeCommon\obj\Debug\OutSystems.RuntimeCommon.csprojResolveAssemblyReference.cache
+C:\temp\CaseConferencing_v112_Source\OutSystems.RuntimeCommon\obj\Debug\OutSystems.RuntimeCommon.LabelingResources.resources
+C:\temp\CaseConferencing_v112_Source\OutSystems.RuntimeCommon\obj\Debug\OutSystems.RuntimeCommon.csproj.GenerateResource.Cache
+C:\temp\CaseConferencing_v112_Source\OutSystems.RuntimeCommon\obj\Debug\OutSystems.RuntimeCommon.dll
+C:\temp\CaseConferencing_v112_Source\OutSystems.RuntimeCommon\obj\Debug\OutSystems.RuntimeCommon.pdb

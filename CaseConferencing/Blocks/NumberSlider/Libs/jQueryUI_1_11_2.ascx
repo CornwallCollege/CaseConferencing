@@ -1,0 +1,5 @@
+﻿<%@ Control Language="c#" AutoEventWireup="false" Codebehind="Blocks\NumberSlider\Libs\jQueryUI_1_11_2.ascx.cs" Inherits="ssNumberSlider.Flows.FlowLibs.WBlkjQueryUI_1_11_2,NumberSlider" TargetSchema="http://schemas.microsoft.com/intellisense/ie5"%>
+<%@ Register TagPrefix="osweb" Namespace="OutSystems.HubEdition.WebWidgets" Assembly="OutSystems.HubEdition.WebWidgets" %>
+<%@ Assembly Name="OutSystems.WidgetsRuntimeAPI" %>
+<%@ Import namespace="ssNumberSlider" %>
+<%# PageStartHook() %><osweb:IfPlaceHolder runat="server"><osweb:If runat="server" visible="<%# if_wt3() %>"><osweb:PlaceHolder runat="server"><%# " " %></osweb:PlaceHolder><osweb:Span runat="server" id="wt4" anonymous="true" class="Text_Note"><%# OutSystems.HubEdition.RuntimePlatform.RuntimePlatformUtils.ExtendedHtmlEncode(expression4()) %></osweb:Span></osweb:If><osweb:If runat="server" visible="<%# !if_wt3() %>"></osweb:If></osweb:IfPlaceHolder><%# PageEndHook() %>

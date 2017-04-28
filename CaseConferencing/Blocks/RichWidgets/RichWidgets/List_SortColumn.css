@@ -1,0 +1,21 @@
+﻿.SortColumns_Sortable {
+    font-weight: normal;
+    cursor:pointer;
+    color:white;
+}
+
+.SortColumns_Sortable:hover {
+    text-decoration:underline;
+}    
+
+.SortColumns_Sorted {
+    font-weight: bold;
+    cursor:pointer;
+    color:white;
+}
+
+.SortColumns_Sorted:hover {
+    text-decoration:underline;
+}
+
+/* ExcludeAllFromPickersOutsideBlock */

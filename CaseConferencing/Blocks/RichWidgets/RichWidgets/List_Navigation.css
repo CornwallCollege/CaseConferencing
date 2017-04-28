@@ -1,0 +1,26 @@
+﻿a.ListNavigation_PageNumber,
+span.ListNavigation_CurrentPageNumber,
+span.ListNavigation_Ellipsis {
+    padding: 3px 6px;
+}
+
+span.ListNavigation_DisabledNext,
+a.ListNavigation_Next {
+    padding: 3px 0px 3px 6px;
+}
+
+a.ListNavigation_Previous,
+span.ListNavigation_DisabledPrevious {
+    padding: 3px 6px 3px 0px;
+}
+
+span.ListNavigation_CurrentPageNumber {
+    font-weight: bold;
+}
+
+span.ListNavigation_DisabledPrevious,
+span.ListNavigation_DisabledNext {
+    color: gray;
+}
+
+/* ExcludeAllFromPickersOutsideBlock */

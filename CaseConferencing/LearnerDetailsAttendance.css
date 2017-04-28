@@ -1,0 +1,120 @@
+﻿.AttendanceSection {
+    border: solid 1px #b1b1b1;
+    font-size:14px;
+    margin-bottom: 20px;
+    vertical-align: top;
+    padding: 10px 20px;
+}
+
+.AttendanceTitle{
+    font-size: 16px;
+    font-weight: 600;
+   /* margin-bottom: 4px;*/
+    color: #666;
+}
+
+.AttendanceTitleCourse{
+    font-size: 16px;
+    font-weight: 600;
+    font-weight: bold;
+    margin-left: 8px;
+    color: #666;
+}
+
+
+.AttendanceTitleValues{
+    font-size: 15px;
+    font-weight: 600;
+    font-weight: bold;
+    color: #666;
+}
+
+.AttendanceValues{
+    font-size: 15px;
+    font-weight: 600;
+   
+    margin-left: 8px;
+    color: #666;
+}
+
+.AttendanceSectionTitle
+{
+    font-size: 13px;
+    font-weight: 700;
+    font-weight: bold;
+    color: #4E4C4C;
+    padding-top:5px;
+    padding-left: 5px;
+}
+
+
+
+.TableRecordsAtt
+{
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    border: none;
+    /*padding: 2px 4px;*/
+    padding-top: 0px !important;
+}
+
+.TableRecords_HeaderAtt {
+    font-size:17px;
+    padding: 15px;
+    padding-top: 15px;
+    padding-bottom: 5px;
+    /*text-shadow: 0px 1px 2px #dadada;*/
+    font-weight: 600;
+    border-bottom: solid 1px #dadada;
+    text-shadow: 0px 1px 2px #dadada;
+    color:#666;
+    
+}
+
+
+
+.TableRecords_OddLineAtt
+{
+    background-color:#F8F8F8;
+    padding: 7px 0 7px 10px;
+}
+.TableRecords_EvenLineAtt {
+    padding: 7px 0 7px 10px;
+}
+
+
+/*
+.TableRecords_OddLine:first-child,
+.TableRecords_EvenLine:first-child,    
+.TableRecords_Header:first-child {
+    padding-left: 20px;
+}
+
+.TableRecords_OddLine:last-child,
+.TableRecords_EvenLine:last-child,    
+.TableRecords_Header:last-child {
+    padding-right: 20px;
+}
+
+.TableRecords_TopNavigation {
+    padding: 5px 0px;   
+}
+
+.TableRecords_BottomNavigation {
+    margin-top: 15px;   
+}*/
+
+.CellAttendance
+{
+    padding:1px;
+}
+
+.ContentDetailWrapper{
+    background-color:white;
+    box-shadow: 0px 1px 2px #b1b1b1;
+    border: solid 1px #DADADA;
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 20px;
+}

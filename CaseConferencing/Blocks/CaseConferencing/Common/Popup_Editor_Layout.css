@@ -1,0 +1,60 @@
+﻿.PopupWrapper
+{
+ 
+    border-radius: 5px;
+    background-color: #f8f8f8;
+    border: 1px solid #DADADA;
+    
+}
+
+.PopupWrapper .TitlePopupHeader
+{
+  
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    /*padding-top: 7px;*/
+    height: 23px;
+    vertical-align: top;
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+    background-color: #00326C;
+    background: -webkit-linear-gradient(180deg, #002959, #00326C);
+    background: -o-linear-gradient(180deg, #002959, #00326C);
+    background: -moz-linear-gradient(180deg, #002959, #00326C);
+    background: linear-gradient(180deg, #002959, #00326C);
+     padding: 10px;
+     text-align: left;
+}
+
+
+
+.PopupWrapper .ContentWrapper
+{
+    padding: 10px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.EditRecord_Caption {
+    color: #666;
+    padding: 7px 10px 0 0;
+    vertical-align: top;
+    font-weight: bold;
+}
+
+
+.ButtonGrey {
+
+    padding: 6px 10px;
+    color:#757575;
+    font-weight: 300;
+    border-radius: 3px;
+    background-color:#F3F3F3;   
+    border: 1px solid #DADADA;
+    cursor:pointer;
+    font-size:12px;
+    text-align: center;
+}
+
